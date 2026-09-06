@@ -1,0 +1,4423 @@
+import React, { useEffect, useState } from "react";
+import AirportSearchForm from "./AirportSearchForm";
+
+export default function Home() {
+    return (
+        <>
+            <div id="magic-cursor">
+                <div id="ball"></div>
+            </div>
+
+            <div className="support-area">
+                <div aria-hidden="true" className="support-card" id="supportCard">
+                    <div className="support-card-banner">
+                        
+                        <ul className="users-img-grp">
+                            <li>
+                                <img alt="" src="/assets/img/home1/support-card-user-img2.png" />
+                            </li>
+                            <li>
+                                <img alt="" src="/assets/img/home1/support-card-user-img1.png" />
+                            </li>
+                            <li>
+                                <img alt="" src="/assets/img/home1/support-card-user-img2.png" />
+                            </li>
+                        </ul>
+                        <div className="content">
+                            <span>Questions or answer?</span>
+                            <span>Call us anytime.</span>
+                        </div>
+                    </div>
+                    <ul className="contact-list">
+                        <li className="single-contact">
+                            <div className="icon">
+                                <img alt="" src="/assets/img/home1/icon/whatsapp-icon.svg" />
+                            </div>
+                            <div className="content">
+                                <span>WhatsApp</span>
+                                <a href="tel:+91 73077 13497">+91 73077 13497</a>
+                            </div>
+                        </li>
+                        <li className="single-contact">
+                            <div className="icon">
+                                <img alt="" src="/assets/img/home1/icon/mail-icon.svg" />
+                            </div>
+                            <div className="content">
+                                <span>Mail us anywhere</span>
+                                <a href="mailto:info@exampleatlastrip.com">info@myticketexpert.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                    {/* <a className="chat-btn" href="https://crisp.chat/en/">
+                        <svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.8583 11.9621L18.4784 10.3522C19.4631 9.24137 19.9994 7.88641 19.9994 6.48418C19.9994 2.85117 16.4747 0 12.3434 0C8.14344 0 4.72645 2.90879 4.72645 6.48418C4.72645 6.57398 4.72942 6.66402 4.73383 6.75398C1.93883 7.86461 4.15822e-05 10.2587 4.15822e-05 13.027C4.15822e-05 14.5785 0.592698 16.0671 1.68004 17.2734L0.145003 19.0277C0.0708653 19.1124 0.0227017 19.2166 0.00627317 19.328C-0.0101554 19.4394 0.00584674 19.5531 0.0523653 19.6556C0.0988838 19.7581 0.173949 19.8451 0.268582 19.906C0.363214 19.967 0.473407 19.9994 0.585979 19.9994H8.82789C8.89309 19.9994 9.09844 19.9622 9.14039 19.9583C11.0733 19.78 12.865 19.0212 14.2112 17.8057C15.6326 16.5222 16.4737 14.8038 16.4434 12.9293H19.4135C19.913 12.9293 20.1835 12.3414 19.8583 11.9621ZM8.94508 18.7991C8.89387 18.8032 8.71676 18.8185 8.68145 18.8276H1.87723L2.91809 17.638C3.12512 17.4014 3.10852 17.0436 2.88047 16.8272C1.77867 15.7815 1.17188 14.4319 1.17188 13.027C1.17188 9.85074 4.34317 7.26547 8.24196 7.26547C12.1189 7.26547 15.273 9.85008 15.273 13.027C15.273 15.9972 12.5059 18.5081 8.94508 18.7991ZM16.3085 11.7575C15.6015 8.49785 12.2205 6.09363 8.24196 6.09363C7.4286 6.09363 6.64262 6.19375 5.89992 6.37926C5.96805 3.49828 8.83215 1.17191 12.3434 1.17191C15.9188 1.17191 18.8275 3.555 18.8275 6.48422C18.8275 7.73719 18.2788 8.95254 17.2822 9.90641C17.0575 10.1215 17.04 10.4748 17.2425 10.711L18.1395 11.7575H16.3085Z"></path>
+                            <path d="M4.72652 11.7568C4.08039 11.7568 3.55469 12.2825 3.55469 12.9287C3.55469 13.5748 4.08039 14.1005 4.72652 14.1005C5.37266 14.1005 5.89836 13.5748 5.89836 12.9287C5.89836 12.2825 5.3727 11.7568 4.72652 11.7568ZM8.24203 11.7568C7.5959 11.7568 7.07019 12.2825 7.07019 12.9287C7.07019 13.5748 7.5959 14.1005 8.24203 14.1005C8.88816 14.1005 9.41387 13.5748 9.41387 12.9287C9.41387 12.2825 8.8882 11.7568 8.24203 11.7568ZM11.7575 11.7568C11.1114 11.7568 10.5857 12.2825 10.5857 12.9287C10.5857 13.5748 11.1114 14.1005 11.7575 14.1005C12.4037 14.1005 12.9294 13.5748 12.9294 12.9287C12.9294 12.2825 12.4037 11.7568 11.7575 11.7568Z"></path>
+                        </svg>
+                        Chat with Us
+                    </a> */}
+                    <span>Respons time instant reply!</span>
+                </div>
+                <button aria-controls="supportCard" aria-expanded="false" aria-label="Open support" className="support-toggle" type="button">
+                    <svg className="call-icon" height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M21.4012 16.1458L18.331 13.0756C17.2345 11.9791 15.3705 12.4178 14.9319 13.8432C14.603 14.83 13.5065 15.3783 12.5196 15.1589C10.3267 14.6107 7.36615 11.7598 6.8179 9.45721C6.48896 8.47032 7.14685 7.37384 8.13369 7.04493C9.55912 6.60634 9.99772 4.74231 8.90123 3.64582L5.83107 0.575656C4.95387 -0.191885 3.63809 -0.191885 2.87055 0.575656L0.787221 2.65898C-1.29611 4.85196 1.00652 10.6633 6.16001 15.8168C11.3135 20.9703 17.1249 23.3826 19.3179 21.1896L21.4012 19.1063C22.1688 18.2291 22.1688 16.9133 21.4012 16.1458Z"></path>
+                        </g>
+                    </svg>
+                    <svg className="close-icon" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.3788 2.37451C16.1487 2.14453 15.8368 2.01534 15.5115 2.01534C15.1862 2.01534 14.8742 2.14453 14.6442 2.37451L9.37787 7.64084L4.11154 2.37451C3.99837 2.25734 3.86301 2.16389 3.71335 2.09959C3.56368 2.0353 3.40271 2.00146 3.23983 2.00005C3.07694 1.99863 2.91541 2.02967 2.76465 2.09135C2.61389 2.15303 2.47692 2.24412 2.36174 2.3593C2.24656 2.47448 2.15547 2.61145 2.09379 2.76221C2.03211 2.91297 2.00107 3.0745 2.00249 3.23739C2.0039 3.40027 2.03774 3.56124 2.10204 3.7109C2.16633 3.86057 2.25978 3.99593 2.37695 4.10909L7.64328 9.37543L2.37695 14.6418C2.25978 14.7549 2.16633 14.8903 2.10204 15.0399C2.03774 15.1896 2.0039 15.3506 2.00249 15.5135C2.00107 15.6764 2.03211 15.8379 2.09379 15.9886C2.15547 16.1394 2.24656 16.2764 2.36174 16.3916C2.47692 16.5067 2.61389 16.5978 2.76465 16.6595C2.91541 16.7212 3.07694 16.7522 3.23983 16.7508C3.40271 16.7494 3.56368 16.7156 3.71335 16.6513C3.86301 16.587 3.99837 16.4935 4.11154 16.3763L9.37787 11.11L14.6442 16.3763C14.8756 16.5998 15.1854 16.7235 15.5071 16.7207C15.8287 16.7179 16.1364 16.5889 16.3638 16.3614C16.5913 16.134 16.7203 15.8263 16.7231 15.5046C16.7259 15.183 16.6022 14.8731 16.3788 14.6418L11.1125 9.37543L16.3788 4.10909C16.6088 3.87905 16.738 3.56708 16.738 3.2418C16.738 2.91652 16.6088 2.60455 16.3788 2.37451Z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="scroll-percentage">
+                <span id="scroll-percentage-value">0%</span>
+                <svg className="arrow" fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M7 1.55632L14 10.8896L0 10.8896L7 1.55632Z"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <button className="d-none">
+                
+            </button>
+
+            {/* <div className="home1-demo-menu-wrapper">
+                <button className="close-btn">
+                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.7588 2.24121L16.4658 2.94824L10.4141 9L16.4658 15.0518L15.7588 15.7588L15.0508 16.4658L8.99902 10.4141L2.94824 16.4658L2.24121 15.7588L1.53418 15.0508L7.58496 9L1.53418 2.94922L2.24121 2.24121L2.94824 1.53418L8.99902 7.58496L15.0508 1.53418L15.7588 2.24121Z"></path>
+                    </svg>
+                </button>
+                <div className="container one">
+                    <div className="title-area">
+                        <span className="demo-count">06</span>
+                        <h2>Pre-built Live Demo</h2>
+                        <p>AtlasTrip delivers a complete travel website solution with 6 homepage layouts and 100+ ready-made
+                            inner pages.</p>
+                    </div>
+                </div>
+                <div className="container-fluid one">
+                    <div className="row gy-5 mb-70">
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card active">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg1.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img1.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="/">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="/">1. <span>Main Home</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg2.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img2.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="https://demo.egenslab.com/html/atlastrip/preview/travel-agency-home/index#">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="https://demo.egenslab.com/html/atlastrip/preview/travel-agency-home/index#">2. <span>Travel Agency</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg3.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img3.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="https://demo.egenslab.com/html/atlastrip/preview/adventure-home/index#">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="https://demo.egenslab.com/html/atlastrip/preview/adventure-home/index#">3. <span>Adventure</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg4.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img4.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="https://demo.egenslab.com/html/atlastrip/preview/city-tour-home/index#">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="https://demo.egenslab.com/html/atlastrip/preview/city-tour-home/index#">4. <span>City Tour</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg1.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img5.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="https://demo.egenslab.com/html/atlastrip/preview/hotel-resort-home/index#">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="https://demo.egenslab.com/html/atlastrip/preview/hotel-resort-home/index#">5. <span>Hotel & Resort</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg2.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/home-page-img6.jpg" />
+                                        <div className="button-group">
+                                            <a className="primary-btn1 two" href="https://demo.egenslab.com/html/atlastrip/preview/single-hotel-home/index#">
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <span>
+                                                    Live Preview
+                                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M2.80292 0.302678C3.09582 0.0097845 3.57058 0.0097845 3.86347 0.302678L8.56073 4.99994L3.86347 9.69623C3.57058 9.98913 3.09582 9.98913 2.80292 9.69623C2.51019 9.40333 2.51008 8.92852 2.80292 8.63569L6.43866 4.99897L2.80292 1.36322C2.51003 1.07033 2.51003 0.595571 2.80292 0.302678Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="https://demo.egenslab.com/html/atlastrip/preview/single-hotel-home/index#">6. <span>Single Hotel</span></a>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg1.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/comming-soon-page-img.jpg" />
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="#">7. <span>Hajj & Umrah</span></a>
+                                    <span className="badge">Coming Soon</span>
+                                </strong>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-lg-4 col-sm-6">
+                            <div className="home-page-card">
+                                <div className="home-img-wrap" style={{ backgroundImage: "url(/assets/img/home1/home-page-card-bg2.jpg)" }}>
+                                    <div className="home-img">
+                                        <img alt="" src="/assets/img/home1/comming-soon-page-img.jpg" />
+                                    </div>
+                                </div>
+                                <strong>
+                                    <a href="#">8. <span>Visa Agency</span></a>
+                                    <span className="badge">Coming Soon</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="puchase-btn-area d-flex justify-content-center">
+                        <a className="primary-btn1 two" href="/">
+                            <span>
+                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M9.34665 17.9998C9.80104 17.9998 10.1695 17.635 10.1695 17.185C10.1695 16.7349 9.80104 16.3701 9.34665 16.3701C8.8922 16.3701 8.5238 16.7349 8.5238 17.185C8.5238 17.635 8.8922 17.9998 9.34665 17.9998Z"></path>
+                                        <path d="M14.0731 11.8551L9.43719 12.3468C9.3524 12.3561 9.30856 12.2486 9.37611 12.1967L13.9128 8.69884C14.2075 8.46044 14.395 8.08895 14.3146 7.69113C14.2341 7.08123 13.7253 6.6834 13.0828 6.76311L8.1537 7.47763C8.06675 7.49044 8.02004 7.38013 8.08975 7.32747L12.9757 3.63321C13.9401 2.89095 14.0199 1.43203 13.1367 0.583728C12.3333 -0.211913 11.0476 -0.185581 10.2442 0.61006L2.37087 8.53943C2.07623 8.85754 1.94257 9.2817 2.02305 9.73289C2.15672 10.4488 2.87966 10.9264 3.60333 10.794L7.84757 9.93643C7.93955 9.91792 7.98986 10.0396 7.91009 10.0894L3.20089 13.0742C2.61161 13.4456 2.34428 14.1082 2.53113 14.7715C2.71869 15.6468 3.60261 16.1507 4.45922 15.9386L11.4982 14.2214C11.5773 14.2021 11.6355 14.2932 11.5845 14.3559L10.485 15.6995C10.1903 16.071 10.6725 16.5748 11.0742 16.283L14.6897 13.3396C15.3321 12.8094 14.9038 11.7747 14.0738 11.8544L14.0731 11.8551Z"></path>
+                                    </g>
+                                </svg>
+                                Purchase Now
+                            </span>
+                            <span>
+                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M9.34665 17.9998C9.80104 17.9998 10.1695 17.635 10.1695 17.185C10.1695 16.7349 9.80104 16.3701 9.34665 16.3701C8.8922 16.3701 8.5238 16.7349 8.5238 17.185C8.5238 17.635 8.8922 17.9998 9.34665 17.9998Z"></path>
+                                        <path d="M14.0731 11.8551L9.43719 12.3468C9.3524 12.3561 9.30856 12.2486 9.37611 12.1967L13.9128 8.69884C14.2075 8.46044 14.395 8.08895 14.3146 7.69113C14.2341 7.08123 13.7253 6.6834 13.0828 6.76311L8.1537 7.47763C8.06675 7.49044 8.02004 7.38013 8.08975 7.32747L12.9757 3.63321C13.9401 2.89095 14.0199 1.43203 13.1367 0.583728C12.3333 -0.211913 11.0476 -0.185581 10.2442 0.61006L2.37087 8.53943C2.07623 8.85754 1.94257 9.2817 2.02305 9.73289C2.15672 10.4488 2.87966 10.9264 3.60333 10.794L7.84757 9.93643C7.93955 9.91792 7.98986 10.0396 7.91009 10.0894L3.20089 13.0742C2.61161 13.4456 2.34428 14.1082 2.53113 14.7715C2.71869 15.6468 3.60261 16.1507 4.45922 15.9386L11.4982 14.2214C11.5773 14.2021 11.6355 14.2932 11.5845 14.3559L10.485 15.6995C10.1903 16.071 10.6725 16.5748 11.0742 16.283L14.6897 13.3396C15.3321 12.8094 14.9038 11.7747 14.0738 11.8544L14.0731 11.8551Z"></path>
+                                    </g>
+                                </svg>
+                                Purchase Now
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div> */}
+{/* 
+            <div aria-hidden="true" className="modal map-view-modal fade" id="mapViewModal" tabIndex="-1">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <button aria-label="Close" className="close-btn" data-bs-dismiss="modal" type="button">
+                            <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.00247 0.500545C1.79016 0.505525 1.58918 0.582706 1.4362 0.735547L0.694403 1.479C0.345704 1.82743 0.389689 2.43243 0.79164 2.83493L3.00694 5.05341L0.79164 7.27092C0.389689 7.67328 0.345566 8.27842 0.694403 8.62753L1.4362 9.37044C1.7849 9.71872 2.38879 9.67543 2.7913 9.27293L5.00659 7.05473L7.22189 9.27293C7.62467 9.67543 8.22898 9.71872 8.57699 9.37044L9.31989 8.62753C9.6679 8.27856 9.62461 7.67342 9.22182 7.27092L7.00653 5.05341L9.22182 2.83493C9.62461 2.43243 9.6679 1.82743 9.31989 1.479L8.57699 0.735547C8.22898 0.386433 7.62467 0.430557 7.22189 0.833614L5.00659 3.05126L2.7913 0.833753C2.56515 0.606635 2.27482 0.493906 2.00247 0.500545Z"></path>
+                            </svg>
+                        </button>
+                        <div className="title-area">
+                            <a className="rating-area" href="https://business.google.com/reviews">
+                                <ul className="rating">
+                                    <li><i className="bi bi-star-fill"></i></li>
+                                    <li><i className="bi bi-star-fill"></i></li>
+                                    <li><i className="bi bi-star-fill"></i></li>
+                                    <li><i className="bi bi-star-fill"></i></li>
+                                    <li><i className="bi bi-star-fill"></i></li>
+                                </ul>
+                                <span>(4.9)</span>
+                            </a>
+                            <h2 className="modal-title" id="ratingModalLabel">
+                                Bali Tropical Island Retreat
+                            </h2>
+                            <ul className="package-features">
+                                <li>
+                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.61933 3.0722L4.05903 8.6355C3.97043 8.7211 3.85813 8.7655 3.74593 8.7655C3.68772 8.76559 3.63008 8.75415 3.57632 8.73184C3.52256 8.70952 3.47376 8.67678 3.43272 8.6355L0.380725 5.5835C0.206425 5.4121 0.206425 5.1315 0.380725 4.9572L1.45912 3.8758C1.62462 3.7104 1.92002 3.7104 2.08552 3.8758L3.74593 5.5362L7.91463 1.3645C7.95569 1.32334 8.00445 1.29068 8.05814 1.26837C8.11183 1.24607 8.16939 1.23456 8.22753 1.2345C8.34563 1.2345 8.45792 1.2818 8.54063 1.3645L9.61903 2.446C9.79363 2.6203 9.79363 2.9009 9.61933 3.0722Z"></path>
+                                    </svg>
+                                    No Booking Fee
+                                </li>
+                                <li>
+                                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.61933 3.0722L4.05903 8.6355C3.97043 8.7211 3.85813 8.7655 3.74593 8.7655C3.68772 8.76559 3.63008 8.75415 3.57632 8.73184C3.52256 8.70952 3.47376 8.67678 3.43272 8.6355L0.380725 5.5835C0.206425 5.4121 0.206425 5.1315 0.380725 4.9572L1.45912 3.8758C1.62462 3.7104 1.92002 3.7104 2.08552 3.8758L3.74593 5.5362L7.91463 1.3645C7.95569 1.32334 8.00445 1.29068 8.05814 1.26837C8.11183 1.24607 8.16939 1.23456 8.22753 1.2345C8.34563 1.2345 8.45792 1.2818 8.54063 1.3645L9.61903 2.446C9.79363 2.6203 9.79363 2.9009 9.61933 3.0722Z"></path>
+                                    </svg>
+                                    Best Price Ever
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="modal-body">
+                            <div className="map-wrapper">
+                                <div className="map-area">
+                                    <div id="mapModal"></div>
+                                </div>
+                                <div className="map-info">
+                                    <div className="map-info-title-area">
+                                        <h3>
+                                            <img alt="" src="/assets/img/home1/icon/carbon-icon.svg" />
+                                            100% Carbon Neutral.
+                                        </h3>
+                                        <p>
+                                            Indonesia is not just a destination—it’s a collection of
+                                            over <strong>17,000 islands</strong>, each offering
+                                            something unique.
+                                        </p>
+                                    </div>
+                                    <div className="tour-schedule">
+                                        <div className="schedule-stop">
+                                            <div className="schedule-badge">Start</div>
+                                            <div className="schedule-content">
+                                                <h4>Bali, Indonesia</h4>
+                                                <span>Departure: 8:00 am - 8:30 am</span>
+                                            </div>
+                                        </div>
+                                        <ul className="schedule-points">
+                                            <li>Yogyakarta (Java).</li>
+                                            <li>Komodo National Park.</li>
+                                            <li>Raja Ampat Archipelago.</li>
+                                            <li>Mount Bromo (East Java).</li>
+                                            <li>Gili Islands (near Lombok).</li>
+                                            <li>Tumpak Sewu Waterfall.</li>
+                                        </ul>
+                                        <div className="schedule-stop">
+                                            <div className="schedule-badge">End</div>
+                                            <div className="schedule-content">
+                                                <h4>Bali, Indonesia</h4>
+                                                <span>Arrival: 9:00 pm - 10:30 pm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bottom-area">
+                                <a className="primary-btn1 two" href="tour-package-details#">
+                                    <span> Book Now</span>
+                                    <span>Book Now </span>
+                                </a>
+                                <span className="notes">
+                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                        <rect height="14" rx="7" width="14"></rect>
+                                        <path d="M10.6947 5.45771L6.24644 9.90835C6.17556 9.97683 6.08572 10.0123 5.99596 10.0123C5.9494 10.0124 5.90328 10.0033 5.86027 9.98542C5.81727 9.96757 5.77822 9.94138 5.7454 9.90835L3.3038 7.46675C3.16436 7.32963 3.16436 7.10515 3.3038 6.96571L4.16652 6.10059C4.29892 5.96827 4.53524 5.96827 4.66764 6.10059L5.99596 7.42891L9.33092 4.09155C9.36377 4.05862 9.40278 4.03249 9.44573 4.01465C9.48868 3.9968 9.53473 3.98759 9.58124 3.98755C9.67572 3.98755 9.76556 4.02539 9.83172 4.09155L10.6944 4.95675C10.8341 5.09619 10.8341 5.32067 10.6947 5.45771Z"></path>
+                                    </svg>
+                                    No Hidden Fee, Secure Booking
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
+
+            <header className="header-area style-1">
+                <div className="container d-flex flex-nowrap align-items-center justify-content-between position-relative">
+                    <div className="logo-and-menu-area">
+                        <a className="header-logo" href="/">
+                            <img alt="" src="/assets/img/header-logo.svg" />
+                        </a>
+                        <div className="main-menu">
+                            <div className="mobile-logo-area d-lg-none d-flex align-items-center justify-content-between">
+                                <a className="mobile-logo-wrap" href="/">
+                                    <img alt="" src="/assets/img/header-logo.svg" />
+                                </a>
+                                <div className="menu-close-btn">
+                                    <i className="bi bi-x"></i>
+                                </div>
+                            </div>
+                            <ul className="menu-list">
+                                <li className="active">
+                                    <a className="drop-down" href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                {/* <li className="menu-item-has-children position-inherit">
+                                    <a className="drop-down" href="destination-01#">
+                                        Destination
+                                        <i className="bi bi-caret-down-fill"></i>
+                                    </a>
+                                    <i className="bi bi-plus dropdown-icon"></i>
+                                    <div className="mega-menu">
+                                        <div className="mega-menu-wrapper">
+                                            <div className="menu-list-area">
+                                                <div className="menu-row">
+                                                    <div className="menu-single-item" id="asia-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>Asia</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">Indonesia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Japan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Thailand</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Malaysia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Vietnam</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">India</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Bangladesh</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Nepal</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Cambodia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">China</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="menu-single-item" id="europe-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>Europe</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">France</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Switzerland</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Italy</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">United Kingdom</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Greece</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Istanbul</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Barcelona</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Prague</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="menu-single-item" id="oceania-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>Oceania</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">Australia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">New Zealand</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Fiji</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Tonga</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Palau</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Vanuatu</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="menu-single-item" id="africa-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>Africa</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">South Africa</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Morocco</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Egypt</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Kenya</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Tanzania</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Mauritius</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="menu-single-item" id="middle-east-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>Middle East</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">UAE</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Saudi Arabia</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Qatar</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Turkey</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Jordan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Kuwait</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="menu-single-item" id="north-america-destination">
+                                                        <div className="menu-title">
+                                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                                <g>
+                                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <h2>North America</h2>
+                                                        </div>
+                                                        <i className="bi bi-plus dropdown-icon"></i>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="destination-details#">United States</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Canada</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Mexico</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Jamaica</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="destination-details#">Costa Rica</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a className="primary-btn1 two white-bg" href="customize-package#">
+                                                    <span>Customize Package</span>
+                                                    <span>Customize Package</span>
+                                                </a>
+                                            </div>
+                                            <div className="menu-destination-area show" data-region="asia-destination">
+                                                <h3>Asia Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img1.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Indonesia</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img2.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Japan</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img3.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Thailand</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img4.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Malaysia</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img5.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Vietnam</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img6.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">India</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img7.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Bangladesh</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img8.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Nepal</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img9.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Cambodia</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img10.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">China</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-destination-area" data-region="europe-destination">
+                                                <h3>Europe Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img11.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">France</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img12.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Switzerland</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img13.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Italy</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img14.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">United Kingdom</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img15.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Greece</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img16.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Istanbul</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img17.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Barcelona</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img18.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Prague</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-destination-area" data-region="oceania-destination">
+                                                <h3>Oceania Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img19.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Australia</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img20.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">New Zealand</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img21.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Fiji</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img22.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Tonga</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img23.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Palau</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img24.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Vanuatu</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-destination-area" data-region="africa-destination">
+                                                <h3>Africa Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img25.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">South Africa</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img26.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Morocco</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img27.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Egypt</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img28.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Kenya</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img29.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Tanzania</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img30.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Mauritius</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-destination-area" data-region="middle-east-destination">
+                                                <h3>Middle East Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img31.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">UAE</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img32.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Saudi Arabia</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img33.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Qatar</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img34.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Turkey</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img35.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Jordan</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img36.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Kuwait</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-destination-area" data-region="north-america-destination">
+                                                <h3>North America Top Destinations</h3>
+                                                <ul className="destination-list">
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img37.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">United States</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img38.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Canada</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img39.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Mexico</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img40.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Jamaica</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li className="single-destination">
+                                                        <a className="destination-img" href="destination-details#">
+                                                            <img alt="" src="/assets/img/home1/menu-destination-img41.jpg" />
+                                                        </a>
+                                                        <div className="destination-content">
+                                                            <h4>
+                                                                <a href="destination-details#">Costa Rica</a>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="menu-offer-banner">
+                                                <img alt="" src="/assets/img/home1/menu-offer-banner-img.jpg" />
+                                                <div className="offer-banner-content">
+                                                    <div className="badge-and-content">
+                                                        <div className="banner-badge">
+                                                            <img alt="" src="/assets/img/home1/menu-offer-banner-badge.png" />
+                                                        </div>
+                                                        <span>(summer offer for Dubai & Egypt upto 20%.)</span>
+                                                    </div>
+                                                    <a className="primary-btn1 two" href="tour-package#">
+                                                        <span>See Packages</span>
+                                                        <span>See Packages</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li> */}
+                                {/* <li className="menu-item-has-children">
+                                    <a className="drop-down" href="#">
+                                        Pages
+                                        <i className="bi bi-caret-down-fill"></i>
+                                    </a>
+                                    <i className="bi bi-plus dropdown-icon"></i>
+                                    <ul className="sub-menu">
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="customize-package#">Customize Package</a></li>
+                                        <li>
+                                            <a href="tour-package#">Tour Package</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="tour-package#">Tour Package</a></li>
+                                                <li>
+                                                    <a href="tour-package-details#">Tour Package Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="experience#">Experience</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="experience#">Experience</a></li>
+                                                <li>
+                                                    <a href="experience-details#">Experience Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="hotel#">Hotel</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="hotel#">Hotel</a></li>
+                                                <li><a href="hotel-details#">Hotel Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="visa#">Visa</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="visa#">Visa</a></li>
+                                                <li><a href="visa-details#">Visa Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="flight#">Flight</a></li>
+                                        <li>
+                                            <a href="transport#">Transport</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="transport#">Transport</a></li>
+                                                <li>
+                                                    <a href="transport-details#">Transport Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="blog#">Travel Inspiration</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li>
+                                                    <a href="blog#">Travel Inspiration Standard</a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog-details#">Travel Inspiration Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop#">Shop</a>
+                                            <i className="d-lg-flex d-none bi-caret-right-fill dropdown-icon"></i>
+                                            <i className="d-lg-none d-flex bi bi-plus dropdown-icon"></i>
+                                            <ul className="sub-menu">
+                                                <li><a href="shop#">Shop</a></li>
+                                                <li><a href="cart#">Cart</a></li>
+                                                <li><a href="checkout#">Checkout</a></li>
+                                                <li>
+                                                    <a href="product-details#">Product Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="faq#">Faq</a></li>
+                                        <li><a href="error#">404</a></li>
+                                    </ul>
+                                </li> */}
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <div className="btn-grp d-lg-none d-flex">
+                                <a className="ai-btn" href="#">
+                                    <span className="ai-btn-outline">
+                                        <span className="ai-btn-outline-sweep"></span>
+                                    </span>
+                                    <span className="ai-btn-bg"></span>
+                                    <span className="ai-btn-content">
+                                        <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M3.74977 1.49988C3.74977 1.10209 3.59174 0.720588 3.31046 0.439306C3.02918 0.158023 2.64768 0 2.24988 0C1.85209 0 1.47059 0.158023 1.18931 0.439306C0.908023 0.720588 0.75 1.10209 0.75 1.49988C0.750152 1.7984 0.839458 2.09007 1.00647 2.33749C1.17348 2.58492 1.41058 2.77683 1.68737 2.88861V7.50009H2.8124V2.88861C3.08924 2.7769 3.3264 2.58501 3.49342 2.33757C3.66044 2.09013 3.74971 1.79842 3.74977 1.49988ZM17.2503 1.49988C17.2435 1.10653 17.0824 0.731589 16.8019 0.455824C16.5213 0.180058 16.1436 0.0255328 15.7502 0.0255328C15.3568 0.0255328 14.9791 0.180058 14.6985 0.455824C14.4179 0.731589 14.2569 1.10653 14.2501 1.49988C14.2502 1.79843 14.3396 2.09011 14.5066 2.33754C14.6737 2.58497 14.9108 2.77686 15.1877 2.88861V7.50009H16.3127V2.88906C16.5896 2.77723 16.8267 2.58526 16.9938 2.33775C17.1608 2.09025 17.2502 1.79849 17.2503 1.49988ZM13.5001 8.25003C10.7227 9.21261 7.50285 9.28731 4.49993 8.25003C3.80422 9.40161 3.37491 10.9924 3.37491 12.7504C3.37491 13.5788 5.89226 14.2502 9.00003 14.2502C12.1065 14.2502 14.6252 13.5788 14.6252 12.7504C14.6252 10.9924 14.1961 9.40161 13.5001 8.25003ZM6.18747 12.7504C6.06432 12.7504 5.94236 12.7262 5.82858 12.6791C5.7148 12.632 5.61142 12.5629 5.52436 12.4758C5.4373 12.3887 5.36826 12.2853 5.3212 12.1715C5.27414 12.0577 5.24998 11.9357 5.2501 11.8125C5.2501 11.2948 5.66929 10.8752 6.18747 10.8752C6.70566 10.8752 7.12484 11.2948 7.12484 11.8125C7.12496 11.9357 7.1008 12.0577 7.05374 12.1715C7.00668 12.2853 6.93764 12.3887 6.85058 12.4758C6.76352 12.5629 6.66014 12.632 6.54636 12.6791C6.43258 12.7262 6.31062 12.7504 6.18747 12.7504ZM11.8126 12.7504C11.6894 12.7505 11.5674 12.7263 11.4536 12.6792C11.3398 12.6321 11.2364 12.563 11.1493 12.4759C11.0622 12.3888 10.9931 12.2854 10.9461 12.1716C10.899 12.0577 10.8749 11.9357 10.875 11.8125C10.875 11.2948 11.294 10.8752 11.8126 10.8752C12.3312 10.8752 12.7502 11.2948 12.7502 11.8125C12.7503 11.9357 12.7262 12.0577 12.6791 12.1716C12.6321 12.2854 12.563 12.3888 12.4759 12.4759C12.3888 12.563 12.2854 12.6321 12.1716 12.6792C12.0578 12.7263 11.9358 12.7505 11.8126 12.7504Z"></path>
+                                                <path d="M8.99996 2.99999C4.0296 2.99999 -0.000244141 7.36419 -0.000244141 12.7504C-0.000244141 15.6509 4.0296 18.0002 8.99996 18.0002C13.9719 18.0002 18.0002 15.6509 18.0002 12.7504C18.0002 7.36419 13.9719 2.99999 8.99996 2.99999ZM8.99996 16.5003C4.57996 16.5003 1.49964 14.5241 1.49964 12.7504C1.49964 8.20098 4.86414 4.49988 8.99996 4.49988C13.1353 4.49988 16.5 8.20098 16.5 12.7504C16.5 14.5241 13.4204 16.5003 8.99996 16.5003Z"></path>
+                                            </g>
+                                        </svg>
+                                        <span>Plan with AI</span>
+                                    </span>
+                                </a>
+                                <a className="contact-btn" href="https://wa.me/+44800123456">
+                                    <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.6713 9.53858L11.6653 9.58858C10.1993 8.85791 10.046 8.76058 9.85664 9.04458C9.7253 9.24124 9.34264 9.68724 9.2273 9.81924C9.11064 9.94924 8.99464 9.95924 8.79664 9.86924C8.59664 9.76924 7.95464 9.55924 7.19464 8.87924C6.60264 8.34924 6.2053 7.69924 6.08797 7.49924C5.89264 7.16191 6.3013 7.11391 6.6733 6.40991C6.73997 6.26991 6.70597 6.15991 6.65664 6.06058C6.60664 5.96058 6.20864 4.98058 6.04197 4.58991C5.88197 4.20058 5.7173 4.24991 5.59397 4.24991C5.20997 4.21658 4.9293 4.22191 4.68197 4.47924C3.60597 5.66191 3.8773 6.88191 4.79797 8.17924C6.6073 10.5472 7.5713 10.9832 9.33397 11.5886C9.80997 11.7399 10.244 11.7186 10.5873 11.6692C10.97 11.6086 11.7653 11.1886 11.9313 10.7186C12.1013 10.2486 12.1013 9.85858 12.0513 9.76858C12.002 9.67858 11.8713 9.62858 11.6713 9.53858Z"></path>
+                                        <path d="M13.68 2.29962C8.554 -2.65571 0.0706667 0.938288 0.0673333 7.92896C0.0673333 9.32629 0.433333 10.689 1.13067 11.8923L0 16.0003L4.22333 14.899C9.49333 17.7456 15.9973 13.9656 16 7.93296C16 5.81562 15.1733 3.82296 13.67 2.32562L13.68 2.29962ZM14.668 7.91096C14.664 12.9996 9.078 16.1776 4.66 13.5803L4.42 13.4376L1.92 14.0876L2.59 11.6576L2.43067 11.4076C-0.318667 7.03096 2.84 1.31096 8.048 1.31096C8.91771 1.30877 9.77922 1.4791 10.5827 1.81211C11.3861 2.14511 12.1155 2.63416 12.7287 3.25096C13.3452 3.86001 13.8342 4.58576 14.1671 5.38585C14.5001 6.18594 14.6704 7.04435 14.668 7.91096Z"></path>
+                                    </svg>
+                                    +44-800 123 456
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="nav-right">
+                        <div className="btn-grp d-lg-flex d-none">
+                            {/* <a className="ai-btn" href="#">
+                                <span className="ai-btn-outline">
+                                    <span className="ai-btn-outline-sweep"></span>
+                                </span>
+                                <span className="ai-btn-bg"></span>
+                                <span className="ai-btn-content">
+                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path d="M3.74977 1.49988C3.74977 1.10209 3.59174 0.720588 3.31046 0.439306C3.02918 0.158023 2.64768 0 2.24988 0C1.85209 0 1.47059 0.158023 1.18931 0.439306C0.908023 0.720588 0.75 1.10209 0.75 1.49988C0.750152 1.7984 0.839458 2.09007 1.00647 2.33749C1.17348 2.58492 1.41058 2.77683 1.68737 2.88861V7.50009H2.8124V2.88861C3.08924 2.7769 3.3264 2.58501 3.49342 2.33757C3.66044 2.09013 3.74971 1.79842 3.74977 1.49988ZM17.2503 1.49988C17.2435 1.10653 17.0824 0.731589 16.8019 0.455824C16.5213 0.180058 16.1436 0.0255328 15.7502 0.0255328C15.3568 0.0255328 14.9791 0.180058 14.6985 0.455824C14.4179 0.731589 14.2569 1.10653 14.2501 1.49988C14.2502 1.79843 14.3396 2.09011 14.5066 2.33754C14.6737 2.58497 14.9108 2.77686 15.1877 2.88861V7.50009H16.3127V2.88906C16.5896 2.77723 16.8267 2.58526 16.9938 2.33775C17.1608 2.09025 17.2502 1.79849 17.2503 1.49988ZM13.5001 8.25003C10.7227 9.21261 7.50285 9.28731 4.49993 8.25003C3.80422 9.40161 3.37491 10.9924 3.37491 12.7504C3.37491 13.5788 5.89226 14.2502 9.00003 14.2502C12.1065 14.2502 14.6252 13.5788 14.6252 12.7504C14.6252 10.9924 14.1961 9.40161 13.5001 8.25003ZM6.18747 12.7504C6.06432 12.7504 5.94236 12.7262 5.82858 12.6791C5.7148 12.632 5.61142 12.5629 5.52436 12.4758C5.4373 12.3887 5.36826 12.2853 5.3212 12.1715C5.27414 12.0577 5.24998 11.9357 5.2501 11.8125C5.2501 11.2948 5.66929 10.8752 6.18747 10.8752C6.70566 10.8752 7.12484 11.2948 7.12484 11.8125C7.12496 11.9357 7.1008 12.0577 7.05374 12.1715C7.00668 12.2853 6.93764 12.3887 6.85058 12.4758C6.76352 12.5629 6.66014 12.632 6.54636 12.6791C6.43258 12.7262 6.31062 12.7504 6.18747 12.7504ZM11.8126 12.7504C11.6894 12.7505 11.5674 12.7263 11.4536 12.6792C11.3398 12.6321 11.2364 12.563 11.1493 12.4759C11.0622 12.3888 10.9931 12.2854 10.9461 12.1716C10.899 12.0577 10.8749 11.9357 10.875 11.8125C10.875 11.2948 11.294 10.8752 11.8126 10.8752C12.3312 10.8752 12.7502 11.2948 12.7502 11.8125C12.7503 11.9357 12.7262 12.0577 12.6791 12.1716C12.6321 12.2854 12.563 12.3888 12.4759 12.4759C12.3888 12.563 12.2854 12.6321 12.1716 12.6792C12.0578 12.7263 11.9358 12.7505 11.8126 12.7504Z"></path>
+                                            <path d="M8.99996 2.99999C4.0296 2.99999 -0.000244141 7.36419 -0.000244141 12.7504C-0.000244141 15.6509 4.0296 18.0002 8.99996 18.0002C13.9719 18.0002 18.0002 15.6509 18.0002 12.7504C18.0002 7.36419 13.9719 2.99999 8.99996 2.99999ZM8.99996 16.5003C4.57996 16.5003 1.49964 14.5241 1.49964 12.7504C1.49964 8.20098 4.86414 4.49988 8.99996 4.49988C13.1353 4.49988 16.5 8.20098 16.5 12.7504C16.5 14.5241 13.4204 16.5003 8.99996 16.5003Z"></path>
+                                        </g>
+                                    </svg>
+                                    <span>Plan with AI</span>
+                                </span>
+                            </a> */}
+                            <a className="contact-btn" href="https://wa.me/+917307713497" target='blank'>
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.6713 9.53858L11.6653 9.58858C10.1993 8.85791 10.046 8.76058 9.85664 9.04458C9.7253 9.24124 9.34264 9.68724 9.2273 9.81924C9.11064 9.94924 8.99464 9.95924 8.79664 9.86924C8.59664 9.76924 7.95464 9.55924 7.19464 8.87924C6.60264 8.34924 6.2053 7.69924 6.08797 7.49924C5.89264 7.16191 6.3013 7.11391 6.6733 6.40991C6.73997 6.26991 6.70597 6.15991 6.65664 6.06058C6.60664 5.96058 6.20864 4.98058 6.04197 4.58991C5.88197 4.20058 5.7173 4.24991 5.59397 4.24991C5.20997 4.21658 4.9293 4.22191 4.68197 4.47924C3.60597 5.66191 3.8773 6.88191 4.79797 8.17924C6.6073 10.5472 7.5713 10.9832 9.33397 11.5886C9.80997 11.7399 10.244 11.7186 10.5873 11.6692C10.97 11.6086 11.7653 11.1886 11.9313 10.7186C12.1013 10.2486 12.1013 9.85858 12.0513 9.76858C12.002 9.67858 11.8713 9.62858 11.6713 9.53858Z"></path>
+                                    <path d="M13.68 2.29962C8.554 -2.65571 0.0706667 0.938288 0.0673333 7.92896C0.0673333 9.32629 0.433333 10.689 1.13067 11.8923L0 16.0003L4.22333 14.899C9.49333 17.7456 15.9973 13.9656 16 7.93296C16 5.81562 15.1733 3.82296 13.67 2.32562L13.68 2.29962ZM14.668 7.91096C14.664 12.9996 9.078 16.1776 4.66 13.5803L4.42 13.4376L1.92 14.0876L2.59 11.6576L2.43067 11.4076C-0.318667 7.03096 2.84 1.31096 8.048 1.31096C8.91771 1.30877 9.77922 1.4791 10.5827 1.81211C11.3861 2.14511 12.1155 2.63416 12.7287 3.25096C13.3452 3.86001 13.8342 4.58576 14.1671 5.38585C14.5001 6.18594 14.6704 7.04435 14.668 7.91096Z"></path>
+                                </svg>
+                               +91 73077 13497
+                            </a>
+                        </div>
+                        <div className="language-area d-lg-none d-block">
+                            <div className="language-btn">
+                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M16.2029 9.00049C16.2027 12.9713 12.9706 16.2026 8.99976 16.2026C5.02903 16.2024 1.7978 12.9712 1.79761 9.00049C1.79761 5.0296 5.02891 1.79755 8.99976 1.79736C12.9708 1.79736 16.2029 5.02948 16.2029 9.00049ZM17.2029 9.00049C17.2029 4.4772 13.523 0.797363 8.99976 0.797363C4.47663 0.797554 0.797607 4.47732 0.797607 9.00049C0.797798 13.5235 4.47675 17.2024 8.99976 17.2026C13.5229 17.2026 17.2027 13.5236 17.2029 9.00049Z"></path>
+                                        <path d="M12.4629 9.00049C12.4628 11.0466 11.9585 12.8893 11.2441 14.2056C10.8867 14.8641 10.4854 15.375 10.085 15.7153C9.6822 16.0576 9.31106 16.2026 9 16.2026C8.68904 16.2026 8.31859 16.0574 7.91602 15.7153C7.51557 15.375 7.11424 14.8641 6.75684 14.2056C6.04247 12.8893 5.53717 11.0467 5.53711 9.00049C5.53711 6.95416 6.04243 5.11081 6.75684 3.79443C7.11422 3.13599 7.51562 2.62497 7.91602 2.28467C8.31854 1.94267 8.68908 1.79743 9 1.79736C9.31105 1.79736 9.68222 1.9424 10.085 2.28467C10.4854 2.625 10.8867 3.13588 11.2441 3.79443C11.9585 5.11081 12.4629 6.95416 12.4629 9.00049ZM13.4629 9.00049C13.4629 6.79979 12.9224 4.79094 12.123 3.31787C11.7235 2.58173 11.2504 1.9632 10.7324 1.52295C10.2167 1.08466 9.62432 0.797363 9 0.797363C8.37576 0.797431 7.78322 1.0847 7.26758 1.52295C6.74967 1.96319 6.27738 2.58184 5.87793 3.31787C5.07848 4.79096 4.53711 6.79968 4.53711 9.00049C4.53717 11.2011 5.07858 13.2091 5.87793 14.6821C6.27734 15.4181 6.74972 16.0368 7.26758 16.4771C7.78322 16.9153 8.37576 17.2026 9 17.2026C9.62433 17.2026 10.2167 16.9153 10.7324 16.4771C11.2504 16.0368 11.7236 15.4182 12.123 14.6821C12.9223 13.2092 13.4628 11.2009 13.4629 9.00049Z"></path>
+                                        <path d="M16.7029 9.5V8.5H1.29761V9.5H16.7029Z"></path>
+                                        <path d="M9 5.82422C11.3267 5.82422 13.4395 5.16352 14.9336 4.20605L14.6641 3.78516L14.3936 3.36426C13.0707 4.21186 11.1477 4.82422 9 4.82422C6.85223 4.82418 4.92929 4.21193 3.60645 3.36426L3.06738 4.20605C4.56144 5.16337 6.67359 5.82418 9 5.82422Z"></path>
+                                        <path d="M14.6638 14.2153L14.9333 13.7944C13.4392 12.837 11.3264 12.1763 8.99976 12.1763C6.67327 12.1763 4.56122 12.837 3.06714 13.7944L3.6062 14.6362C4.92905 13.7885 6.85196 13.1763 8.99976 13.1763C11.1475 13.1763 13.0704 13.7886 14.3933 14.6362L14.6638 14.2153Z"></path>
+                                        <path d="M9.5 16.7026V1.29736H8.5V16.7026H9.5Z"></path>
+                                    </g>
+                                </svg>
+                                <span>USD</span>
+                            </div>
+                            <div className="region-language-area">
+                                <ul className="language-currency-nav">
+                                    <li className="active" id="header-language">Language</li>
+                                    <li id="header-currency">Currency</li>
+                                </ul>
+                                <div className="language-currency-content-wrap" data-id="header-language">
+                                    <h2>Region & Language</h2>
+                                    <ul className="country-list">
+                                        <li className="single-country-content">
+                                            <strong>English</strong>
+                                            <span>United Kingdom</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Bengali</strong>
+                                            <span>Bangladesh</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Hindi</strong>
+                                            <span>India</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Japanese</strong>
+                                            <span>Japan</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Arabic</strong>
+                                            <span>Saudi Arabia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Turkish</strong>
+                                            <span>Turkey</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Español</strong>
+                                            <span>Argentina</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>English</strong>
+                                            <span>United State</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Español</strong>
+                                            <span>Mexico</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>English</strong>
+                                            <span>Australia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Italian</strong>
+                                            <span>Italy</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>English</strong>
+                                            <span>Malaysia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Dutch</strong>
+                                            <span>Netherlands</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Korean</strong>
+                                            <span>South Korea</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Español</strong>
+                                            <span>Sweden</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Arabic</strong>
+                                            <span>UAE</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>English</strong>
+                                            <span>Nigeria</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Chinese</strong>
+                                            <span>China</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Persian</strong>
+                                            <span>Iran</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>Vietnamese</strong>
+                                            <span>Vietnam</span>
+                                        </li>
+                                    </ul>
+                                    <a className="seemore-btn" href="#">
+                                        See More
+                                        <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div className="language-currency-content-wrap" data-id="header-currency">
+                                    <h2>Region & Currency</h2>
+                                    <ul className="country-list">
+                                        <li className="single-country-content">
+                                            <strong>GBP</strong>
+                                            <span>United Kingdom</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>BDT</strong>
+                                            <span>Bangladesh</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>INR</strong>
+                                            <span>India</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>JPY</strong>
+                                            <span>Japan</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>SAR</strong>
+                                            <span>Saudi Arabia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>TRY</strong>
+                                            <span>Turkey</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>ARS</strong>
+                                            <span>Argentina</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>USD</strong>
+                                            <span>United State</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>MXN</strong>
+                                            <span>Mexico</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>AUD</strong>
+                                            <span>Australia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>EUR</strong>
+                                            <span>Italy</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>MYR</strong>
+                                            <span>Malaysia</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>EUR</strong>
+                                            <span>Netherlands</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>KRW</strong>
+                                            <span>South Korea</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>SEK</strong>
+                                            <span>Sweden</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>AED</strong>
+                                            <span>UAE</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>NGN</strong>
+                                            <span>Nigeria</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>CNY</strong>
+                                            <span>China</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>IRR</strong>
+                                            <span>Iran</span>
+                                        </li>
+                                        <li className="single-country-content">
+                                            <strong>VND</strong>
+                                            <span>Vietnam</span>
+                                        </li>
+                                    </ul>
+                                    <a className="seemore-btn" href="#">
+                                        See More
+                                        <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="login-btn d-lg-none d-block">
+                            <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M9 9.5625C8.33249 9.5625 7.67997 9.36456 7.12495 8.99371C6.56994 8.62286 6.13735 8.09576 5.88191 7.47906C5.62646 6.86236 5.55963 6.18376 5.68985 5.52907C5.82008 4.87439 6.14151 4.27302 6.61352 3.80102C7.08552 3.32901 7.68689 3.00758 8.34157 2.87735C8.99626 2.74713 9.67486 2.81396 10.2916 3.06941C10.9083 3.32485 11.4354 3.75744 11.8062 4.31245C12.1771 4.86747 12.375 5.51999 12.375 6.1875C12.375 7.08261 12.0194 7.94105 11.3865 8.57399C10.7536 9.20692 9.89511 9.5625 9 9.5625ZM9 3.9375C8.55499 3.9375 8.11998 4.06946 7.74997 4.31669C7.37996 4.56393 7.09157 4.91533 6.92127 5.32646C6.75098 5.7376 6.70642 6.19 6.79323 6.62645C6.88005 7.06291 7.09434 7.46382 7.40901 7.77849C7.72368 8.09316 8.12459 8.30745 8.56105 8.39427C8.99751 8.48109 9.4499 8.43653 9.86104 8.26623C10.2722 8.09593 10.6236 7.80755 10.8708 7.43753C11.118 7.06752 11.25 6.63251 11.25 6.1875C11.25 5.59076 11.0129 5.01847 10.591 4.59651C10.169 4.17455 9.59674 3.9375 9 3.9375Z"></path>
+                                    <path d="M8.99999 17.4375C7.75261 17.4367 6.52093 17.1593 5.39363 16.6253C4.26633 16.0913 3.27145 15.314 2.48061 14.3494L2.18811 13.9894L2.48061 13.635C3.27211 12.6716 4.26729 11.8956 5.39456 11.3628C6.52182 10.8301 7.75316 10.5537 8.99999 10.5537C10.2468 10.5537 11.4782 10.8301 12.6054 11.3628C13.7327 11.8956 14.7279 12.6716 15.5194 13.635L15.8119 13.9894L15.5194 14.3494C14.7285 15.314 13.7336 16.0913 12.6063 16.6253C11.479 17.1593 10.2474 17.4367 8.99999 17.4375ZM3.66186 13.995C4.34599 14.7274 5.17337 15.3113 6.09263 15.7106C7.01189 16.1098 8.0034 16.3158 9.00561 16.3158C10.0078 16.3158 10.9993 16.1098 11.9186 15.7106C12.8378 15.3113 13.6652 14.7274 14.3494 13.995C13.6652 13.2626 12.8378 12.6787 11.9186 12.2794C10.9993 11.8802 10.0078 11.6742 9.00561 11.6742C8.0034 11.6742 7.01189 11.8802 6.09263 12.2794C5.17337 12.6787 4.34599 13.2626 3.66186 13.995Z"></path>
+                                    <path d="M9.00002 17.4375C7.08344 17.4388 5.22353 16.7875 3.7264 15.5909C2.22928 14.3943 1.18417 12.7236 0.763068 10.8538C0.34197 8.98408 0.569984 7.02668 1.40958 5.30378C2.24918 3.58089 3.65033 2.19517 5.38242 1.37471C7.1145 0.554249 9.07431 0.347931 10.9393 0.789713C12.8043 1.2315 14.4632 2.29505 15.6432 3.80534C16.8232 5.31562 17.4538 7.18263 17.4313 9.09908C17.4088 11.0155 16.7345 12.8672 15.5194 14.3494C14.7286 15.314 13.7337 16.0913 12.6064 16.6253C11.4791 17.1593 10.2474 17.4367 9.00002 17.4375ZM9.00002 1.6875C7.55374 1.6875 6.13995 2.11637 4.93741 2.91988C3.73488 3.72338 2.79761 4.86544 2.24415 6.20163C1.69068 7.53781 1.54587 9.00811 1.82803 10.4266C2.11018 11.8451 2.80663 13.148 3.8293 14.1707C4.85197 15.1934 6.15493 15.8898 7.57342 16.172C8.99191 16.4541 10.4622 16.3093 11.7984 15.7559C13.1346 15.2024 14.2766 14.2651 15.0801 13.0626C15.8836 11.8601 16.3125 10.4463 16.3125 9C16.3125 7.0606 15.5421 5.20064 14.1707 3.82928C12.7994 2.45792 10.9394 1.6875 9.00002 1.6875Z"></path>
+                                    <path d="M2.91382 13.995C2.91382 13.995 8.57819 20.3231 14.3438 14.625L15.0863 13.995C15.0863 13.995 10.2713 9 5.38319 11.9981L2.91382 13.995Z"></path>
+                                    <path d="M9 9C10.5533 9 11.8125 7.7408 11.8125 6.1875C11.8125 4.6342 10.5533 3.375 9 3.375C7.4467 3.375 6.1875 4.6342 6.1875 6.1875C6.1875 7.7408 7.4467 9 9 9Z"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="sidebar-button mobile-menu-btn">
+                            <svg height="18" viewBox="0 0 20 18" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.29445 2.8421H10.5237C11.2389 2.8421 11.8182 2.2062 11.8182 1.42105C11.8182 0.635903 11.2389 0 10.5237 0H1.29445C0.579249 0 0 0.635903 0 1.42105C0 2.2062 0.579249 2.8421 1.29445 2.8421Z">
+                                </path>
+                                <path d="M1.23002 10.421H18.77C19.4496 10.421 20 9.78506 20 8.99991C20 8.21476 19.4496 7.57886 18.77 7.57886H1.23002C0.550421 7.57886 0 8.21476 0 8.99991C0 9.78506 0.550421 10.421 1.23002 10.421Z">
+                                </path>
+                                <path d="M18.8052 15.1579H10.2858C9.62563 15.1579 9.09094 15.7938 9.09094 16.5789C9.09094 17.3641 9.62563 18 10.2858 18H18.8052C19.4653 18 20 17.3641 20 16.5789C20 15.7938 19.4653 15.1579 18.8052 15.1579Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div className="topbar-area">
+                <div className="container position-relative">
+                    <div className="topbar-content">
+                        {/* <div className="topbar-left">
+                            <div className="rating">
+                                <i className="bi bi-star-fill"></i>
+                                <span>4.9 Rated by <strong>10,000+</strong> Travelers
+                                    Worldwide.</span>
+                            </div>
+                        </div> */}
+                        {/* <div className="topbar-right">
+                            <div className="language-area d-lg-block d-none">
+                                <div className="language-btn">
+                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path d="M16.2029 9.00049C16.2027 12.9713 12.9706 16.2026 8.99976 16.2026C5.02903 16.2024 1.7978 12.9712 1.79761 9.00049C1.79761 5.0296 5.02891 1.79755 8.99976 1.79736C12.9708 1.79736 16.2029 5.02948 16.2029 9.00049ZM17.2029 9.00049C17.2029 4.4772 13.523 0.797363 8.99976 0.797363C4.47663 0.797554 0.797607 4.47732 0.797607 9.00049C0.797798 13.5235 4.47675 17.2024 8.99976 17.2026C13.5229 17.2026 17.2027 13.5236 17.2029 9.00049Z"></path>
+                                            <path d="M12.4629 9.00049C12.4628 11.0466 11.9585 12.8893 11.2441 14.2056C10.8867 14.8641 10.4854 15.375 10.085 15.7153C9.6822 16.0576 9.31106 16.2026 9 16.2026C8.68904 16.2026 8.31859 16.0574 7.91602 15.7153C7.51557 15.375 7.11424 14.8641 6.75684 14.2056C6.04247 12.8893 5.53717 11.0467 5.53711 9.00049C5.53711 6.95416 6.04243 5.11081 6.75684 3.79443C7.11422 3.13599 7.51562 2.62497 7.91602 2.28467C8.31854 1.94267 8.68908 1.79743 9 1.79736C9.31105 1.79736 9.68222 1.9424 10.085 2.28467C10.4854 2.625 10.8867 3.13588 11.2441 3.79443C11.9585 5.11081 12.4629 6.95416 12.4629 9.00049ZM13.4629 9.00049C13.4629 6.79979 12.9224 4.79094 12.123 3.31787C11.7235 2.58173 11.2504 1.9632 10.7324 1.52295C10.2167 1.08466 9.62432 0.797363 9 0.797363C8.37576 0.797431 7.78322 1.0847 7.26758 1.52295C6.74967 1.96319 6.27738 2.58184 5.87793 3.31787C5.07848 4.79096 4.53711 6.79968 4.53711 9.00049C4.53717 11.2011 5.07858 13.2091 5.87793 14.6821C6.27734 15.4181 6.74972 16.0368 7.26758 16.4771C7.78322 16.9153 8.37576 17.2026 9 17.2026C9.62433 17.2026 10.2167 16.9153 10.7324 16.4771C11.2504 16.0368 11.7236 15.4182 12.123 14.6821C12.9223 13.2092 13.4628 11.2009 13.4629 9.00049Z"></path>
+                                            <path d="M16.7029 9.5V8.5H1.29761V9.5H16.7029Z"></path>
+                                            <path d="M9 5.82422C11.3267 5.82422 13.4395 5.16352 14.9336 4.20605L14.6641 3.78516L14.3936 3.36426C13.0707 4.21186 11.1477 4.82422 9 4.82422C6.85223 4.82418 4.92929 4.21193 3.60645 3.36426L3.06738 4.20605C4.56144 5.16337 6.67359 5.82418 9 5.82422Z"></path>
+                                            <path d="M14.6638 14.2153L14.9333 13.7944C13.4392 12.837 11.3264 12.1763 8.99976 12.1763C6.67327 12.1763 4.56122 12.837 3.06714 13.7944L3.6062 14.6362C4.92905 13.7885 6.85196 13.1763 8.99976 13.1763C11.1475 13.1763 13.0704 13.7886 14.3933 14.6362L14.6638 14.2153Z"></path>
+                                            <path d="M9.5 16.7026V1.29736H8.5V16.7026H9.5Z"></path>
+                                        </g>
+                                    </svg>
+                                    <span>USD</span>
+                                </div>
+                                <div className="region-language-area">
+                                    <ul className="language-currency-nav">
+                                        <li className="active" id="language">Language</li>
+                                        <li id="currency">Currency</li>
+                                    </ul>
+                                    <div className="language-currency-content-wrap" data-id="language">
+                                        <h2>Region & Language</h2>
+                                        <ul className="country-list">
+                                            <li className="single-country-content">
+                                                <strong>English</strong>
+                                                <span>United Kingdom</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Bengali</strong>
+                                                <span>Bangladesh</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Hindi</strong>
+                                                <span>India</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Japanese</strong>
+                                                <span>Japan</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Arabic</strong>
+                                                <span>Saudi Arabia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Turkish</strong>
+                                                <span>Turkey</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Español</strong>
+                                                <span>Argentina</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>English</strong>
+                                                <span>United State</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Español</strong>
+                                                <span>Mexico</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>English</strong>
+                                                <span>Australia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Italian</strong>
+                                                <span>Italy</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>English</strong>
+                                                <span>Malaysia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Dutch</strong>
+                                                <span>Netherlands</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Korean</strong>
+                                                <span>South Korea</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Español</strong>
+                                                <span>Sweden</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Arabic</strong>
+                                                <span>UAE</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>English</strong>
+                                                <span>Nigeria</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Chinese</strong>
+                                                <span>China</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Persian</strong>
+                                                <span>Iran</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>Vietnamese</strong>
+                                                <span>Vietnam</span>
+                                            </li>
+                                        </ul>
+                                        <a className="seemore-btn" href="#">
+                                            See More
+                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div className="language-currency-content-wrap" data-id="currency">
+                                        <h2>Region & Currency</h2>
+                                        <ul className="country-list">
+                                            <li className="single-country-content">
+                                                <strong>GBP</strong>
+                                                <span>United Kingdom</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>BDT</strong>
+                                                <span>Bangladesh</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>INR</strong>
+                                                <span>India</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>JPY</strong>
+                                                <span>Japan</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>SAR</strong>
+                                                <span>Saudi Arabia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>TRY</strong>
+                                                <span>Turkey</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>ARS</strong>
+                                                <span>Argentina</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>USD</strong>
+                                                <span>United State</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>MXN</strong>
+                                                <span>Mexico</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>AUD</strong>
+                                                <span>Australia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>EUR</strong>
+                                                <span>Italy</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>MYR</strong>
+                                                <span>Malaysia</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>EUR</strong>
+                                                <span>Netherlands</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>KRW</strong>
+                                                <span>South Korea</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>SEK</strong>
+                                                <span>Sweden</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>AED</strong>
+                                                <span>UAE</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>NGN</strong>
+                                                <span>Nigeria</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>CNY</strong>
+                                                <span>China</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>IRR</strong>
+                                                <span>Iran</span>
+                                            </li>
+                                            <li className="single-country-content">
+                                                <strong>VND</strong>
+                                                <span>Vietnam</span>
+                                            </li>
+                                        </ul>
+                                        <a className="seemore-btn" href="#">
+                                            See More
+                                            <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a className="cart-button" href="cart#">
+                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.8699 3.08066C17.8187 3.02075 17.7553 2.97264 17.6838 2.93964C17.6123 2.90665 17.5344 2.88956 17.4557 2.88955H4.88527L4.7976 2.21931C4.71671 1.60222 4.41666 1.0382 3.95272 0.631127C3.48882 0.224166 2.89064 0 2.26841 0H0.544357C0.243727 0 0 0.243727 0 0.544357C0 0.844987 0.243727 1.08871 0.544357 1.08871H2.26841C3.01182 1.08871 3.62153 1.62367 3.7181 2.36062L4.8766 11.2177L4.84096 11.2208C3.87829 11.3051 3.15781 12.1268 3.20071 13.0908C3.24219 14.0555 4.03071 14.8102 4.99654 14.8102H4.99937L5.56514 14.8093C5.48009 15.0179 5.43641 15.241 5.43653 15.4663C5.43653 16.4306 6.22062 17.2152 7.18442 17.2152C8.14822 17.2152 8.93333 16.4306 8.93333 15.4663C8.93346 15.2391 8.88904 15.0141 8.80257 14.804L12.2925 14.7984C12.2075 15.0069 12.1639 15.2299 12.164 15.455C12.164 16.4194 12.9486 17.2039 13.9129 17.2039C14.8773 17.2039 15.6608 16.4194 15.6608 15.455C15.6608 14.4906 14.8767 13.7071 13.9129 13.7071H13.9121L4.99763 13.7215H4.9965C4.81366 13.7219 4.63775 13.6516 4.5057 13.5251C4.37365 13.3986 4.29574 13.2259 4.28833 13.0432C4.27139 12.6627 4.55583 12.3386 4.93543 12.3054L15.1109 11.4228C16.0931 11.3379 16.8579 10.6267 17.0139 9.65268L17.9932 3.51974C18.0056 3.44198 18.001 3.36245 17.9797 3.28664C17.9584 3.21083 17.9209 3.14054 17.8698 3.08062L17.8699 3.08066ZM7.18442 16.1265C6.82093 16.1265 6.52524 15.8303 6.52524 15.4663C6.52524 15.1023 6.82093 14.8071 7.18442 14.8071C7.5479 14.8071 7.84461 15.1028 7.84461 15.4663C7.84461 15.8298 7.54845 16.1265 7.18442 16.1265ZM14.5721 15.455C14.5721 15.819 14.2764 16.1152 13.913 16.1152C13.5495 16.1152 13.2528 15.819 13.2528 15.455C13.2528 15.0909 13.5489 14.7958 13.9129 14.7958H13.913C14.2764 14.7958 14.5721 15.0915 14.5721 15.455ZM8.02433 9.5163C8.00701 9.51793 7.98981 9.51873 7.97276 9.51873C7.69506 9.51873 7.4579 9.30726 7.43141 9.02525L7.08992 5.39094C7.06183 5.09162 7.28164 4.82619 7.58097 4.79807C7.87993 4.76998 8.14572 4.98979 8.17388 5.28911L8.51537 8.92342C8.54346 9.22274 8.32365 9.48817 8.02433 9.5163ZM11.5019 8.97434C11.5019 9.27497 11.2582 9.51869 10.9576 9.51869C10.6569 9.51869 10.4132 9.27497 10.4132 8.97434V5.34003C10.4132 5.0394 10.6569 4.79567 10.9576 4.79567C11.2582 4.79567 11.5019 5.0394 11.5019 5.34003V8.97434ZM14.8252 5.39113L14.4827 9.02543C14.4561 9.30737 14.219 9.51873 13.9414 9.51873C13.9242 9.51873 13.907 9.51793 13.8897 9.5163C13.5903 9.4881 13.3706 9.2226 13.3988 8.92327L13.7413 5.28897C13.7695 4.98965 14.0351 4.76958 14.3343 4.7981C14.6337 4.8263 14.8534 5.0918 14.8252 5.39113Z"></path>
+                                </svg>
+                            </a>
+                            <div className="login-btn d-lg-block d-none">
+                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M9 9.5625C8.33249 9.5625 7.67997 9.36456 7.12495 8.99371C6.56994 8.62286 6.13735 8.09576 5.88191 7.47906C5.62646 6.86236 5.55963 6.18376 5.68985 5.52907C5.82008 4.87439 6.14151 4.27302 6.61352 3.80102C7.08552 3.32901 7.68689 3.00758 8.34157 2.87735C8.99626 2.74713 9.67486 2.81396 10.2916 3.06941C10.9083 3.32485 11.4354 3.75744 11.8062 4.31245C12.1771 4.86747 12.375 5.51999 12.375 6.1875C12.375 7.08261 12.0194 7.94105 11.3865 8.57399C10.7536 9.20692 9.89511 9.5625 9 9.5625ZM9 3.9375C8.55499 3.9375 8.11998 4.06946 7.74997 4.31669C7.37996 4.56393 7.09157 4.91533 6.92127 5.32646C6.75098 5.7376 6.70642 6.19 6.79323 6.62645C6.88005 7.06291 7.09434 7.46382 7.40901 7.77849C7.72368 8.09316 8.12459 8.30745 8.56105 8.39427C8.99751 8.48109 9.4499 8.43653 9.86104 8.26623C10.2722 8.09593 10.6236 7.80755 10.8708 7.43753C11.118 7.06752 11.25 6.63251 11.25 6.1875C11.25 5.59076 11.0129 5.01847 10.591 4.59651C10.169 4.17455 9.59674 3.9375 9 3.9375Z"></path>
+                                        <path d="M8.99999 17.4375C7.75261 17.4367 6.52093 17.1593 5.39363 16.6253C4.26633 16.0913 3.27145 15.314 2.48061 14.3494L2.18811 13.9894L2.48061 13.635C3.27211 12.6716 4.26729 11.8956 5.39456 11.3628C6.52182 10.8301 7.75316 10.5537 8.99999 10.5537C10.2468 10.5537 11.4782 10.8301 12.6054 11.3628C13.7327 11.8956 14.7279 12.6716 15.5194 13.635L15.8119 13.9894L15.5194 14.3494C14.7285 15.314 13.7336 16.0913 12.6063 16.6253C11.479 17.1593 10.2474 17.4367 8.99999 17.4375ZM3.66186 13.995C4.34599 14.7274 5.17337 15.3113 6.09263 15.7106C7.01189 16.1098 8.0034 16.3158 9.00561 16.3158C10.0078 16.3158 10.9993 16.1098 11.9186 15.7106C12.8378 15.3113 13.6652 14.7274 14.3494 13.995C13.6652 13.2626 12.8378 12.6787 11.9186 12.2794C10.9993 11.8802 10.0078 11.6742 9.00561 11.6742C8.0034 11.6742 7.01189 11.8802 6.09263 12.2794C5.17337 12.6787 4.34599 13.2626 3.66186 13.995Z"></path>
+                                        <path d="M9.00002 17.4375C7.08344 17.4388 5.22353 16.7875 3.7264 15.5909C2.22928 14.3943 1.18417 12.7236 0.763068 10.8538C0.34197 8.98408 0.569984 7.02668 1.40958 5.30378C2.24918 3.58089 3.65033 2.19517 5.38242 1.37471C7.1145 0.554249 9.07431 0.347931 10.9393 0.789713C12.8043 1.2315 14.4632 2.29505 15.6432 3.80534C16.8232 5.31562 17.4538 7.18263 17.4313 9.09908C17.4088 11.0155 16.7345 12.8672 15.5194 14.3494C14.7286 15.314 13.7337 16.0913 12.6064 16.6253C11.4791 17.1593 10.2474 17.4367 9.00002 17.4375ZM9.00002 1.6875C7.55374 1.6875 6.13995 2.11637 4.93741 2.91988C3.73488 3.72338 2.79761 4.86544 2.24415 6.20163C1.69068 7.53781 1.54587 9.00811 1.82803 10.4266C2.11018 11.8451 2.80663 13.148 3.8293 14.1707C4.85197 15.1934 6.15493 15.8898 7.57342 16.172C8.99191 16.4541 10.4622 16.3093 11.7984 15.7559C13.1346 15.2024 14.2766 14.2651 15.0801 13.0626C15.8836 11.8601 16.3125 10.4463 16.3125 9C16.3125 7.0606 15.5421 5.20064 14.1707 3.82928C12.7994 2.45792 10.9394 1.6875 9.00002 1.6875Z"></path>
+                                        <path d="M2.91382 13.995C2.91382 13.995 8.57819 20.3231 14.3438 14.625L15.0863 13.995C15.0863 13.995 10.2713 9 5.38319 11.9981L2.91382 13.995Z"></path>
+                                        <path d="M9 9C10.5533 9 11.8125 7.7408 11.8125 6.1875C11.8125 4.6342 10.5533 3.375 9 3.375C7.4467 3.375 6.1875 4.6342 6.1875 6.1875C6.1875 7.7408 7.4467 9 9 9Z"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-ai-chatbox-popup" id="travelAiChatboxPopup">
+                <div className="home1-ai-chatbox-panel">
+                    <div className="home1-ai-chatbox-topbar">
+                        <div className="home1-ai-chatbox-actions">
+                            <div className="home1-ai-logo">
+                                <svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M4.16706 1.66654C4.16706 1.22454 3.99148 0.800654 3.67894 0.488117C3.36641 0.175581 2.94251 0 2.50052 0C2.05853 0 1.63464 0.175581 1.3221 0.488117C1.00957 0.800654 0.833984 1.22454 0.833984 1.66654C0.834154 1.99822 0.933382 2.3223 1.11895 2.59721C1.30451 2.87213 1.56796 3.08536 1.87551 3.20957V8.33344H3.12554V3.20957C3.43314 3.08545 3.69665 2.87224 3.88222 2.5973C4.0678 2.32236 4.16699 1.99824 4.16706 1.66654ZM19.1676 1.66654C19.1601 1.22948 18.9811 0.812877 18.6694 0.506471C18.3576 0.200064 17.938 0.0283698 17.5009 0.0283698C17.0637 0.0283698 16.6441 0.200064 16.3323 0.506471C16.0206 0.812877 15.8416 1.22948 15.8341 1.66654C15.8343 1.99825 15.9335 2.32235 16.1191 2.59727C16.3047 2.87219 16.5682 3.0854 16.8758 3.20957V8.33344H18.1259V3.21007C18.4335 3.08581 18.697 2.87251 18.8826 2.5975C19.0682 2.3225 19.1675 1.99832 19.1676 1.66654ZM15.0008 9.1667C11.9147 10.2362 8.33715 10.3192 5.00058 9.1667C4.22756 10.4462 3.75055 12.2138 3.75055 14.1671C3.75055 15.0876 6.54761 15.8336 10.0007 15.8336C13.4523 15.8336 16.2508 15.0876 16.2508 14.1671C16.2508 12.2138 15.7741 10.4462 15.0008 9.1667ZM6.87562 14.1671C6.73878 14.1671 6.60328 14.1402 6.47685 14.0879C6.35043 14.0355 6.23556 13.9588 6.13883 13.862C6.04209 13.7652 5.96539 13.6503 5.9131 13.5238C5.86081 13.3974 5.83396 13.2619 5.8341 13.125C5.8341 12.5498 6.29986 12.0835 6.87562 12.0835C7.45138 12.0835 7.91714 12.5498 7.91714 13.125C7.91727 13.2619 7.89043 13.3974 7.83814 13.5238C7.78585 13.6503 7.70915 13.7652 7.61241 13.862C7.51568 13.9588 7.40081 14.0355 7.27439 14.0879C7.14796 14.1402 7.01246 14.1671 6.87562 14.1671ZM13.1258 14.1671C12.9889 14.1672 12.8533 14.1403 12.7269 14.088C12.6004 14.0357 12.4855 13.9589 12.3887 13.8621C12.292 13.7654 12.2152 13.6504 12.1629 13.5239C12.1107 13.3975 12.0838 13.2619 12.084 13.125C12.084 12.5498 12.5495 12.0835 13.1258 12.0835C13.702 12.0835 14.1675 12.5498 14.1675 13.125C14.1677 13.2619 14.1409 13.3975 14.0886 13.5239C14.0363 13.6504 13.9596 13.7654 13.8628 13.8621C13.766 13.9589 13.6511 14.0357 13.5246 14.088C13.3982 14.1403 13.2626 14.1672 13.1258 14.1671Z"></path>
+                                        <path d="M10.0002 3.33332C4.4776 3.33332 0 8.18243 0 14.1671C0 17.3899 4.4776 20.0002 10.0002 20.0002C15.5246 20.0002 20.0004 17.3899 20.0004 14.1671C20.0004 8.18243 15.5246 3.33332 10.0002 3.33332ZM10.0002 18.3337C5.08911 18.3337 1.66654 16.1379 1.66654 14.1671C1.66654 9.1122 5.40487 4.99986 10.0002 4.99986C14.5951 4.99986 18.3337 9.1122 18.3337 14.1671C18.3337 16.1379 14.9118 18.3337 10.0002 18.3337Z"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <button className="home1-ai-chatbox-new-chat" type="button">
+                            <span>
+                                <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.75 4.25H10V5.75H5.75V10H4.25V5.75H0V4.25H4.25V0H5.75V4.25Z"></path>
+                                </svg>
+                            </span>
+                            New Chat
+                        </button>
+                    </div>
+                    <div className="home1-ai-chatbox-content">
+                        <div className="home1-ai-chatbox-state home1-ai-chatbox-state-intro is-active">
+                            <div className="home1-ai-chatbox-avatar">
+                                <svg height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M7.49953 2.99977C7.49953 2.20418 7.18349 1.44118 6.62092 0.878611C6.05836 0.316046 5.29535 0 4.49977 0C3.70418 0 2.94118 0.316046 2.37861 0.878611C1.81605 1.44118 1.5 2.20418 1.5 2.99977C1.5003 3.5968 1.67892 4.18013 2.01293 4.67499C2.34695 5.16984 2.82115 5.55366 3.37474 5.77723V15.0002H5.62479V5.77723C6.17849 5.55381 6.65279 5.17003 6.98683 4.67514C7.32087 4.18026 7.49941 3.59684 7.49953 2.99977ZM34.5006 2.99977C34.487 2.21306 34.1649 1.46318 33.6037 0.911647C33.0425 0.360116 32.2872 0.0510657 31.5004 0.0510657C30.7135 0.0510657 29.9582 0.360116 29.397 0.911647C28.8359 1.46318 28.5138 2.21306 28.5002 2.99977C28.5005 3.59685 28.6792 4.18022 29.0133 4.67508C29.3474 5.16994 29.8217 5.55373 30.3753 5.77723V15.0002H32.6254V5.77813C33.1791 5.55447 33.6535 5.17052 33.9876 4.6755C34.3217 4.18049 34.5003 3.59698 34.5006 2.99977ZM27.0003 16.5001C21.4453 18.4252 15.0057 18.5746 8.99987 16.5001C7.60844 18.8032 6.74982 21.9848 6.74982 25.5007C6.74982 27.1577 11.7845 28.5005 18.0001 28.5005C24.2129 28.5005 29.2503 27.1577 29.2503 25.5007C29.2503 21.9848 28.3922 18.8032 27.0003 16.5001ZM12.3749 25.5007C12.1286 25.5008 11.8847 25.4524 11.6572 25.3582C11.4296 25.2639 11.2228 25.1258 11.0487 24.9516C10.8746 24.7774 10.7365 24.5705 10.6424 24.3429C10.5483 24.1153 10.5 23.8714 10.5002 23.6251C10.5002 22.5896 11.3386 21.7503 12.3749 21.7503C13.4113 21.7503 14.2497 22.5896 14.2497 23.6251C14.2499 23.8714 14.2016 24.1153 14.1075 24.3429C14.0134 24.5705 13.8753 24.7774 13.7012 24.9516C13.527 25.1258 13.3203 25.2639 13.0927 25.3582C12.8652 25.4524 12.6212 25.5008 12.3749 25.5007ZM23.6252 25.5007C23.3788 25.501 23.1348 25.4526 22.9072 25.3584C22.6796 25.2642 22.4727 25.1261 22.2985 24.9519C22.1244 24.7776 21.9863 24.5708 21.8921 24.3431C21.798 24.1154 21.7497 23.8714 21.75 23.6251C21.75 22.5896 22.5879 21.7503 23.6252 21.7503C24.6625 21.7503 25.5004 22.5896 25.5004 23.6251C25.5007 23.8714 25.4524 24.1154 25.3583 24.3431C25.2641 24.5708 25.126 24.7776 24.9518 24.9519C24.7777 25.1261 24.5708 25.2642 24.3432 25.3584C24.1155 25.4526 23.8716 25.501 23.6252 25.5007Z"></path>
+                                        <path d="M18.0004 6C8.05968 6 0 14.7284 0 25.5007C0 31.3018 8.05968 36.0004 18.0004 36.0004C27.9443 36.0004 36.0008 31.3018 36.0008 25.5007C36.0008 14.7284 27.9443 6 18.0004 6ZM18.0004 33.0006C9.1604 33.0006 2.99977 29.0482 2.99977 25.5007C2.99977 16.402 9.72877 8.99977 18.0004 8.99977C26.2711 8.99977 33.0006 16.402 33.0006 25.5007C33.0006 29.0482 26.8413 33.0006 18.0004 33.0006Z"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h2 id="home1AiChatboxTitle">Good Evening!</h2>
+                            <p>Ask me anything - from destinations and packages to visas, flights, and travel tips.</p>
+                            <div className="home1-ai-chatbox-terms">
+                                By using AI Travel Assistant, you agree to the following
+                                <a href="#">Term of Use</a> to ensure a safe & helpful experience.
+                            </div>
+                            <button className="primary-btn1 two home1-ai-chatbox-start-btn" type="button">
+                                <span>Start Chat</span>
+                                <span>Start Chat</span>
+                            </button>
+                        </div>
+                        <div className="home1-ai-chatbox-state home1-ai-chatbox-state-chat">
+                            <div className="home1-ai-chatbox-suggestions">
+                                <h3>Ask me anything-</h3>
+                                <button type="button">Best destinations for honeymoon.</button>
+                                <button type="button">Sugesst a best hotel reservation in United Kingdom.</button>
+                                <button type="button">Suggest the best destinations for solo travel with safety, budget, and
+                                    unique
+                                    experiences.</button>
+                                <button type="button">Visa requirements for Dubai.</button>
+                            </div>
+                        </div>
+                    </div>
+                    <form aria-disabled="true" className="home1-ai-chatbox-field disable">
+                        <div className="home1-ai-chatbox-attachment-menu">
+                            <button className="home1-ai-chatbox-screenshot-btn" type="button">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path d="M9.99992 15.1668H5.99992C2.37992 15.1668 0.833252 13.6202 0.833252 10.0002V6.00016C0.833252 2.38016 2.37992 0.833496 5.99992 0.833496H9.99992C13.6199 0.833496 15.1666 2.38016 15.1666 6.00016V10.0002C15.1666 13.6202 13.6199 15.1668 9.99992 15.1668ZM5.99992 1.8335C2.92659 1.8335 1.83325 2.92683 1.83325 6.00016V10.0002C1.83325 13.0735 2.92659 14.1668 5.99992 14.1668H9.99992C13.0733 14.1668 14.1666 13.0735 14.1666 10.0002V6.00016C14.1666 2.92683 13.0733 1.8335 9.99992 1.8335H5.99992Z"></path>
+                                        <path d="M5.99985 7.16667C4.98652 7.16667 4.16652 6.34667 4.16652 5.33333C4.16652 4.32 4.98652 3.5 5.99985 3.5C7.01319 3.5 7.83319 4.32 7.83319 5.33333C7.83319 6.34667 7.01319 7.16667 5.99985 7.16667ZM5.99985 4.5C5.77884 4.5 5.56688 4.5878 5.4106 4.74408C5.25432 4.90036 5.16652 5.11232 5.16652 5.33333C5.16652 5.55435 5.25432 5.76631 5.4106 5.92259C5.56688 6.07887 5.77884 6.16667 5.99985 6.16667C6.22087 6.16667 6.43283 6.07887 6.58911 5.92259C6.74539 5.76631 6.83319 5.55435 6.83319 5.33333C6.83319 5.11232 6.74539 4.90036 6.58911 4.74408C6.43283 4.5878 6.22087 4.5 5.99985 4.5ZM1.77985 13.1333C1.67271 13.1335 1.56837 13.0991 1.48238 13.0351C1.39639 12.9712 1.33334 12.8812 1.30262 12.7786C1.2719 12.6759 1.27515 12.5661 1.31189 12.4655C1.34863 12.3648 1.4169 12.2787 1.50652 12.22L4.79319 10.0133C5.51319 9.52667 6.50652 9.58667 7.15985 10.14L7.37985 10.3333C7.71319 10.62 8.27985 10.62 8.60652 10.3333L11.3799 7.95333C12.0865 7.34667 13.1999 7.34667 13.9132 7.95333L14.9999 8.88667C15.2065 9.06667 15.2332 9.38 15.0532 9.59333C14.8732 9.8 14.5599 9.82667 14.3465 9.64667L13.2599 8.71333C12.9265 8.42667 12.3599 8.42667 12.0265 8.71333L9.25319 11.0933C8.54652 11.7 7.43319 11.7 6.71985 11.0933L6.49985 10.9C6.19319 10.64 5.68652 10.6133 5.34652 10.8467L2.05985 13.0533C1.97319 13.1067 1.87319 13.1333 1.77985 13.1333Z"></path>
+                                    </g>
+                                </svg>
+                                Upload Image
+                            </button>
+                            <button className="home1-ai-chatbox-upload-btn" type="button">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.48929 14.8C3.69855 14.799 2.92583 14.5637 2.26877 14.1238C1.6117 13.6839 1.09976 13.0591 0.797631 12.3283C0.495502 11.5976 0.416737 10.7937 0.571288 10.0182C0.725839 9.24268 1.10677 8.5304 1.66596 7.97131L7.32263 2.31464C7.44763 2.18955 7.61721 2.11924 7.79406 2.11917C7.9709 2.11911 8.14053 2.1893 8.26563 2.31431C8.39072 2.43931 8.46103 2.60889 8.46109 2.78574C8.46116 2.96259 8.39096 3.13221 8.26596 3.25731L2.60662 8.91397C2.10651 9.41409 1.82556 10.0924 1.82556 10.7996C1.82556 11.5069 2.10651 12.1852 2.60662 12.6853C3.10673 13.1854 3.78503 13.4664 4.49229 13.4664C5.19955 13.4664 5.87785 13.1854 6.37796 12.6853L13.6846 5.37864C13.8394 5.22386 13.9622 5.0401 14.046 4.83786C14.1297 4.63563 14.1728 4.41887 14.1728 4.19997C14.1728 3.98108 14.1297 3.76432 14.046 3.56208C13.9622 3.35985 13.8394 3.17609 13.6846 3.02131C13.5298 2.86652 13.3461 2.74374 13.1439 2.65997C12.9416 2.5762 12.7249 2.53309 12.506 2.53309C12.0639 2.53309 11.6399 2.70871 11.3273 3.02131L5.43463 8.91397C5.34138 9.00725 5.27789 9.12609 5.2522 9.25545C5.22651 9.38481 5.23977 9.51889 5.2903 9.64072C5.34083 9.76255 5.42636 9.86665 5.53607 9.93985C5.64578 10.0131 5.77473 10.0521 5.90663 10.052C5.99424 10.0525 6.08107 10.0354 6.16202 10.0019C6.24296 9.96836 6.31638 9.91897 6.37796 9.85664L10.1493 6.08597C10.2108 6.0223 10.2844 5.97151 10.3657 5.93657C10.447 5.90163 10.5345 5.88324 10.623 5.88247C10.7115 5.8817 10.7993 5.89857 10.8813 5.93209C10.9632 5.96561 11.0376 6.01512 11.1002 6.07771C11.1628 6.14031 11.2123 6.21474 11.2458 6.29667C11.2794 6.3786 11.2962 6.46639 11.2955 6.55491C11.2947 6.64343 11.2763 6.73091 11.2414 6.81224C11.2064 6.89358 11.1556 6.96714 11.092 7.02864L7.32063 10.8C7.1349 10.9857 6.91441 11.1331 6.67174 11.2336C6.42906 11.3341 6.16896 11.3859 5.90629 11.3859C5.64362 11.3859 5.38352 11.3341 5.14085 11.2336C4.89817 11.1331 4.67768 10.9857 4.49196 10.8C4.11702 10.4249 3.90639 9.9163 3.90639 9.38597C3.90639 8.85565 4.11702 8.34703 4.49196 7.97197L10.3846 2.07931C10.9472 1.51669 11.7103 1.20062 12.506 1.20062C13.3016 1.20062 14.0647 1.51669 14.6273 2.07931C15.1899 2.64192 15.506 3.40499 15.506 4.20064C15.506 4.9963 15.1899 5.75936 14.6273 6.32197L7.32063 13.6286C6.95011 14.0014 6.50929 14.2968 6.02373 14.4979C5.53816 14.699 5.01751 14.8016 4.49196 14.8H4.48929Z"></path>
+                                    <path d="M4.49216 14.6307C3.73401 14.6313 2.99271 14.407 2.36214 13.9861C1.73156 13.5652 1.24007 12.9666 0.949891 12.2662C0.659714 11.5657 0.583903 10.795 0.732059 10.0514C0.880215 9.30789 1.24567 8.62504 1.78216 8.08934L7.43883 2.432C7.53263 2.3382 7.65984 2.28551 7.79249 2.28551C7.92514 2.28551 8.05236 2.3382 8.14616 2.432C8.23996 2.5258 8.29265 2.65302 8.29265 2.78567C8.29265 2.91832 8.23996 3.04554 8.14616 3.13934L2.48883 8.796C1.97977 9.33183 1.70023 10.0454 1.70985 10.7844C1.71946 11.5234 2.01747 12.2294 2.5403 12.7518C3.06313 13.2742 3.7694 13.5716 4.50843 13.5806C5.24746 13.5896 5.96076 13.3095 6.49616 12.8L13.8028 5.49334C13.9732 5.32308 14.1083 5.12094 14.2005 4.89845C14.2927 4.67597 14.3401 4.4375 14.3401 4.19667C14.3401 3.95584 14.2927 3.71737 14.2005 3.49488C14.1083 3.2724 13.9732 3.07025 13.8028 2.9C13.4584 2.55714 12.9922 2.36465 12.5062 2.36465C12.0202 2.36465 11.5539 2.55714 11.2095 2.9L5.31749 8.796C5.16119 8.9523 5.07338 9.16429 5.07338 9.38534C5.07338 9.60638 5.16119 9.81837 5.31749 9.97467C5.47379 10.131 5.68578 10.2188 5.90683 10.2188C6.12787 10.2188 6.33986 10.131 6.49616 9.97467L10.2662 6.204C10.3123 6.15623 10.3674 6.11811 10.4284 6.09188C10.4894 6.06564 10.555 6.05182 10.6214 6.05121C10.6878 6.0506 10.7536 6.06322 10.8151 6.08834C10.8765 6.11345 10.9324 6.15055 10.9794 6.19747C11.0263 6.24439 11.0635 6.3002 11.0886 6.36164C11.1138 6.42308 11.1265 6.48891 11.1259 6.5553C11.1254 6.62169 11.1116 6.6873 11.0855 6.74832C11.0593 6.80933 11.0212 6.86452 10.9735 6.91067L7.20283 10.6813C6.85832 11.0214 6.39327 11.2115 5.90917 11.21C5.42507 11.2085 4.96121 11.0156 4.61881 10.6734C4.27641 10.3311 4.08326 9.86736 4.08152 9.38326C4.07977 8.89916 4.26957 8.43402 4.60949 8.08934L10.5028 2.2C10.766 1.93688 11.0783 1.72815 11.4221 1.58575C11.7659 1.44335 12.1344 1.37006 12.5065 1.37006C12.8786 1.37006 13.2471 1.44335 13.5909 1.58575C13.9347 1.72815 14.247 1.93688 14.5102 2.2C14.7733 2.46313 14.982 2.7755 15.1244 3.11929C15.2668 3.46308 15.3401 3.83155 15.3401 4.20367C15.3401 4.57578 15.2668 4.94426 15.1244 5.28805C14.982 5.63184 14.7733 5.94421 14.5102 6.20734L7.20349 13.514C6.84734 13.8695 6.42448 14.1511 5.9592 14.3428C5.49391 14.5344 4.99536 14.6322 4.49216 14.6307Z"></path>
+                                </svg>
+                                Upload file
+                            </button>
+                        </div>
+                        <input accept="image/*" className="home1-ai-chatbox-screenshot-input" hidden="" multiple="" type="file" />
+                        <input accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip,.rar,.7z,.json,.xml,#,.css,.js" className="home1-ai-chatbox-upload-input" hidden="" type="file" />
+                        <div aria-live="polite" className="home1-ai-chatbox-file-preview"></div>
+                        <input disabled="" id="travelAiChatboxInput" placeholder="Ask anything about travel..." type="text" />
+                        <div className="home1-ai-chatbox-field-row">
+                            <button aria-label="More options" className="home1-ai-chatbox-more-btn" disabled="" type="button">
+                                <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.75 4.25H10V5.75H5.75V10H4.25V5.75H0V4.25H4.25V0H5.75V4.25Z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="Voice message" className="home1-ai-chatbox-voice-btn" disabled="" type="button">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.18741 0H7.81027C6.23231 0 4.95312 1.27919 4.95312 2.85714V7.94286C4.95312 9.52081 6.23231 10.8 7.81027 10.8H8.18741C9.76537 10.8 11.0446 9.52081 11.0446 7.94286V2.85714C11.0446 1.27919 9.76537 0 8.18741 0Z"></path>
+                                    <path d="M13.3311 6.73883C13.1796 6.73883 13.0342 6.79903 12.9271 6.9062C12.8199 7.01336 12.7597 7.15871 12.7597 7.31026C12.7597 8.57284 12.2581 9.78371 11.3654 10.6765C10.4726 11.5693 9.26171 12.0708 7.99913 12.0708C6.73655 12.0708 5.52568 11.5693 4.6329 10.6765C3.74012 9.78371 3.23856 8.57284 3.23856 7.31026C3.23856 7.15871 3.17836 7.01336 3.07119 6.9062C2.96403 6.79903 2.81868 6.73883 2.66713 6.73883C2.51558 6.73883 2.37023 6.79903 2.26307 6.9062C2.15591 7.01336 2.0957 7.15871 2.0957 7.31026C2.09773 8.77629 2.64449 10.1893 3.62981 11.2748C4.61514 12.3603 5.96871 13.041 7.4277 13.1845V14.8571H5.52313C5.37158 14.8571 5.22623 14.9173 5.11907 15.0245C5.01191 15.1316 4.9517 15.277 4.9517 15.4285C4.9517 15.5801 5.01191 15.7254 5.11907 15.8326C5.22623 15.9398 5.37158 16 5.52313 16H10.4751C10.6267 16 10.772 15.9398 10.8792 15.8326C10.9864 15.7254 11.0466 15.5801 11.0466 15.4285C11.0466 15.277 10.9864 15.1316 10.8792 15.0245C10.772 14.9173 10.6267 14.8571 10.4751 14.8571H8.57056V13.1845C10.0295 13.041 11.3831 12.3603 12.3685 11.2748C13.3538 10.1893 13.9005 8.77629 13.9026 7.31026C13.9026 7.15871 13.8424 7.01336 13.7352 6.9062C13.628 6.79903 13.4827 6.73883 13.3311 6.73883Z"></path>
+                                </svg>
+                            </button>
+                            <button aria-label="Send message" className="home1-ai-chatbox-send-btn" disabled="" type="submit">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path clipRule="evenodd" d="M2.03286 3.27949C1.98495 3.08843 1.99287 2.88763 2.05569 2.70093C2.11852 2.51424 2.23359 2.3495 2.38726 2.22627C2.54093 2.10304 2.72674 2.0265 2.92262 2.00573C3.1185 1.98497 3.31623 2.02086 3.49232 2.10913L13.4322 7.0791C13.6034 7.16449 13.7474 7.2959 13.848 7.45856C13.9486 7.62122 14.0019 7.80871 14.0019 7.99998C14.0019 8.19125 13.9486 8.37873 13.848 8.54139C13.7474 8.70406 13.6034 8.83546 13.4322 8.92086L3.49232 13.8908C3.31623 13.9791 3.1185 14.015 2.92262 13.9942C2.72674 13.9735 2.54093 13.8969 2.38726 13.7737C2.23359 13.6505 2.11852 13.4857 2.05569 13.299C1.99287 13.1123 1.98495 12.9115 2.03286 12.7205L3.07374 8.55809L9.11806 7.99998L3.07374 7.44187L2.03286 3.27949Z" fillRule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <img alt="" className="top-vector" src="/assets/img/home1/ai-chatbox-top-vector.png" />
+                <img alt="" className="bottom-vector" src="/assets/img/home1/ai-chatbox-bottom-vector.png" />
+            </div>
+
+
+            <div className="home1-banner-section">
+<div className="banner-video-area">
+    <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        src="/assets/video/home1-banner-video.mp4"
+    ></video>
+</div>
+                <div className="banner-content-wrap">
+                    <div className="container">
+                        <div className="banner-content">
+                            <h1>Unforgettable Travel Experience</h1>
+                            <p>
+                                We curate exceptional travel experiences & 10,000+ our trusted
+                                travelers world-wide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="filter-wrapper mb-100">
+                <div className="container">
+                    <div className="filter-inner-wrap">
+                        
+                      <AirportSearchForm />
+                        <div className="swiper filter-bottom-text-slider">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">
+                                    <p>
+                                        Can’t find what you’re looking for?
+                                        <a href="#">Create</a> your tarvel custom itinerary.
+                                    </p>
+                                </div>
+                                <div className="swiper-slide">
+                                    <p>
+                                        <strong>Save Up to 30%</strong> on premium hotel stays –
+                                        Limited time deal!
+                                    </p>
+                                </div>
+                                <div className="swiper-slide">
+                                    <p>
+                                        <strong>250+ transport</strong> awaiting for you, Book your
+                                        seat easily!
+                                    </p>
+                                </div>
+                                <div className="swiper-slide">
+                                    <p>
+                                        <strong>50,000+ traveler,</strong> using our platform to
+                                        traveled world-wide.
+                                    </p>
+                                </div>
+                                <div className="swiper-slide">
+                                    <p>
+                                        4.9 Rated by <strong>10,000+</strong> Travelers Worldwide.
+                                    </p>
+                                </div>
+                                <div className="swiper-slide">
+                                    <p>
+                                        Save Up to <strong>$390</strong> on Schengen Visa – 14 days
+                                        delivery!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-offer-section mb-100">
+                <div className="container">
+                    <div className="section-title text-center mb-50 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2>Discounts & Offers</h2>
+                    </div>
+                    <div className="offer-slider-wrapper">
+                        <div className="swiper home1-offer-slider">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img1.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <div className="icon">
+                                                    <svg height="45" viewBox="0 0 45 45" width="45" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M16.6944 5.48733C15.9636 5.18161 15.1195 5.45972 14.7122 6.1392L13.9341 7.43999C15.1145 7.4321 16.794 7.19344 18.225 6.12737C17.7151 5.91336 17.2043 5.70035 16.6944 5.48733ZM6.27629 31.3797L13.7003 8.23584C13.6185 8.23485 13.5396 8.2319 13.4627 8.22795L0.0790717 30.5937C-0.135918 30.9537 0.111616 31.4133 0.530747 31.4281C2.1905 31.4882 4.12245 31.4941 6.27629 31.3797ZM7.12047 31.3304C9.18107 31.1947 11.234 30.9607 13.2723 30.6292L15.0484 8.17174C14.8719 8.19343 14.7003 8.20823 14.5346 8.21908L7.12047 31.3304ZM16.1165 7.97549C16.0267 7.99817 15.939 8.01888 15.8512 8.03762L14.0751 30.4932C16.2871 30.1056 18.6204 29.577 21.0455 28.8659L16.1165 7.97549ZM23.367 28.1391C25.435 27.4488 27.3738 26.6835 29.1865 25.8748L17.0553 7.67667C16.9952 7.70034 16.935 7.72302 16.8739 7.74472L21.8029 28.6401C22.3206 28.4813 22.8413 28.3147 23.367 28.1391ZM37.5947 21.3561L18.0001 7.22302C17.9271 7.26543 17.8532 7.30586 17.7802 7.34432L29.9162 25.5454C32.5673 24.3238 35.1326 22.9241 37.5947 21.3561ZM43.1203 17.4163C43.4487 17.1559 43.3758 16.6382 42.9892 16.4764C35.0109 13.1431 27.0346 9.80783 19.0563 6.47451C18.9421 6.57346 18.8244 6.6682 18.7033 6.75853L38.3067 20.8965C39.964 19.8112 41.5702 18.6499 43.1203 17.4163Z"></path>
+                                                            <path d="M45 24.441C42.0335 24.3818 39.7801 22.8966 38.4576 22.0682C28.1845 48.3393 6.5465 32.3641 5.4962 32.2063C3.90351 34.5968 1.33646 36.8285 1.33646 36.8285L3.46071 36.6076L3.60371 38.9932C3.60371 38.9932 4.50706 37.4449 5.89561 33.1974C15.7792 40.794 22.6086 40.4617 27.6431 38.6412C34.2328 36.2595 37.8531 29.0781 38.7574 23.0012C39.9547 25.0327 44.6075 26.3848 44.6075 26.3848L43.8728 25.2112L45 24.44V24.441Z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <h3>Vietnam</h3>
+                                                <span>Early Bird Booking Discount — Save Up to 20%.</span>
+                                                <p>
+                                                    ***Ideal for Halong Bay cruises, Hanoi city tours, and
+                                                    beach resorts.
+                                                </p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img2.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <h3>Monthly Deals</h3>
+                                                <p>
+                                                    Save up to 25% on top destinations, hotels, transport
+                                                    packages this month.
+                                                </p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img3.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <h3>Exclusive Travel Offers!</h3>
+                                                <p>
+                                                    Handpicked deals on beach escapes, city tours, and
+                                                    luxury stays—crafted for every traveler.
+                                                </p>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img4.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <div className="icon two">
+                                                    <svg height="27" viewBox="0 0 32 27" width="32" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.4066 17.9156C12.8547 15.5804 14.2893 13.7025 15.4088 13.7025C16.4753 13.7025 17.8281 15.407 19.2059 17.5878C19.958 17.4923 20.7287 17.3793 21.5146 17.2487C19.5989 12.2147 17.2855 5.88495 15.4088 0C13.485 6.03262 11.1022 12.5332 9.1593 17.6257C9.82712 17.7598 10.5798 17.8567 11.4066 17.9156Z"></path>
+                                                        <path d="M31.3462 15.733C29.2854 16.4497 27.0138 17.1058 24.6071 17.6602C23.6879 17.872 22.7805 18.0612 21.8891 18.2291C21.2593 18.3477 20.6374 18.4555 20.0255 18.5524C11.7865 19.8572 5.31994 19.2051 4.77435 16.7795C4.40845 15.1525 6.78585 13.0783 10.8001 11.1548C4.0333 13.5083 -0.456281 16.5139 0.0369526 18.7069C0.400987 20.3252 3.40082 21.154 7.80378 21.1391C8.36141 21.1372 8.94154 21.1217 9.54161 21.0927C12.5799 20.9455 16.1305 20.4489 19.8698 19.5877C20.0297 19.5508 20.1875 19.5128 20.346 19.475C20.9703 19.3266 21.5855 19.172 22.1894 19.0108C25.6998 18.0736 28.8417 16.933 31.3462 15.733Z" fill="#0067EE"></path>
+                                                        <path d="M7.53256 21.8327C6.33067 24.8995 5.53552 26.8386 5.53552 26.8386C6.29653 26.7547 7.62909 24.4559 9.13691 21.8046C8.67996 21.8222 8.23492 21.8321 7.80368 21.8334C7.71237 21.8337 7.62266 21.833 7.53256 21.8327Z"></path>
+                                                        <path d="M22.1891 19.705C21.6997 19.8356 21.2013 19.961 20.6981 20.083C22.5958 23.3784 24.3591 26.7367 25.2821 26.8384C25.2821 26.8384 24.0963 23.9463 22.4314 19.6389C22.3505 19.661 22.2705 19.6834 22.1891 19.705Z"></path>
+                                                        <path d="M7.80371 21.1391C7.7112 21.3765 7.62082 21.6072 7.53259 21.8326C7.6227 21.833 7.7124 21.8336 7.80371 21.8333C8.23496 21.8319 8.67999 21.8221 9.13694 21.8044C9.27056 21.5695 9.40538 21.332 9.54154 21.0928C8.94147 21.1218 8.36134 21.1372 7.80371 21.1391Z"></path>
+                                                        <path d="M22.4314 19.6391C22.3516 19.4326 22.271 19.2237 22.189 19.0109C21.5852 19.1721 20.97 19.3268 20.3457 19.475C20.4635 19.6769 20.5809 19.8798 20.698 20.083C21.2011 19.961 21.6996 19.8357 22.1889 19.7051C22.2704 19.6834 22.3505 19.661 22.4314 19.6391Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <h3>Adventure Calling!</h3>
+                                                <p>
+                                                    Unlock thrilling experiences—from jungle treks to island
+                                                    diving—at exclusive discounted prices.
+                                                </p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img5.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <h3>Bali</h3>
+                                                <p>
+                                                    ***Perfect for tropical beaches, cultural temples,
+                                                    scenic rice terraces, and relaxing luxury resorts.
+                                                </p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="offer-card">
+                                        <img alt="" className="offer-img" src="/assets/img/home1/offer-card-img6.jpg" />
+                                        <div className="offer-info">
+                                            <div className="offer-info-content">
+                                                <h3>Unbeatable Holiday Deals!</h3>
+                                                <p>
+                                                    Enjoy special offers on top destinations with premium
+                                                    comfort and seamless travel experiences.
+                                                </p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slider-btn-grp">
+                            <div className="slider-btn offer-slider-prev">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.11087 7.45372L10.341 1.22366C10.4851 1.07945 10.6775 1 10.8826 1C11.0877 1 11.2801 1.07945 11.4242 1.22366L11.883 1.68235C12.1815 1.98124 12.1815 2.46703 11.883 2.76547L6.65133 7.9971L11.8888 13.2345C12.0329 13.3787 12.1124 13.571 12.1124 13.776C12.1124 13.9812 12.0329 14.1734 11.8888 14.3178L11.43 14.7763C11.2858 14.9206 11.0935 15 10.8884 15C10.6833 15 10.4909 14.9206 10.3468 14.7763L4.11087 8.54059C3.96643 8.39592 3.88709 8.20277 3.88755 7.99744C3.88709 7.79131 3.96643 7.59827 4.11087 7.45372Z"></path>
+                                </svg>
+                            </div>
+                            <div className="slider-btn offer-slider-next">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.7828 7.45372L5.72295 1.22366C5.5828 1.07945 5.3957 1 5.1962 1C4.99671 1 4.80961 1.07945 4.66945 1.22366L4.22319 1.68235C3.9328 1.98124 3.9328 2.46703 4.22319 2.76547L9.31178 7.9971L4.21754 13.2345C4.07739 13.3787 4 13.571 4 13.776C4 13.9812 4.07739 14.1734 4.21754 14.3178L4.66381 14.7763C4.80407 14.9206 4.99106 15 5.19056 15C5.39005 15 5.57715 14.9206 5.71731 14.7763L11.7828 8.54059C11.9233 8.39592 12.0004 8.20277 12 7.99744C12.0004 7.79131 11.9233 7.59827 11.7828 7.45372Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-area wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <span>
+                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M13.9634 5.09634C13.9185 4.95784 13.834 4.83558 13.7202 4.74474C13.6064 4.65389 13.4685 4.59846 13.3235 4.58533L9.28211 4.21842L7.68493 0.4791C7.56699 0.204372 7.29869 0.0270996 7.00004 0.0270996C6.70138 0.0270996 6.43297 0.204372 6.3158 0.4791L4.71863 4.21842L0.676602 4.58533C0.380273 4.61267 0.129362 4.81338 0.0366651 5.09634C-0.0085039 5.23495 -0.0120174 5.38377 0.0265597 5.52436C0.0651368 5.66496 0.14411 5.79114 0.253696 5.8873L3.30868 8.56605L2.40793 12.5333C2.34203 12.825 2.45524 13.1267 2.69729 13.3017C2.82406 13.3939 2.97684 13.4435 3.13362 13.4434C3.26801 13.4434 3.39988 13.4069 3.51515 13.3379L7.00004 11.2541L10.4843 13.3379C10.6093 13.4126 10.7535 13.4491 10.899 13.4426C11.0445 13.4362 11.1849 13.3872 11.3028 13.3017C11.5448 13.1267 11.6581 12.825 11.5922 12.5333L10.6914 8.56607L13.7464 5.88732C13.856 5.79118 13.935 5.66499 13.9735 5.5244C14.0121 5.3838 14.0086 5.23498 13.9634 5.09636V5.09634Z"></path>
+                                </g>
+                            </svg>
+                            4.9
+                        </span>
+                        <p><strong>10,000+</strong> Verified trip reviewers in world-wide.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-partner-section mb-100">
+                <div className="container">
+                    <div className="partner-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <span>Our 100+ valuable partner in the world-wide</span>
+                    </div>
+                    <div className="partner-wrap">
+                        <div className="marquee">
+                            <div className="marquee__group">
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-01.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-02.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-03.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-04.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-05.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-06.png" /></a>
+                            </div>
+                            <div aria-hidden="true" className="marquee__group">
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-01.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-02.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-03.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-04.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-05.png" /></a>
+                                <a href="#"><img alt="" src="/assets/img/home1/partner-06.png" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-tour-package-section" style={{ backgroundImage: "url(/assets/img/home1/home1-tour-package-section-bg.png),           linear-gradient(180deg, #e5f0fd 0%, #e5f0fd 100%)" }}>
+                <div className="container">
+                    <div className="title-and-tour-category mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div className="section-title text-center">
+                            <h2>Best Selling Tours</h2>
+                        </div>
+                        <ul className="tour-category-list">
+                            <li className="single-category active" id="group-tour">Group tours</li>
+                            <li className="single-category" id="private-tour">Private tours</li>
+                            <li className="single-category" id="family-tour">Family tours</li>
+                            <li className="single-category" id="safari-tour">Safari tours</li>
+                            <li className="single-category" id="last-minute-deal">
+                                Last minute deals
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="tour-package-list">
+                        <div className="tour-pack-item show" data-category="group-tour">
+                            <div className="row gy-5 mb-45">
+                                <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                            </a>
+                                            <div className="package-video">
+                                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/tour-package-video.mp4"></video>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="yellow">Group tour</span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                            <span className="play-icon">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.345 7.58966L4.90245 2.21551C3.90082 1.64368 2.87964 2.26906 2.87964 3.39362V14.6127C2.87964 15.5654 3.49989 15.9999 4.07638 15.9999C4.34785 15.9999 4.62445 15.9142 4.89919 15.747L14.3842 9.94122C14.861 9.64833 15.1287 9.2148 15.1204 8.75147C15.1124 8.28768 14.8303 7.86393 14.345 7.58966ZM13.7485 8.90421L4.26404 14.7086C4.21785 14.7381 4.16788 14.7611 4.11549 14.7771C4.10209 14.7233 4.09583 14.6681 4.09687 14.6127V3.39409C4.09687 3.2786 4.11782 3.2204 4.11782 3.20596C4.15507 3.20829 4.22026 3.22738 4.30222 3.27395L13.7434 8.64809C13.8598 8.71468 13.8943 8.77242 13.9055 8.75985C13.8994 8.77568 13.8598 8.83482 13.7485 8.90421Z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Maldives & Dubai Luxury Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Maldives, Dubai, Sri Lanka</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Maldives</span>
+                                                                <span>Dubai</span>
+                                                                <span>Sri Lanka</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    15 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$699<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                            </a>
+                                            <div className="batch">
+                                                <span>Up to 15% off</span>
+                                                <span className="yellow">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.9907 2.69546C12.4314 2.69546 11.9785 3.18869 11.9785 3.79544C11.9785 4.19014 12.1695 4.53375 12.4573 4.72901C11.8493 5.64156 10.9914 6.70129 10.1071 7.00829C8.94343 7.41259 7.85849 4.92787 7.3244 3.45121C7.72029 3.30221 8.00866 2.89551 8.00866 2.41311C8.00866 1.80637 7.55628 1.31372 6.9988 1.31372C6.44249 1.31372 5.98953 1.80634 5.98953 2.41311C5.98953 2.89551 6.27728 3.30163 6.67379 3.45121C6.14093 4.92787 5.05716 7.41259 3.8917 7.00829C3.00859 6.70129 2.14891 5.64156 1.54216 4.72901C1.82871 4.53378 2.02035 4.19075 2.02035 3.79544C2.02035 3.18869 1.56678 2.69546 1.00927 2.69546C0.452959 2.69546 0 3.18869 0 3.79544C0 4.404 0.452959 4.89662 1.00927 4.89662C1.02069 4.89662 1.02849 4.89361 1.03932 4.89241L2.40304 11.2274H11.5964L12.9607 4.89241C12.9703 4.89302 12.9799 4.89662 12.9913 4.89662C13.547 4.89662 14 4.404 14 3.79544C13.9994 3.18869 13.5464 2.69546 12.9907 2.69546ZM2.44927 11.4503H11.5495V12.686H2.44927V11.4503Z"></path>
+                                                    </svg>
+                                                    Best seller
+                                                </span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Bali Tropical Island Retreat</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Bali, Indonesia</a>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    07 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong><del>$399</del> $329<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="map-btn" data-bs-target="#mapViewModal" data-bs-toggle="modal" href="#">
+                                                    <svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.7856 10.1307C19.1247 10.8725 18.4773 11.6717 18.0254 12.7742C17.8198 13.2834 17.3309 13.6139 16.7812 13.6139C16.2282 13.6139 15.7393 13.2834 15.5302 12.7709C15.0075 11.4895 14.2151 10.6162 13.4463 9.77322C13.2541 9.56081 13.0619 9.34836 12.8731 9.12919C12.863 9.13256 12.8562 9.13594 12.8462 9.13929C12.0976 9.36518 11.521 10.3565 11.8683 11.1625C12.1043 11.7154 13.76 11.6109 13.6184 12.8012C13.5004 13.7757 14.7749 14.0319 15.2267 13.9848C15.6786 13.9308 16.3732 14.7266 16.0225 15.0773C15.6753 15.428 15.0177 15.4415 15.1188 16.3452C15.1458 16.6082 15.9416 16.5745 15.9416 16.9724C15.9416 17.3736 15.5303 17.8289 15.8472 18.2908C15.9147 18.3919 15.9855 18.4695 16.0596 18.5302C14.5355 19.9329 12.5022 20.7928 10.2734 20.7928C5.56274 20.7928 1.73218 16.9622 1.73218 12.2516C1.73218 10.8219 2.08627 9.4731 2.71007 8.28618C2.70669 9.82043 3.52608 11.095 3.91047 11.4794C5.16483 12.7304 6.98235 12.3359 7.21497 13.3845C7.451 14.4299 5.96733 14.4332 6.06514 15.2324C6.16626 16.0349 8.09842 16.2473 7.66683 16.9858C7.09695 17.967 8.05122 18.0378 7.77474 19.2483C7.62639 19.9093 8.58062 20.0374 8.9347 19.535C9.20446 19.1506 9.1505 18.6785 9.69338 18.1019C10.3577 17.3938 11.8987 17.2791 11.7267 16.109C11.4333 14.1668 9.54502 13.8633 8.72225 13.4081C7.78822 12.8956 8.01753 11.6648 7.81519 11.0781C7.53195 10.2452 6.57093 11.3108 6.05838 10.8252C5.21541 10.0294 6.21012 8.90318 6.91822 8.9268C8.41199 8.974 8.87057 10.4273 9.42018 10.3767C9.95634 10.3295 10.3037 9.58094 10.3981 9.18307C10.597 8.31648 10.0609 8.70425 9.84508 8.25239C9.55509 7.64882 10.8634 7.07222 11.3692 6.62712C11.4468 6.55968 11.5041 6.49562 11.5344 6.43491C11.6862 6.13819 11.4872 5.91226 11.15 5.70657C10.4757 5.29853 9.2449 4.97485 9.1876 4.33757C9.15384 3.94639 9.90245 3.75759 10.7555 3.72387C10.8971 3.73063 11.0354 3.74411 11.1771 3.75759C11.2482 3.35537 11.3623 2.96196 11.5176 2.58415C11.1096 2.53019 10.6948 2.5032 10.2733 2.5032C4.89842 2.5032 0.525024 6.87659 0.525024 12.2515C0.524988 17.6266 4.89842 22 10.2733 22C15.6482 22 20.0217 17.6265 20.0217 12.2516C20.0217 11.5233 19.9407 10.8118 19.7856 10.1307ZM16.3225 0.0216537C13.5706 0.281771 11.6858 2.94826 12.1661 5.67041C12.6539 8.43554 15.2033 9.28667 16.4686 12.3905C16.5826 12.6703 16.9764 12.6717 17.0903 12.3919C18.4929 8.94934 21.4751 8.27751 21.4751 4.69529C21.475 1.95129 19.1212 -0.242885 16.3225 0.0216537ZM16.7797 7.17489C15.4103 7.17489 14.3001 6.06475 14.3001 4.69529C14.3001 3.32586 15.4103 2.21572 16.7797 2.21572C18.1492 2.21572 19.2593 3.32586 19.2593 4.69529C19.2593 6.06472 18.1491 7.17489 16.7797 7.17489Z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <div className="swiper package-card-img-slider">
+                                                <div className="swiper-wrapper">
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img3.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="slider-pagi-wrap">
+                                                <div className="package-card-img-pagi paginations"></div>
+                                            </div>
+                                            <div className="slider-btn-grp">
+                                                <div className="slider-btn package-card-img-slider-prev">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.59702 6.522L9.04843 1.0707C9.17451 0.944516 9.34282 0.875 9.52229 0.875C9.70176 0.875 9.87007 0.944516 9.99615 1.0707L10.3976 1.47206C10.6588 1.73359 10.6588 2.15865 10.3976 2.41978L5.81993 6.99746L10.4027 11.5802C10.5288 11.7064 10.5984 11.8746 10.5984 12.054C10.5984 12.2335 10.5288 12.4018 10.4027 12.528L10.0012 12.9293C9.87505 13.0555 9.70683 13.125 9.52737 13.125C9.3479 13.125 9.17959 13.0555 9.05351 12.9293L3.59702 7.47301C3.47064 7.34643 3.40122 7.17742 3.40162 6.99776C3.40122 6.8174 3.47064 6.64849 3.59702 6.522Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div className="slider-btn package-card-img-slider-next">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.3099 6.52201L5.00758 1.0707C4.88495 0.944516 4.72124 0.875 4.54668 0.875C4.37212 0.875 4.20841 0.944516 4.08577 1.0707L3.69529 1.47206C3.4412 1.73359 3.4412 2.15865 3.69529 2.41978L8.14781 6.99746L3.69035 11.5802C3.56771 11.7064 3.5 11.8746 3.5 12.054C3.5 12.2335 3.56771 12.4018 3.69035 12.528L4.08083 12.9293C4.20356 13.0555 4.36718 13.125 4.54174 13.125C4.7163 13.125 4.88001 13.0555 5.00264 12.9293L10.3099 7.47302C10.4329 7.34643 10.5004 7.17742 10.5 6.99776C10.5004 6.8174 10.4329 6.64849 10.3099 6.52201Z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="green">Featured</span>
+                                            </div>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Switzerland Alpine Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Switzerland</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Lucerne</span>
+                                                                <span>Zurich</span>
+                                                                <span>Interlaken</span>
+                                                                <span>Bern</span>
+                                                                <span>Lugano</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    12 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$299<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div className="tour-pack-item" data-category="private-tour">
+                            <div className="row gy-5 mb-45">
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                            </a>
+                                            <div className="package-video">
+                                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/tour-package-video.mp4"></video>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="yellow">Private tour</span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                            <span className="play-icon">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.345 7.58966L4.90245 2.21551C3.90082 1.64368 2.87964 2.26906 2.87964 3.39362V14.6127C2.87964 15.5654 3.49989 15.9999 4.07638 15.9999C4.34785 15.9999 4.62445 15.9142 4.89919 15.747L14.3842 9.94122C14.861 9.64833 15.1287 9.2148 15.1204 8.75147C15.1124 8.28768 14.8303 7.86393 14.345 7.58966ZM13.7485 8.90421L4.26404 14.7086C4.21785 14.7381 4.16788 14.7611 4.11549 14.7771C4.10209 14.7233 4.09583 14.6681 4.09687 14.6127V3.39409C4.09687 3.2786 4.11782 3.2204 4.11782 3.20596C4.15507 3.20829 4.22026 3.22738 4.30222 3.27395L13.7434 8.64809C13.8598 8.71468 13.8943 8.77242 13.9055 8.75985C13.8994 8.77568 13.8598 8.83482 13.7485 8.90421Z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Maldives & Dubai Luxury Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Maldives, Dubai, Sri Lanka</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Maldives</span>
+                                                                <span>Dubai</span>
+                                                                <span>Sri Lanka</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    15 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$699<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img6.jpg" />
+                                            </a>
+                                            <div className="batch">
+                                                <span>Up to 15% off</span>
+                                                <span className="yellow">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.9907 2.69546C12.4314 2.69546 11.9785 3.18869 11.9785 3.79544C11.9785 4.19014 12.1695 4.53375 12.4573 4.72901C11.8493 5.64156 10.9914 6.70129 10.1071 7.00829C8.94343 7.41259 7.85849 4.92787 7.3244 3.45121C7.72029 3.30221 8.00866 2.89551 8.00866 2.41311C8.00866 1.80637 7.55628 1.31372 6.9988 1.31372C6.44249 1.31372 5.98953 1.80634 5.98953 2.41311C5.98953 2.89551 6.27728 3.30163 6.67379 3.45121C6.14093 4.92787 5.05716 7.41259 3.8917 7.00829C3.00859 6.70129 2.14891 5.64156 1.54216 4.72901C1.82871 4.53378 2.02035 4.19075 2.02035 3.79544C2.02035 3.18869 1.56678 2.69546 1.00927 2.69546C0.452959 2.69546 0 3.18869 0 3.79544C0 4.404 0.452959 4.89662 1.00927 4.89662C1.02069 4.89662 1.02849 4.89361 1.03932 4.89241L2.40304 11.2274H11.5964L12.9607 4.89241C12.9703 4.89302 12.9799 4.89662 12.9913 4.89662C13.547 4.89662 14 4.404 14 3.79544C13.9994 3.18869 13.5464 2.69546 12.9907 2.69546ZM2.44927 11.4503H11.5495V12.686H2.44927V11.4503Z"></path>
+                                                    </svg>
+                                                    Best seller
+                                                </span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Bali Tropical Island Retreat</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Bali, Indonesia</a>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    07 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong><del>$399</del> $329<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="map-btn" data-bs-target="#mapViewModal" data-bs-toggle="modal" href="#">
+                                                    <svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.7856 10.1307C19.1247 10.8725 18.4773 11.6717 18.0254 12.7742C17.8198 13.2834 17.3309 13.6139 16.7812 13.6139C16.2282 13.6139 15.7393 13.2834 15.5302 12.7709C15.0075 11.4895 14.2151 10.6162 13.4463 9.77322C13.2541 9.56081 13.0619 9.34836 12.8731 9.12919C12.863 9.13256 12.8562 9.13594 12.8462 9.13929C12.0976 9.36518 11.521 10.3565 11.8683 11.1625C12.1043 11.7154 13.76 11.6109 13.6184 12.8012C13.5004 13.7757 14.7749 14.0319 15.2267 13.9848C15.6786 13.9308 16.3732 14.7266 16.0225 15.0773C15.6753 15.428 15.0177 15.4415 15.1188 16.3452C15.1458 16.6082 15.9416 16.5745 15.9416 16.9724C15.9416 17.3736 15.5303 17.8289 15.8472 18.2908C15.9147 18.3919 15.9855 18.4695 16.0596 18.5302C14.5355 19.9329 12.5022 20.7928 10.2734 20.7928C5.56274 20.7928 1.73218 16.9622 1.73218 12.2516C1.73218 10.8219 2.08627 9.4731 2.71007 8.28618C2.70669 9.82043 3.52608 11.095 3.91047 11.4794C5.16483 12.7304 6.98235 12.3359 7.21497 13.3845C7.451 14.4299 5.96733 14.4332 6.06514 15.2324C6.16626 16.0349 8.09842 16.2473 7.66683 16.9858C7.09695 17.967 8.05122 18.0378 7.77474 19.2483C7.62639 19.9093 8.58062 20.0374 8.9347 19.535C9.20446 19.1506 9.1505 18.6785 9.69338 18.1019C10.3577 17.3938 11.8987 17.2791 11.7267 16.109C11.4333 14.1668 9.54502 13.8633 8.72225 13.4081C7.78822 12.8956 8.01753 11.6648 7.81519 11.0781C7.53195 10.2452 6.57093 11.3108 6.05838 10.8252C5.21541 10.0294 6.21012 8.90318 6.91822 8.9268C8.41199 8.974 8.87057 10.4273 9.42018 10.3767C9.95634 10.3295 10.3037 9.58094 10.3981 9.18307C10.597 8.31648 10.0609 8.70425 9.84508 8.25239C9.55509 7.64882 10.8634 7.07222 11.3692 6.62712C11.4468 6.55968 11.5041 6.49562 11.5344 6.43491C11.6862 6.13819 11.4872 5.91226 11.15 5.70657C10.4757 5.29853 9.2449 4.97485 9.1876 4.33757C9.15384 3.94639 9.90245 3.75759 10.7555 3.72387C10.8971 3.73063 11.0354 3.74411 11.1771 3.75759C11.2482 3.35537 11.3623 2.96196 11.5176 2.58415C11.1096 2.53019 10.6948 2.5032 10.2733 2.5032C4.89842 2.5032 0.525024 6.87659 0.525024 12.2515C0.524988 17.6266 4.89842 22 10.2733 22C15.6482 22 20.0217 17.6265 20.0217 12.2516C20.0217 11.5233 19.9407 10.8118 19.7856 10.1307ZM16.3225 0.0216537C13.5706 0.281771 11.6858 2.94826 12.1661 5.67041C12.6539 8.43554 15.2033 9.28667 16.4686 12.3905C16.5826 12.6703 16.9764 12.6717 17.0903 12.3919C18.4929 8.94934 21.4751 8.27751 21.4751 4.69529C21.475 1.95129 19.1212 -0.242885 16.3225 0.0216537ZM16.7797 7.17489C15.4103 7.17489 14.3001 6.06475 14.3001 4.69529C14.3001 3.32586 15.4103 2.21572 16.7797 2.21572C18.1492 2.21572 19.2593 3.32586 19.2593 4.69529C19.2593 6.06472 18.1491 7.17489 16.7797 7.17489Z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <div className="swiper package-card-img-slider">
+                                                <div className="swiper-wrapper">
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img7.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="slider-pagi-wrap">
+                                                <div className="package-card-img-pagi paginations"></div>
+                                            </div>
+                                            <div className="slider-btn-grp">
+                                                <div className="slider-btn package-card-img-slider-prev">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.59702 6.522L9.04843 1.0707C9.17451 0.944516 9.34282 0.875 9.52229 0.875C9.70176 0.875 9.87007 0.944516 9.99615 1.0707L10.3976 1.47206C10.6588 1.73359 10.6588 2.15865 10.3976 2.41978L5.81993 6.99746L10.4027 11.5802C10.5288 11.7064 10.5984 11.8746 10.5984 12.054C10.5984 12.2335 10.5288 12.4018 10.4027 12.528L10.0012 12.9293C9.87505 13.0555 9.70683 13.125 9.52737 13.125C9.3479 13.125 9.17959 13.0555 9.05351 12.9293L3.59702 7.47301C3.47064 7.34643 3.40122 7.17742 3.40162 6.99776C3.40122 6.8174 3.47064 6.64849 3.59702 6.522Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div className="slider-btn package-card-img-slider-next">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.3099 6.52201L5.00758 1.0707C4.88495 0.944516 4.72124 0.875 4.54668 0.875C4.37212 0.875 4.20841 0.944516 4.08577 1.0707L3.69529 1.47206C3.4412 1.73359 3.4412 2.15865 3.69529 2.41978L8.14781 6.99746L3.69035 11.5802C3.56771 11.7064 3.5 11.8746 3.5 12.054C3.5 12.2335 3.56771 12.4018 3.69035 12.528L4.08083 12.9293C4.20356 13.0555 4.36718 13.125 4.54174 13.125C4.7163 13.125 4.88001 13.0555 5.00264 12.9293L10.3099 7.47302C10.4329 7.34643 10.5004 7.17742 10.5 6.99776C10.5004 6.8174 10.4329 6.64849 10.3099 6.52201Z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="green">Featured</span>
+                                            </div>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Switzerland Alpine Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Switzerland</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Lucerne</span>
+                                                                <span>Zurich</span>
+                                                                <span>Interlaken</span>
+                                                                <span>Bern</span>
+                                                                <span>Lugano</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    12 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$299<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="all-package-btn">
+                                <a className="primary-btn1 two white-bg" href="#">
+                                    <span>View All Package</span>
+                                    <span>View All Package</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="tour-pack-item" data-category="family-tour">
+                            <div className="row gy-5 mb-45">
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                            </a>
+                                            <div className="package-video">
+                                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/tour-package-video.mp4"></video>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="yellow">Group tour</span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                            <span className="play-icon">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.345 7.58966L4.90245 2.21551C3.90082 1.64368 2.87964 2.26906 2.87964 3.39362V14.6127C2.87964 15.5654 3.49989 15.9999 4.07638 15.9999C4.34785 15.9999 4.62445 15.9142 4.89919 15.747L14.3842 9.94122C14.861 9.64833 15.1287 9.2148 15.1204 8.75147C15.1124 8.28768 14.8303 7.86393 14.345 7.58966ZM13.7485 8.90421L4.26404 14.7086C4.21785 14.7381 4.16788 14.7611 4.11549 14.7771C4.10209 14.7233 4.09583 14.6681 4.09687 14.6127V3.39409C4.09687 3.2786 4.11782 3.2204 4.11782 3.20596C4.15507 3.20829 4.22026 3.22738 4.30222 3.27395L13.7434 8.64809C13.8598 8.71468 13.8943 8.77242 13.9055 8.75985C13.8994 8.77568 13.8598 8.83482 13.7485 8.90421Z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Maldives & Dubai Luxury Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Maldives, Dubai, Sri Lanka</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Maldives</span>
+                                                                <span>Dubai</span>
+                                                                <span>Sri Lanka</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    15 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$699<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                            </a>
+                                            <div className="batch">
+                                                <span>Up to 15% off</span>
+                                                <span className="yellow">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.9907 2.69546C12.4314 2.69546 11.9785 3.18869 11.9785 3.79544C11.9785 4.19014 12.1695 4.53375 12.4573 4.72901C11.8493 5.64156 10.9914 6.70129 10.1071 7.00829C8.94343 7.41259 7.85849 4.92787 7.3244 3.45121C7.72029 3.30221 8.00866 2.89551 8.00866 2.41311C8.00866 1.80637 7.55628 1.31372 6.9988 1.31372C6.44249 1.31372 5.98953 1.80634 5.98953 2.41311C5.98953 2.89551 6.27728 3.30163 6.67379 3.45121C6.14093 4.92787 5.05716 7.41259 3.8917 7.00829C3.00859 6.70129 2.14891 5.64156 1.54216 4.72901C1.82871 4.53378 2.02035 4.19075 2.02035 3.79544C2.02035 3.18869 1.56678 2.69546 1.00927 2.69546C0.452959 2.69546 0 3.18869 0 3.79544C0 4.404 0.452959 4.89662 1.00927 4.89662C1.02069 4.89662 1.02849 4.89361 1.03932 4.89241L2.40304 11.2274H11.5964L12.9607 4.89241C12.9703 4.89302 12.9799 4.89662 12.9913 4.89662C13.547 4.89662 14 4.404 14 3.79544C13.9994 3.18869 13.5464 2.69546 12.9907 2.69546ZM2.44927 11.4503H11.5495V12.686H2.44927V11.4503Z"></path>
+                                                    </svg>
+                                                    Best seller
+                                                </span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Bali Tropical Island Retreat</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Bali, Indonesia</a>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    07 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong><del>$399</del> $329<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="map-btn" data-bs-target="#mapViewModal" data-bs-toggle="modal" href="#">
+                                                    <svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.7856 10.1307C19.1247 10.8725 18.4773 11.6717 18.0254 12.7742C17.8198 13.2834 17.3309 13.6139 16.7812 13.6139C16.2282 13.6139 15.7393 13.2834 15.5302 12.7709C15.0075 11.4895 14.2151 10.6162 13.4463 9.77322C13.2541 9.56081 13.0619 9.34836 12.8731 9.12919C12.863 9.13256 12.8562 9.13594 12.8462 9.13929C12.0976 9.36518 11.521 10.3565 11.8683 11.1625C12.1043 11.7154 13.76 11.6109 13.6184 12.8012C13.5004 13.7757 14.7749 14.0319 15.2267 13.9848C15.6786 13.9308 16.3732 14.7266 16.0225 15.0773C15.6753 15.428 15.0177 15.4415 15.1188 16.3452C15.1458 16.6082 15.9416 16.5745 15.9416 16.9724C15.9416 17.3736 15.5303 17.8289 15.8472 18.2908C15.9147 18.3919 15.9855 18.4695 16.0596 18.5302C14.5355 19.9329 12.5022 20.7928 10.2734 20.7928C5.56274 20.7928 1.73218 16.9622 1.73218 12.2516C1.73218 10.8219 2.08627 9.4731 2.71007 8.28618C2.70669 9.82043 3.52608 11.095 3.91047 11.4794C5.16483 12.7304 6.98235 12.3359 7.21497 13.3845C7.451 14.4299 5.96733 14.4332 6.06514 15.2324C6.16626 16.0349 8.09842 16.2473 7.66683 16.9858C7.09695 17.967 8.05122 18.0378 7.77474 19.2483C7.62639 19.9093 8.58062 20.0374 8.9347 19.535C9.20446 19.1506 9.1505 18.6785 9.69338 18.1019C10.3577 17.3938 11.8987 17.2791 11.7267 16.109C11.4333 14.1668 9.54502 13.8633 8.72225 13.4081C7.78822 12.8956 8.01753 11.6648 7.81519 11.0781C7.53195 10.2452 6.57093 11.3108 6.05838 10.8252C5.21541 10.0294 6.21012 8.90318 6.91822 8.9268C8.41199 8.974 8.87057 10.4273 9.42018 10.3767C9.95634 10.3295 10.3037 9.58094 10.3981 9.18307C10.597 8.31648 10.0609 8.70425 9.84508 8.25239C9.55509 7.64882 10.8634 7.07222 11.3692 6.62712C11.4468 6.55968 11.5041 6.49562 11.5344 6.43491C11.6862 6.13819 11.4872 5.91226 11.15 5.70657C10.4757 5.29853 9.2449 4.97485 9.1876 4.33757C9.15384 3.94639 9.90245 3.75759 10.7555 3.72387C10.8971 3.73063 11.0354 3.74411 11.1771 3.75759C11.2482 3.35537 11.3623 2.96196 11.5176 2.58415C11.1096 2.53019 10.6948 2.5032 10.2733 2.5032C4.89842 2.5032 0.525024 6.87659 0.525024 12.2515C0.524988 17.6266 4.89842 22 10.2733 22C15.6482 22 20.0217 17.6265 20.0217 12.2516C20.0217 11.5233 19.9407 10.8118 19.7856 10.1307ZM16.3225 0.0216537C13.5706 0.281771 11.6858 2.94826 12.1661 5.67041C12.6539 8.43554 15.2033 9.28667 16.4686 12.3905C16.5826 12.6703 16.9764 12.6717 17.0903 12.3919C18.4929 8.94934 21.4751 8.27751 21.4751 4.69529C21.475 1.95129 19.1212 -0.242885 16.3225 0.0216537ZM16.7797 7.17489C15.4103 7.17489 14.3001 6.06475 14.3001 4.69529C14.3001 3.32586 15.4103 2.21572 16.7797 2.21572C18.1492 2.21572 19.2593 3.32586 19.2593 4.69529C19.2593 6.06472 18.1491 7.17489 16.7797 7.17489Z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <div className="swiper package-card-img-slider">
+                                                <div className="swiper-wrapper">
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img3.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="slider-pagi-wrap">
+                                                <div className="package-card-img-pagi paginations"></div>
+                                            </div>
+                                            <div className="slider-btn-grp">
+                                                <div className="slider-btn package-card-img-slider-prev">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.59702 6.522L9.04843 1.0707C9.17451 0.944516 9.34282 0.875 9.52229 0.875C9.70176 0.875 9.87007 0.944516 9.99615 1.0707L10.3976 1.47206C10.6588 1.73359 10.6588 2.15865 10.3976 2.41978L5.81993 6.99746L10.4027 11.5802C10.5288 11.7064 10.5984 11.8746 10.5984 12.054C10.5984 12.2335 10.5288 12.4018 10.4027 12.528L10.0012 12.9293C9.87505 13.0555 9.70683 13.125 9.52737 13.125C9.3479 13.125 9.17959 13.0555 9.05351 12.9293L3.59702 7.47301C3.47064 7.34643 3.40122 7.17742 3.40162 6.99776C3.40122 6.8174 3.47064 6.64849 3.59702 6.522Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div className="slider-btn package-card-img-slider-next">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.3099 6.52201L5.00758 1.0707C4.88495 0.944516 4.72124 0.875 4.54668 0.875C4.37212 0.875 4.20841 0.944516 4.08577 1.0707L3.69529 1.47206C3.4412 1.73359 3.4412 2.15865 3.69529 2.41978L8.14781 6.99746L3.69035 11.5802C3.56771 11.7064 3.5 11.8746 3.5 12.054C3.5 12.2335 3.56771 12.4018 3.69035 12.528L4.08083 12.9293C4.20356 13.0555 4.36718 13.125 4.54174 13.125C4.7163 13.125 4.88001 13.0555 5.00264 12.9293L10.3099 7.47302C10.4329 7.34643 10.5004 7.17742 10.5 6.99776C10.5004 6.8174 10.4329 6.64849 10.3099 6.52201Z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="green">Featured</span>
+                                            </div>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Switzerland Alpine Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Switzerland</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Lucerne</span>
+                                                                <span>Zurich</span>
+                                                                <span>Interlaken</span>
+                                                                <span>Bern</span>
+                                                                <span>Lugano</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    12 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$299<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="all-package-btn">
+                                <a className="primary-btn1 two white-bg" href="#">
+                                    <span>View All Package</span>
+                                    <span>View All Package</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="tour-pack-item" data-category="safari-tour">
+                            <div className="row gy-5 mb-45">
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                            </a>
+                                            <div className="package-video">
+                                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/tour-package-video.mp4"></video>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="yellow">Private tour</span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                            <span className="play-icon">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.345 7.58966L4.90245 2.21551C3.90082 1.64368 2.87964 2.26906 2.87964 3.39362V14.6127C2.87964 15.5654 3.49989 15.9999 4.07638 15.9999C4.34785 15.9999 4.62445 15.9142 4.89919 15.747L14.3842 9.94122C14.861 9.64833 15.1287 9.2148 15.1204 8.75147C15.1124 8.28768 14.8303 7.86393 14.345 7.58966ZM13.7485 8.90421L4.26404 14.7086C4.21785 14.7381 4.16788 14.7611 4.11549 14.7771C4.10209 14.7233 4.09583 14.6681 4.09687 14.6127V3.39409C4.09687 3.2786 4.11782 3.2204 4.11782 3.20596C4.15507 3.20829 4.22026 3.22738 4.30222 3.27395L13.7434 8.64809C13.8598 8.71468 13.8943 8.77242 13.9055 8.75985C13.8994 8.77568 13.8598 8.83482 13.7485 8.90421Z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Maldives & Dubai Luxury Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Maldives, Dubai, Sri Lanka</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Maldives</span>
+                                                                <span>Dubai</span>
+                                                                <span>Sri Lanka</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    15 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$699<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img6.jpg" />
+                                            </a>
+                                            <div className="batch">
+                                                <span>Up to 15% off</span>
+                                                <span className="yellow">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.9907 2.69546C12.4314 2.69546 11.9785 3.18869 11.9785 3.79544C11.9785 4.19014 12.1695 4.53375 12.4573 4.72901C11.8493 5.64156 10.9914 6.70129 10.1071 7.00829C8.94343 7.41259 7.85849 4.92787 7.3244 3.45121C7.72029 3.30221 8.00866 2.89551 8.00866 2.41311C8.00866 1.80637 7.55628 1.31372 6.9988 1.31372C6.44249 1.31372 5.98953 1.80634 5.98953 2.41311C5.98953 2.89551 6.27728 3.30163 6.67379 3.45121C6.14093 4.92787 5.05716 7.41259 3.8917 7.00829C3.00859 6.70129 2.14891 5.64156 1.54216 4.72901C1.82871 4.53378 2.02035 4.19075 2.02035 3.79544C2.02035 3.18869 1.56678 2.69546 1.00927 2.69546C0.452959 2.69546 0 3.18869 0 3.79544C0 4.404 0.452959 4.89662 1.00927 4.89662C1.02069 4.89662 1.02849 4.89361 1.03932 4.89241L2.40304 11.2274H11.5964L12.9607 4.89241C12.9703 4.89302 12.9799 4.89662 12.9913 4.89662C13.547 4.89662 14 4.404 14 3.79544C13.9994 3.18869 13.5464 2.69546 12.9907 2.69546ZM2.44927 11.4503H11.5495V12.686H2.44927V11.4503Z"></path>
+                                                    </svg>
+                                                    Best seller
+                                                </span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Bali Tropical Island Retreat</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Bali, Indonesia</a>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    07 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong><del>$399</del> $329<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="map-btn" data-bs-target="#mapViewModal" data-bs-toggle="modal" href="#">
+                                                    <svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.7856 10.1307C19.1247 10.8725 18.4773 11.6717 18.0254 12.7742C17.8198 13.2834 17.3309 13.6139 16.7812 13.6139C16.2282 13.6139 15.7393 13.2834 15.5302 12.7709C15.0075 11.4895 14.2151 10.6162 13.4463 9.77322C13.2541 9.56081 13.0619 9.34836 12.8731 9.12919C12.863 9.13256 12.8562 9.13594 12.8462 9.13929C12.0976 9.36518 11.521 10.3565 11.8683 11.1625C12.1043 11.7154 13.76 11.6109 13.6184 12.8012C13.5004 13.7757 14.7749 14.0319 15.2267 13.9848C15.6786 13.9308 16.3732 14.7266 16.0225 15.0773C15.6753 15.428 15.0177 15.4415 15.1188 16.3452C15.1458 16.6082 15.9416 16.5745 15.9416 16.9724C15.9416 17.3736 15.5303 17.8289 15.8472 18.2908C15.9147 18.3919 15.9855 18.4695 16.0596 18.5302C14.5355 19.9329 12.5022 20.7928 10.2734 20.7928C5.56274 20.7928 1.73218 16.9622 1.73218 12.2516C1.73218 10.8219 2.08627 9.4731 2.71007 8.28618C2.70669 9.82043 3.52608 11.095 3.91047 11.4794C5.16483 12.7304 6.98235 12.3359 7.21497 13.3845C7.451 14.4299 5.96733 14.4332 6.06514 15.2324C6.16626 16.0349 8.09842 16.2473 7.66683 16.9858C7.09695 17.967 8.05122 18.0378 7.77474 19.2483C7.62639 19.9093 8.58062 20.0374 8.9347 19.535C9.20446 19.1506 9.1505 18.6785 9.69338 18.1019C10.3577 17.3938 11.8987 17.2791 11.7267 16.109C11.4333 14.1668 9.54502 13.8633 8.72225 13.4081C7.78822 12.8956 8.01753 11.6648 7.81519 11.0781C7.53195 10.2452 6.57093 11.3108 6.05838 10.8252C5.21541 10.0294 6.21012 8.90318 6.91822 8.9268C8.41199 8.974 8.87057 10.4273 9.42018 10.3767C9.95634 10.3295 10.3037 9.58094 10.3981 9.18307C10.597 8.31648 10.0609 8.70425 9.84508 8.25239C9.55509 7.64882 10.8634 7.07222 11.3692 6.62712C11.4468 6.55968 11.5041 6.49562 11.5344 6.43491C11.6862 6.13819 11.4872 5.91226 11.15 5.70657C10.4757 5.29853 9.2449 4.97485 9.1876 4.33757C9.15384 3.94639 9.90245 3.75759 10.7555 3.72387C10.8971 3.73063 11.0354 3.74411 11.1771 3.75759C11.2482 3.35537 11.3623 2.96196 11.5176 2.58415C11.1096 2.53019 10.6948 2.5032 10.2733 2.5032C4.89842 2.5032 0.525024 6.87659 0.525024 12.2515C0.524988 17.6266 4.89842 22 10.2733 22C15.6482 22 20.0217 17.6265 20.0217 12.2516C20.0217 11.5233 19.9407 10.8118 19.7856 10.1307ZM16.3225 0.0216537C13.5706 0.281771 11.6858 2.94826 12.1661 5.67041C12.6539 8.43554 15.2033 9.28667 16.4686 12.3905C16.5826 12.6703 16.9764 12.6717 17.0903 12.3919C18.4929 8.94934 21.4751 8.27751 21.4751 4.69529C21.475 1.95129 19.1212 -0.242885 16.3225 0.0216537ZM16.7797 7.17489C15.4103 7.17489 14.3001 6.06475 14.3001 4.69529C14.3001 3.32586 15.4103 2.21572 16.7797 2.21572C18.1492 2.21572 19.2593 3.32586 19.2593 4.69529C19.2593 6.06472 18.1491 7.17489 16.7797 7.17489Z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <div className="swiper package-card-img-slider">
+                                                <div className="swiper-wrapper">
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img7.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="slider-pagi-wrap">
+                                                <div className="package-card-img-pagi paginations"></div>
+                                            </div>
+                                            <div className="slider-btn-grp">
+                                                <div className="slider-btn package-card-img-slider-prev">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.59702 6.522L9.04843 1.0707C9.17451 0.944516 9.34282 0.875 9.52229 0.875C9.70176 0.875 9.87007 0.944516 9.99615 1.0707L10.3976 1.47206C10.6588 1.73359 10.6588 2.15865 10.3976 2.41978L5.81993 6.99746L10.4027 11.5802C10.5288 11.7064 10.5984 11.8746 10.5984 12.054C10.5984 12.2335 10.5288 12.4018 10.4027 12.528L10.0012 12.9293C9.87505 13.0555 9.70683 13.125 9.52737 13.125C9.3479 13.125 9.17959 13.0555 9.05351 12.9293L3.59702 7.47301C3.47064 7.34643 3.40122 7.17742 3.40162 6.99776C3.40122 6.8174 3.47064 6.64849 3.59702 6.522Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div className="slider-btn package-card-img-slider-next">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.3099 6.52201L5.00758 1.0707C4.88495 0.944516 4.72124 0.875 4.54668 0.875C4.37212 0.875 4.20841 0.944516 4.08577 1.0707L3.69529 1.47206C3.4412 1.73359 3.4412 2.15865 3.69529 2.41978L8.14781 6.99746L3.69035 11.5802C3.56771 11.7064 3.5 11.8746 3.5 12.054C3.5 12.2335 3.56771 12.4018 3.69035 12.528L4.08083 12.9293C4.20356 13.0555 4.36718 13.125 4.54174 13.125C4.7163 13.125 4.88001 13.0555 5.00264 12.9293L10.3099 7.47302C10.4329 7.34643 10.5004 7.17742 10.5 6.99776C10.5004 6.8174 10.4329 6.64849 10.3099 6.52201Z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="green">Featured</span>
+                                            </div>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Switzerland Alpine Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Switzerland</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Lucerne</span>
+                                                                <span>Zurich</span>
+                                                                <span>Interlaken</span>
+                                                                <span>Bern</span>
+                                                                <span>Lugano</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    12 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$299<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="all-package-btn">
+                                <a className="primary-btn1 two white-bg" href="#">
+                                    <span>View All Package</span>
+                                    <span>View All Package</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="tour-pack-item" data-category="last-minute-deal">
+                            <div className="row gy-5 mb-45">
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                            </a>
+                                            <div className="package-video">
+                                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/tour-package-video.mp4"></video>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="yellow">Group tour</span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                            <span className="play-icon">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.345 7.58966L4.90245 2.21551C3.90082 1.64368 2.87964 2.26906 2.87964 3.39362V14.6127C2.87964 15.5654 3.49989 15.9999 4.07638 15.9999C4.34785 15.9999 4.62445 15.9142 4.89919 15.747L14.3842 9.94122C14.861 9.64833 15.1287 9.2148 15.1204 8.75147C15.1124 8.28768 14.8303 7.86393 14.345 7.58966ZM13.7485 8.90421L4.26404 14.7086C4.21785 14.7381 4.16788 14.7611 4.11549 14.7771C4.10209 14.7233 4.09583 14.6681 4.09687 14.6127V3.39409C4.09687 3.2786 4.11782 3.2204 4.11782 3.20596C4.15507 3.20829 4.22026 3.22738 4.30222 3.27395L13.7434 8.64809C13.8598 8.71468 13.8943 8.77242 13.9055 8.75985C13.8994 8.77568 13.8598 8.83482 13.7485 8.90421Z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Maldives & Dubai Luxury Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Maldives, Dubai, Sri Lanka</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Maldives</span>
+                                                                <span>Dubai</span>
+                                                                <span>Sri Lanka</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    15 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$699<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <a className="package-img" href="#">
+                                                <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                            </a>
+                                            <div className="batch">
+                                                <span>Up to 15% off</span>
+                                                <span className="yellow">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.9907 2.69546C12.4314 2.69546 11.9785 3.18869 11.9785 3.79544C11.9785 4.19014 12.1695 4.53375 12.4573 4.72901C11.8493 5.64156 10.9914 6.70129 10.1071 7.00829C8.94343 7.41259 7.85849 4.92787 7.3244 3.45121C7.72029 3.30221 8.00866 2.89551 8.00866 2.41311C8.00866 1.80637 7.55628 1.31372 6.9988 1.31372C6.44249 1.31372 5.98953 1.80634 5.98953 2.41311C5.98953 2.89551 6.27728 3.30163 6.67379 3.45121C6.14093 4.92787 5.05716 7.41259 3.8917 7.00829C3.00859 6.70129 2.14891 5.64156 1.54216 4.72901C1.82871 4.53378 2.02035 4.19075 2.02035 3.79544C2.02035 3.18869 1.56678 2.69546 1.00927 2.69546C0.452959 2.69546 0 3.18869 0 3.79544C0 4.404 0.452959 4.89662 1.00927 4.89662C1.02069 4.89662 1.02849 4.89361 1.03932 4.89241L2.40304 11.2274H11.5964L12.9607 4.89241C12.9703 4.89302 12.9799 4.89662 12.9913 4.89662C13.547 4.89662 14 4.404 14 3.79544C13.9994 3.18869 13.5464 2.69546 12.9907 2.69546ZM2.44927 11.4503H11.5495V12.686H2.44927V11.4503Z"></path>
+                                                    </svg>
+                                                    Best seller
+                                                </span>
+                                            </div>
+                                            <a className="wishlist" href="#">
+                                                <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.7922 3.27441C14.973 2.45826 13.8638 2 12.7074 2C11.5511 2 10.4419 2.45826 9.62271 3.27441L9 3.89712L8.37729 3.27441C7.55813 2.45826 6.44891 2 5.29256 2C4.13622 2 3.027 2.45826 2.20783 3.27441C1.39133 4.09456 0.932922 5.20473 0.932922 6.36202C0.932922 7.51931 1.39133 8.62949 2.20783 9.44963L8.59062 15.8324C8.64422 15.8865 8.708 15.9294 8.77826 15.9586C8.84852 15.9879 8.92388 16.003 9 16.003C9.07611 16.003 9.15148 15.9879 9.22174 15.9586C9.292 15.9294 9.35577 15.8865 9.40937 15.8324L15.7922 9.44963C16.6087 8.62949 17.0671 7.51931 17.0671 6.36202C17.0671 5.20473 16.6087 4.09456 15.7922 3.27441ZM14.9792 8.63088L9 14.6101L3.02082 8.63088C2.41979 8.02876 2.08223 7.21277 2.08223 6.36202C2.08223 5.51127 2.41979 4.69528 3.02082 4.09316C3.62392 3.49179 4.44087 3.15408 5.29256 3.15408C6.14426 3.15408 6.9612 3.49179 7.5643 4.09316L8.59062 5.11948C8.64422 5.17353 8.708 5.21642 8.77826 5.24569C8.84852 5.27496 8.92388 5.29004 9 5.29004C9.07611 5.29004 9.15148 5.27496 9.22174 5.24569C9.292 5.21642 9.35577 5.17353 9.40937 5.11948L10.4357 4.09316C11.0388 3.49179 11.8557 3.15408 12.7074 3.15408C13.5591 3.15408 14.3761 3.49179 14.9792 4.09316C15.5802 4.69528 15.9178 5.51127 15.9178 6.36202C15.9178 7.21277 15.5802 8.02876 14.9792 8.63088Z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Bali Tropical Island Retreat</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Bali, Indonesia</a>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    07 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong><del>$399</del> $329<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="map-btn" data-bs-target="#mapViewModal" data-bs-toggle="modal" href="#">
+                                                    <svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.7856 10.1307C19.1247 10.8725 18.4773 11.6717 18.0254 12.7742C17.8198 13.2834 17.3309 13.6139 16.7812 13.6139C16.2282 13.6139 15.7393 13.2834 15.5302 12.7709C15.0075 11.4895 14.2151 10.6162 13.4463 9.77322C13.2541 9.56081 13.0619 9.34836 12.8731 9.12919C12.863 9.13256 12.8562 9.13594 12.8462 9.13929C12.0976 9.36518 11.521 10.3565 11.8683 11.1625C12.1043 11.7154 13.76 11.6109 13.6184 12.8012C13.5004 13.7757 14.7749 14.0319 15.2267 13.9848C15.6786 13.9308 16.3732 14.7266 16.0225 15.0773C15.6753 15.428 15.0177 15.4415 15.1188 16.3452C15.1458 16.6082 15.9416 16.5745 15.9416 16.9724C15.9416 17.3736 15.5303 17.8289 15.8472 18.2908C15.9147 18.3919 15.9855 18.4695 16.0596 18.5302C14.5355 19.9329 12.5022 20.7928 10.2734 20.7928C5.56274 20.7928 1.73218 16.9622 1.73218 12.2516C1.73218 10.8219 2.08627 9.4731 2.71007 8.28618C2.70669 9.82043 3.52608 11.095 3.91047 11.4794C5.16483 12.7304 6.98235 12.3359 7.21497 13.3845C7.451 14.4299 5.96733 14.4332 6.06514 15.2324C6.16626 16.0349 8.09842 16.2473 7.66683 16.9858C7.09695 17.967 8.05122 18.0378 7.77474 19.2483C7.62639 19.9093 8.58062 20.0374 8.9347 19.535C9.20446 19.1506 9.1505 18.6785 9.69338 18.1019C10.3577 17.3938 11.8987 17.2791 11.7267 16.109C11.4333 14.1668 9.54502 13.8633 8.72225 13.4081C7.78822 12.8956 8.01753 11.6648 7.81519 11.0781C7.53195 10.2452 6.57093 11.3108 6.05838 10.8252C5.21541 10.0294 6.21012 8.90318 6.91822 8.9268C8.41199 8.974 8.87057 10.4273 9.42018 10.3767C9.95634 10.3295 10.3037 9.58094 10.3981 9.18307C10.597 8.31648 10.0609 8.70425 9.84508 8.25239C9.55509 7.64882 10.8634 7.07222 11.3692 6.62712C11.4468 6.55968 11.5041 6.49562 11.5344 6.43491C11.6862 6.13819 11.4872 5.91226 11.15 5.70657C10.4757 5.29853 9.2449 4.97485 9.1876 4.33757C9.15384 3.94639 9.90245 3.75759 10.7555 3.72387C10.8971 3.73063 11.0354 3.74411 11.1771 3.75759C11.2482 3.35537 11.3623 2.96196 11.5176 2.58415C11.1096 2.53019 10.6948 2.5032 10.2733 2.5032C4.89842 2.5032 0.525024 6.87659 0.525024 12.2515C0.524988 17.6266 4.89842 22 10.2733 22C15.6482 22 20.0217 17.6265 20.0217 12.2516C20.0217 11.5233 19.9407 10.8118 19.7856 10.1307ZM16.3225 0.0216537C13.5706 0.281771 11.6858 2.94826 12.1661 5.67041C12.6539 8.43554 15.2033 9.28667 16.4686 12.3905C16.5826 12.6703 16.9764 12.6717 17.0903 12.3919C18.4929 8.94934 21.4751 8.27751 21.4751 4.69529C21.475 1.95129 19.1212 -0.242885 16.3225 0.0216537ZM16.7797 7.17489C15.4103 7.17489 14.3001 6.06475 14.3001 4.69529C14.3001 3.32586 15.4103 2.21572 16.7797 2.21572C18.1492 2.21572 19.2593 3.32586 19.2593 4.69529C19.2593 6.06472 18.1491 7.17489 16.7797 7.17489Z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6">
+                                    <div className="package-card">
+                                        <div className="package-img-wrap">
+                                            <div className="swiper package-card-img-slider">
+                                                <div className="swiper-wrapper">
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img3.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img1.jpg" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="swiper-slide">
+                                                        <a className="package-img" href="#">
+                                                            <img alt="" src="/assets/img/home1/tour-package-img2.jpg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="slider-pagi-wrap">
+                                                <div className="package-card-img-pagi paginations"></div>
+                                            </div>
+                                            <div className="slider-btn-grp">
+                                                <div className="slider-btn package-card-img-slider-prev">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.59702 6.522L9.04843 1.0707C9.17451 0.944516 9.34282 0.875 9.52229 0.875C9.70176 0.875 9.87007 0.944516 9.99615 1.0707L10.3976 1.47206C10.6588 1.73359 10.6588 2.15865 10.3976 2.41978L5.81993 6.99746L10.4027 11.5802C10.5288 11.7064 10.5984 11.8746 10.5984 12.054C10.5984 12.2335 10.5288 12.4018 10.4027 12.528L10.0012 12.9293C9.87505 13.0555 9.70683 13.125 9.52737 13.125C9.3479 13.125 9.17959 13.0555 9.05351 12.9293L3.59702 7.47301C3.47064 7.34643 3.40122 7.17742 3.40162 6.99776C3.40122 6.8174 3.47064 6.64849 3.59702 6.522Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div className="slider-btn package-card-img-slider-next">
+                                                    <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.3099 6.52201L5.00758 1.0707C4.88495 0.944516 4.72124 0.875 4.54668 0.875C4.37212 0.875 4.20841 0.944516 4.08577 1.0707L3.69529 1.47206C3.4412 1.73359 3.4412 2.15865 3.69529 2.41978L8.14781 6.99746L3.69035 11.5802C3.56771 11.7064 3.5 11.8746 3.5 12.054C3.5 12.2335 3.56771 12.4018 3.69035 12.528L4.08083 12.9293C4.20356 13.0555 4.36718 13.125 4.54174 13.125C4.7163 13.125 4.88001 13.0555 5.00264 12.9293L10.3099 7.47302C10.4329 7.34643 10.5004 7.17742 10.5 6.99776C10.5004 6.8174 10.4329 6.64849 10.3099 6.52201Z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div className="batch">
+                                                <span>Sale on!</span>
+                                                <span className="green">Featured</span>
+                                            </div>
+                                        </div>
+                                        <div className="package-content">
+                                            <div className="rating-area">
+                                                <ul className="rating">
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                    <li><i className="bi bi-star-fill"></i></li>
+                                                </ul>
+                                                <span className="rating-number">(4.9)</span>
+                                            </div>
+                                            <h2>
+                                                <a href="#">Switzerland Alpine Escape</a>
+                                            </h2>
+                                            <div className="location-and-duration">
+                                                <div className="location">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.1797 9.86058H14.5041C14.5519 9.86058 14.5969 9.84932 14.6363 9.82682C14.6475 9.81839 14.6587 9.81276 14.67 9.80433C14.6869 9.79026 14.7009 9.7762 14.715 9.76214C14.7234 9.7537 14.7319 9.74526 14.7375 9.73682C15.0975 9.32057 17.4375 6.56433 17.4375 5.0737C17.4375 3.4537 16.1213 2.13745 14.5041 2.13745C12.8869 2.13745 11.5678 3.4537 11.5678 5.0737C11.5678 6.29433 13.1316 8.3587 13.9022 9.29808H11.1797C10.3078 9.29808 9.59625 10.0068 9.59625 10.8815C9.59625 11.7562 10.3078 12.4621 11.1797 12.4621H15.4575C16.2394 12.4621 16.875 13.1006 16.875 13.8825C16.875 14.6643 16.2394 15.3 15.4575 15.3H5.70937C6.78375 14.0034 9.64687 10.3612 9.64687 8.34464C9.64687 5.8387 7.61062 3.80245 5.10469 3.80245C2.59875 3.80245 0.5625 5.8387 0.5625 8.34464C0.5625 10.7128 4.49719 15.3084 4.87125 15.7387C4.87969 15.7471 4.88531 15.7584 4.89375 15.7668C4.90781 15.7809 4.92188 15.795 4.93875 15.8062C4.95 15.8146 4.96125 15.8231 4.9725 15.8287C4.97531 15.8287 4.97531 15.8315 4.97813 15.8315C4.98094 15.8343 4.98375 15.8343 4.98656 15.8371C5.00062 15.8428 5.0175 15.8484 5.03156 15.854C5.05687 15.8596 5.07937 15.8625 5.10469 15.8625H15.4575C16.5487 15.8625 17.4375 14.9737 17.4375 13.8825C17.4375 12.7912 16.5487 11.8996 15.4575 11.8996H11.1797C10.6172 11.8996 10.1587 11.444 10.1587 10.8815C10.1587 10.6107 10.2663 10.3511 10.4578 10.1596C10.6492 9.96814 10.9089 9.86058 11.1797 9.86058ZM13.0134 5.0737C13.0134 4.25245 13.6828 3.58308 14.5041 3.58308C15.3253 3.58308 15.9919 4.25245 15.9919 5.0737C15.9919 5.89495 15.3225 6.56151 14.5041 6.56151C13.6856 6.56151 13.0134 5.89214 13.0134 5.0737ZM5.10469 6.02151C6.38719 6.02151 7.42781 7.06214 7.42781 8.34464C7.42781 9.62714 6.38719 10.6678 5.10469 10.6678C3.82219 10.6678 2.78156 9.62433 2.78156 8.34464C2.78156 7.06495 3.825 6.02151 5.10469 6.02151Z"></path>
+                                                    </svg>
+                                                    <a href="#">Switzerland</a>
+                                                    <div className="tour-route">
+                                                        <div className="route-list-wrap">
+                                                            <div className="route-list">
+                                                                <span>Lucerne</span>
+                                                                <span>Zurich</span>
+                                                                <span>Interlaken</span>
+                                                                <span>Bern</span>
+                                                                <span>Lugano</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span className="duration">
+                                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.00005 16.2001C2.60275 16.1936 -0.615079 8.42449 3.90395 3.89688C6.58657 1.10131 11.4136 1.10086 14.0962 3.89699C18.6152 8.425 15.397 16.194 9.00005 16.2001ZM9.00005 2.91211C5.64701 2.91211 2.91912 5.63999 2.91912 8.99303C3.25315 17.0602 14.7482 17.0579 15.081 8.99298C15.081 5.64002 12.3531 2.91211 9.00005 2.91211ZM11.6222 10.8189L9.84333 9.04005C9.85898 8.77733 9.74693 8.52624 9.56282 8.36329C9.56299 8.35741 9.5631 8.35149 9.5631 8.34555V5.05172C9.53337 4.30467 8.46648 4.30523 8.437 5.05172V8.34555C8.437 8.35149 8.43711 8.35741 8.43728 8.36329C7.84847 8.89036 8.2479 9.8775 9.04704 9.83634L10.8259 11.6152C11.0458 11.8351 11.4023 11.8351 11.6222 11.6152C11.8421 11.3953 11.8421 11.0388 11.6222 10.8189Z"></path>
+                                                    </svg>
+                                                    12 Days
+                                                </span>
+                                            </div>
+                                            <div className="btn-and-price-area">
+                                                <div className="price-area">
+                                                    <span>Starting From</span>
+                                                    <strong>$299<sub>/per person</sub></strong>
+                                                </div>
+                                                <a className="primary-btn1 two" href="#">
+                                                    <span>View Tour</span>
+                                                    <span>View Tour</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="all-package-btn">
+                                <a className="primary-btn1 two white-bg" href="#">
+                                    <span>View All Package</span>
+                                    <span>View All Package</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-about-section pt-100 mb-100">
+                <div className="container mb-60">
+                    <div className="row gy-5 align-items-center">
+                        <div className="col-lg-6 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="about-content-wrap">
+                                <div className="section-title">
+                                    <span>We're #01 travel agency in globally</span>
+                                    <h2>Explore the World With Confidence.</h2>
+                                </div>
+                                <p>
+                                    Travel is more than visiting places - it's about discovering
+                                    cultures, creating memories, and experiencing the world in a way
+                                    that stays with you forever. Our travel agency is dedicated to
+                                    designing seamless and inspiring journeys for explorers who want
+                                    more than just a typical vacation.
+                                </p>
+                                <p>
+                                    Our team of passionate travel experts works closely with each
+                                    traveler to understand their interests, preferences, and
+                                    expectations. This allows us to create journeys that feel
+                                    personal, well-organized, and truly extraordinary.
+                                </p>
+                                <a className="primary-btn1 two" href="#">
+                                    <span>Discover More</span>
+                                    <span>Discover More</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="col-lg-6 wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="about-image-area">
+                                <div className="about-image-wrap">
+                                    <img alt="" className="about-center-img" src="/assets/img/home1/about-img1.jpg" />
+                                    <img alt="" className="about-left-img" src="/assets/img/home1/about-img2.jpg" />
+                                    <img alt="" className="about-right-img" src="/assets/img/home1/about-img3.jpg" />
+                                </div>
+                                <div className="about-awards">
+                                    <img alt="" src="/assets/img/home1/about-award-img1.png" />
+                                    <img alt="" src="/assets/img/home1/about-award-img2.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="about-feature-card-area">
+                    <div className="container">
+                        <div className="row g-4">
+                            <div className="col-xl-3 col-lg-4 col-sm-6 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <div className="about-feature-card price-card">
+                                    <div className="icon">
+                                        <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M39.9652 20.7629C39.9527 20.7528 39.9379 20.7459 39.9221 20.7428C39.9064 20.7397 39.8901 20.7404 39.8747 20.7451C39.8398 20.7558 39.8078 20.7651 39.7776 20.774L39.7629 20.7783C39.6885 20.8 39.6242 20.8187 39.5605 20.8442C38.5547 21.2439 37.7629 21.9285 37.1397 22.9373C36.9858 23.1865 36.8666 23.4456 36.7716 23.7039C36.9273 22.8349 36.9634 22.4963 36.991 21.5239C36.9923 21.4831 36.9923 21.4416 36.9923 21.4004C36.9923 21.2879 36.9923 21.1816 37.0168 21.0847C37.0463 20.9698 37.1056 20.8552 37.1629 20.7443C37.1791 20.7129 37.1952 20.6815 37.2085 20.6539C37.2157 20.6469 37.2244 20.6417 37.2339 20.6385C37.5215 20.5946 37.7759 20.4725 38.0117 20.2652C38.2493 20.0554 38.4447 19.7985 38.5926 19.5016C39.1234 18.4372 39.389 17.2607 39.3823 16.0053C39.3817 15.8842 39.3674 15.7663 39.3518 15.638C39.3443 15.5791 39.3375 15.5201 39.3314 15.461C39.3298 15.4446 39.324 15.4289 39.3146 15.4153C39.3052 15.4017 39.2925 15.3908 39.2777 15.3835C39.2628 15.3763 39.2463 15.373 39.2298 15.3738C39.2133 15.3746 39.1973 15.3796 39.1832 15.3882C39.1652 15.3994 39.1499 15.4085 39.1359 15.4167C39.109 15.4327 39.0884 15.4452 39.069 15.4593C38.6162 15.7838 38.2169 16.1879 37.8819 16.6599C37.3353 17.4314 37.0173 18.3037 36.9317 19.2634L36.906 18.9425L36.9029 18.9037C36.8694 18.4843 36.8347 18.0506 36.8064 17.6241C36.7993 17.5161 36.7785 17.411 36.7585 17.3094C36.7198 17.114 36.6832 16.9294 36.7417 16.736C36.7551 16.6923 36.7663 16.6483 36.7775 16.6043C36.8052 16.4956 36.9388 16.328 37.1441 16.1449L37.1518 16.1379C37.2275 16.0738 37.6163 15.718 37.8369 15.0144C38.0607 14.2996 38.0438 13.5526 38.0315 13.0072L38.0312 12.9927C38.0147 12.2429 37.9337 11.678 37.7685 11.1605C37.746 11.0931 37.7215 11.0264 37.6949 10.9605C37.681 10.9248 37.6667 10.8879 37.6521 10.8493C37.6462 10.8333 37.6362 10.8192 37.6231 10.8083C37.61 10.7974 37.5942 10.7901 37.5774 10.7873L37.5609 10.7858C37.5464 10.7858 37.5322 10.789 37.5192 10.7952C37.5062 10.8014 37.4947 10.8104 37.4857 10.8216L37.3251 11.0172C36.5555 11.9558 36.1775 13.0566 36.2011 14.2892C36.2057 14.5132 36.2221 14.7367 36.2503 14.9589C36.0576 14.2921 35.8286 13.6364 35.5644 12.9946C35.5588 12.98 35.5557 12.9646 35.555 12.9491L35.5532 12.8626C35.5505 12.7379 35.5477 12.6089 35.553 12.482C35.5538 12.4609 35.5675 12.4231 35.5959 12.3859C35.6362 12.3327 35.6809 12.2806 35.7272 12.2265C35.8061 12.1347 35.8876 12.0398 35.9522 11.9315C36.1601 11.5832 36.2578 11.1718 36.2594 10.6365C36.2622 10.0063 36.165 9.34322 35.9533 8.54946C35.8376 8.11644 35.6629 7.55388 35.3377 7.04386C35.3148 7.00927 35.2904 6.97565 35.2647 6.9431C35.2521 6.9271 35.2398 6.91089 35.2278 6.89447C35.2094 6.86971 35.1839 6.85527 35.1428 6.85527C35.1266 6.85648 35.111 6.86168 35.0973 6.87041C35.0836 6.87914 35.0723 6.89113 35.0644 6.9053C34.6561 7.64211 34.4528 8.42925 34.4432 9.31174C34.4353 9.94374 34.5198 10.5735 34.6939 11.1811C34.3285 10.5132 33.9225 9.86836 33.4782 9.25018L33.468 9.23624C33.458 9.22291 33.4538 9.21639 33.4545 9.221C33.4309 9.05616 33.4107 8.89082 33.3941 8.72512C33.3945 8.72301 33.3971 8.71138 33.4177 8.67689C33.4469 8.62716 33.4789 8.57844 33.5129 8.5269C33.581 8.42323 33.6514 8.31596 33.6965 8.19585C33.8327 7.83331 33.8633 7.42214 33.7898 6.93929C33.6285 5.87062 33.1573 4.90832 32.3498 3.99726C32.2667 3.90372 32.1749 3.821 32.0777 3.73358L32.0509 3.70921C32.0129 3.67482 31.9739 3.63963 31.9345 3.60244C31.9219 3.59055 31.9065 3.5822 31.8896 3.57824C31.8728 3.57427 31.8552 3.57484 31.8387 3.57988C31.8224 3.58506 31.8078 3.59439 31.7962 3.60694C31.7846 3.61949 31.7765 3.63483 31.7726 3.65146L31.755 3.72886C31.743 3.7802 31.7336 3.8207 31.7267 3.86141C31.618 4.51009 31.626 5.20489 31.7511 5.98572C31.8752 6.76012 32.1226 7.42805 32.502 8.00826C31.933 7.33772 31.3794 6.77466 30.8009 6.27567C30.7979 6.2706 30.7956 6.26509 30.7942 6.25932C30.8394 5.86981 30.7434 5.50286 30.5003 5.13752C30.1812 4.65737 29.7378 4.29142 29.1823 4.05C28.85 3.90582 28.5056 3.77819 28.1684 3.65317C28.0069 3.59321 27.8454 3.53346 27.679 3.46939C27.5119 3.40292 27.4404 3.39109 27.4016 3.42698C27.3517 3.4735 27.3637 3.51321 27.3855 3.58539L27.3925 3.60895C27.5963 4.29553 27.8668 4.83854 28.2196 5.26896C28.8673 6.05991 29.6248 6.46175 30.5341 6.49724C30.566 6.49915 30.5913 6.50797 30.6016 6.51599C30.7296 6.61184 30.8239 6.68854 30.9072 6.76453C31.1758 7.01047 31.4349 7.26651 31.684 7.53212C31.3064 7.29752 30.8449 7.19164 30.3252 7.21791C30.0408 7.23225 29.7584 7.27396 29.4854 7.31426L29.475 7.31586C29.3943 7.32769 29.314 7.33942 29.2339 7.35075C29.0584 7.37452 28.8816 7.4056 28.7253 7.43287C28.6621 7.4442 28.511 7.47859 28.4762 7.55188C28.4642 7.57694 28.4652 7.60441 28.4788 7.62938C28.4908 7.65113 28.5041 7.67159 28.5185 7.69023C28.9694 8.27525 29.4837 8.66055 30.0909 8.86799C30.8312 9.12225 31.5112 9.10129 32.1222 8.80222C32.2156 8.75078 32.3283 8.72472 32.457 8.72472C32.5542 8.72472 32.6271 8.74006 32.6512 8.74557C32.6874 8.75159 32.7365 8.77184 32.7466 8.78487C33.1344 9.29613 33.4941 9.82817 33.824 10.3786C33.5394 10.1019 33.1684 9.9153 32.6629 9.79379C32.2198 9.68821 31.7668 9.66556 31.3289 9.6435L31.1822 9.63608C31.0449 9.62906 30.9075 9.62034 30.766 9.61141L30.5288 9.59678C30.5137 9.59678 30.4987 9.60036 30.4852 9.60723C30.4717 9.61409 30.4601 9.62405 30.4511 9.63628C30.4414 9.64931 30.4352 9.66457 30.4329 9.68066C30.4307 9.69674 30.4325 9.71313 30.4383 9.72832C30.4478 9.75418 30.4652 9.7998 30.4741 9.81504C30.936 10.5876 31.4784 11.122 32.1321 11.4489C32.7711 11.7681 33.3485 11.8525 33.9309 11.7133C34.0051 11.6962 34.081 11.6879 34.1571 11.6884C34.4049 11.6884 34.5776 11.764 34.6139 11.834C34.9365 12.5003 35.2213 13.1842 35.4669 13.8825C35.2083 13.5259 34.8465 13.2362 34.3885 13.0196C33.9335 12.8048 33.4598 12.6085 32.9937 12.4153C32.7934 12.3325 32.5923 12.2494 32.3921 12.1643C32.3773 12.1578 32.3611 12.1551 32.345 12.1564C32.3289 12.1578 32.3133 12.1631 32.2998 12.1719C32.2863 12.1808 32.2752 12.1929 32.2675 12.2071C32.2598 12.2213 32.2558 12.2372 32.2558 12.2534C32.2558 12.3159 32.9205 14.1608 33.8859 14.8878C34.2797 15.1844 34.7648 15.4895 35.3765 15.5038C35.5596 15.5075 35.7489 15.5334 35.8918 15.6959C35.9137 15.7218 35.9427 15.7419 35.9742 15.7526C36.0231 15.7687 36.0365 15.7986 36.0606 15.9004C36.2605 16.7432 36.4045 17.5983 36.4918 18.4601C36.4642 18.3695 36.4329 18.2801 36.3979 18.1922C36.1819 17.6442 35.8182 17.1648 35.2536 16.6832C34.9625 16.434 34.6577 16.1927 34.363 15.9592L34.3489 15.9481C34.2147 15.8418 34.0807 15.7358 33.9472 15.6285C33.9183 15.6051 33.8897 15.5812 33.8616 15.5568L33.7782 15.4854C33.7635 15.4733 33.7457 15.4657 33.7268 15.4634C33.7079 15.4612 33.6887 15.4644 33.6716 15.4727C33.6545 15.4813 33.6403 15.4948 33.6308 15.5115C33.6213 15.5281 33.617 15.5472 33.6183 15.5664C33.6224 15.6252 33.6257 15.6809 33.6289 15.7343L33.6305 15.7593C33.6371 15.8692 33.6433 15.973 33.6544 16.0755C33.7589 17.0732 34.0556 17.9061 34.5614 18.6219C34.8745 19.0643 35.3237 19.6051 36.0241 19.8609C36.1945 19.9234 36.3181 20.0182 36.4506 20.1882C36.5755 20.3474 36.5988 20.4929 36.596 20.676C36.5845 21.436 36.5301 22.1948 36.433 22.9487C36.4105 22.7414 36.3627 22.5279 36.2895 22.3061C36.1378 21.8469 35.9014 21.4005 35.5666 20.9413C35.2776 20.5437 34.977 20.1446 34.6862 19.7585L34.6669 19.7328C34.5516 19.5799 34.4364 19.4268 34.3242 19.277C34.3031 19.2462 34.2727 19.2352 34.2552 19.229C34.2427 19.223 34.229 19.2197 34.2151 19.2193C34.2012 19.219 34.1873 19.2216 34.1745 19.2271C34.1617 19.2325 34.1502 19.2406 34.1408 19.2508C34.1313 19.2611 34.1242 19.2732 34.1198 19.2864L34.1164 19.2968C34.1116 19.3109 34.1078 19.3233 34.1058 19.3357C33.9053 20.5314 34.0283 21.6027 34.4818 22.6111C34.7032 23.1042 35.0003 23.6624 35.5241 24.0641C35.7657 24.2509 35.9499 24.5019 36.0556 24.7884C36.0776 24.8494 36.0768 24.8759 36.0743 24.8861C35.8526 25.8043 35.5631 26.6899 35.2111 27.5281C35.3017 27.0863 35.2955 26.6223 35.192 26.1416C35.0451 25.4602 34.7927 24.7999 34.5675 24.2344L34.5 24.0651C34.3926 23.7955 34.2854 23.5259 34.1784 23.2562C34.1644 23.2208 34.1309 23.1966 34.086 23.1944C34.0684 23.1946 34.0512 23.1996 34.0363 23.2089C34.0213 23.2182 34.0093 23.2315 34.0014 23.2473L33.966 23.3138C33.9505 23.343 33.936 23.3702 33.9235 23.3983C33.4706 24.4203 33.3176 25.468 33.469 26.5123C33.5773 27.2591 33.7608 27.7938 34.064 28.2461C34.2209 28.4799 34.37 28.7404 34.397 29.0607C34.4035 29.1365 34.4005 29.1888 34.3667 29.2482C33.9895 29.9101 33.5613 30.5415 33.086 31.1369L33.0914 31.1273C33.4291 30.51 33.4394 29.8426 33.4049 29.271C33.3751 28.781 33.319 28.2917 33.2649 27.8187L33.2618 27.7913C33.2397 27.6019 33.2187 27.4123 33.1986 27.2227C33.187 27.1145 33.1745 27.0064 33.1613 26.8983L33.144 26.7505C33.1422 26.7346 33.1365 26.7194 33.1273 26.7063C33.1182 26.6932 33.1059 26.6825 33.0916 26.6754C33.0382 26.6475 32.9519 26.6905 32.8587 26.8008C32.2179 27.5586 31.8203 28.4151 31.6767 29.3464C31.5278 30.312 31.6085 31.1383 31.9237 31.8726C31.9322 31.8922 31.932 31.9321 31.9319 31.9454L31.9149 32.3679C31.9124 32.3983 31.8964 32.4326 31.8831 32.4453C31.2478 33.058 30.5429 33.5942 29.7829 34.0431C30.1407 33.7196 30.398 33.2976 30.5647 32.7628C30.7495 32.1701 30.8443 31.5532 30.9363 30.955L30.9443 30.9018C30.9769 30.6917 31.0109 30.4819 31.0456 30.2676L31.0848 30.0252C31.0876 30.0082 31.0857 29.9906 31.0795 29.9745C31.0732 29.9584 31.0627 29.9442 31.0491 29.9335C31.0354 29.9229 31.0192 29.916 31.002 29.9137C30.9848 29.9113 30.9674 29.9135 30.9513 29.9201L30.9171 29.9342C30.8806 29.9491 30.8489 29.9625 30.8189 29.9778C29.3898 30.6916 28.449 32.3563 28.582 33.936C28.6028 34.1834 28.5802 34.4158 28.5126 34.646C28.5063 34.667 28.486 34.6897 28.4778 34.6935C27.799 34.9798 27.1537 35.1886 26.5043 35.332C26.488 35.3357 26.473 35.3434 26.4606 35.3546C26.4482 35.3658 26.4389 35.38 26.4336 35.3958C26.4282 35.4116 26.427 35.4287 26.4302 35.4452C26.4333 35.4616 26.4407 35.477 26.4516 35.4898C26.5215 35.5725 26.5827 35.6622 26.6341 35.7575C26.6549 35.796 26.7043 35.8158 26.7413 35.8061C27.2624 35.6879 27.7743 35.5325 28.2732 35.3412C28.3126 35.3254 28.3427 35.3179 28.3708 35.3225C28.4793 35.3369 28.5939 35.3592 28.7211 35.3907C28.7474 35.3972 28.7692 35.4093 28.7696 35.4082C29.0475 35.9622 29.5251 36.3151 30.2302 36.4869C30.3836 36.5237 30.5419 36.5509 30.7005 36.5675C30.8665 36.585 31.0517 36.594 31.2507 36.594C31.5264 36.594 31.723 36.5769 31.7254 36.5767C32.3366 36.5083 32.8586 36.3708 33.3209 36.1561C33.5106 36.0682 33.7267 35.9498 33.8928 35.7383C33.9082 35.7188 33.9154 35.6942 33.9132 35.6695C33.9109 35.6447 33.8993 35.6218 33.8807 35.6054C33.4111 35.191 32.933 34.8899 32.4187 34.685C31.6568 34.3822 30.9628 34.3002 30.2826 34.4311C30.1823 34.4507 30.0831 34.4751 29.9852 34.5042C30.6216 34.1239 31.2308 33.6768 31.8062 33.1675C31.8186 33.1568 31.8335 33.1495 31.8495 33.1461C31.9437 33.1305 32.0687 33.1112 32.1966 33.102C32.2085 33.102 32.2235 33.1077 32.2252 33.1083C32.5719 33.4963 33.0186 33.6849 33.5908 33.6849C33.6199 33.6849 33.6492 33.6843 33.6784 33.6833C34.3005 33.6633 34.9259 33.4923 35.5376 33.175C35.9822 32.9431 36.4456 32.6731 36.8213 32.2705C36.9047 32.1809 36.979 32.0797 37.0447 31.9903L37.0511 31.9816C37.0802 31.9422 37.1096 31.9025 37.1398 31.8633C37.148 31.8526 37.1539 31.8404 37.1572 31.8273C37.1604 31.8143 37.161 31.8007 37.1588 31.7874C37.1563 31.7736 37.1508 31.7605 37.1429 31.749C37.135 31.7374 37.1247 31.7276 37.1127 31.7203C37.1061 31.7167 36.947 31.6314 36.8017 31.5752C35.829 31.1993 34.8469 31.1608 33.9101 31.4627C33.6034 31.5612 33.3147 31.7092 33.0337 31.9137C33.5535 31.3096 34.0347 30.6473 34.4716 29.9346C34.4764 29.9271 34.4888 29.9067 34.4928 29.903C34.531 29.8787 34.5701 29.8556 34.6091 29.8328C34.679 29.7918 34.7514 29.7494 34.8193 29.6989C34.8767 29.6561 34.8928 29.655 34.9508 29.6923C35.0328 29.7455 35.1281 29.7732 35.2113 29.7949C35.6975 29.9195 36.1877 29.8574 36.7299 29.6028C37.2252 29.3706 37.606 29.0036 37.9438 28.6417C38.4353 28.1137 38.7565 27.6373 38.9546 27.1425C38.9962 27.0386 39.0258 26.9312 39.0567 26.8189C39.0695 26.7718 39.0825 26.7247 39.0963 26.6784C39.1037 26.6545 39.1015 26.6286 39.0902 26.6063C39.0789 26.584 39.0595 26.5669 39.0359 26.5587L38.9952 26.5555C38.7948 26.5555 37.0069 26.5849 35.9612 27.5995C35.735 27.8185 35.5284 28.0569 35.3436 28.3118C35.7573 27.4357 36.1081 26.5124 36.3908 25.554L36.3949 25.54C36.3983 25.5283 36.4035 25.5105 36.4069 25.5057L36.6804 25.1301C36.6906 25.1151 36.6918 25.1151 36.7078 25.1151C36.715 25.1151 36.7228 25.1156 36.7317 25.1161L36.7902 25.1196C36.9937 25.1323 37.1135 25.1304 37.212 25.115C37.6015 25.0535 37.953 24.8574 38.2865 24.5154C39.0667 23.7153 39.6036 22.7171 39.9281 21.464C39.9629 21.3298 39.9726 21.1942 39.983 21.0505C39.9876 20.9853 39.9928 20.9181 40.0002 20.8487C40.0018 20.8327 39.9995 20.8164 39.9934 20.8015C39.9873 20.7865 39.9776 20.7733 39.9652 20.7629ZM13.4963 35.3312C12.8475 35.1879 12.2022 34.9791 11.5232 34.6928C11.5151 34.689 11.495 34.6663 11.4887 34.6458C11.421 34.4151 11.3983 34.1827 11.4192 33.9353C11.5521 32.3555 10.6114 30.6909 9.18258 29.9772C9.15034 29.9613 9.11746 29.9467 9.08403 29.9335L9.05014 29.9195C9.03421 29.9129 9.01683 29.9106 8.99974 29.9128C8.98265 29.9151 8.96646 29.9218 8.95279 29.9323C8.93897 29.943 8.92831 29.9572 8.92192 29.9735C8.91553 29.9897 8.91365 30.0074 8.91649 30.0246L8.95559 30.2669C8.99028 30.4812 9.02427 30.691 9.05686 30.9009L9.06508 30.9559C9.15682 31.5525 9.25166 32.1695 9.43644 32.7622C9.60317 33.297 9.86044 33.719 10.2183 34.0424C9.45828 33.5936 8.75344 33.0574 8.11812 32.4448C8.10469 32.4319 8.08875 32.3976 8.08644 32.3693L8.06929 31.9465C8.06919 31.9315 8.06899 31.8916 8.07752 31.8718C8.39263 31.1377 8.47334 30.3114 8.32446 29.3458C8.18089 28.4145 7.78325 27.558 7.14249 26.8002C7.0675 26.7114 7.00133 26.6665 6.94578 26.6665C6.93354 26.6663 6.92141 26.6689 6.91039 26.6742C6.8959 26.6814 6.88343 26.6922 6.87411 26.7054C6.8648 26.7186 6.85893 26.734 6.85705 26.75L6.83991 26.8975C6.82666 27.0057 6.81419 27.1139 6.80251 27.2222C6.78246 27.4118 6.7614 27.6013 6.73935 27.7907L6.73624 27.8181C6.6821 28.2912 6.62595 28.7805 6.59628 29.2704C6.56179 29.8419 6.57201 30.5093 6.90979 31.1267L6.915 31.1362C6.43982 30.5409 6.01169 29.9095 5.63448 29.2477C5.6007 29.1882 5.59779 29.1359 5.6041 29.0601C5.63128 28.7396 5.78026 28.4791 5.93717 28.2455C6.24025 27.7931 6.42373 27.2585 6.53211 26.5117C6.6836 25.4674 6.53061 24.4198 6.07763 23.3978C6.0652 23.3696 6.05066 23.3424 6.03512 23.3132L5.99973 23.2465C5.99094 23.2301 5.97772 23.2164 5.96157 23.2072C5.94542 23.1979 5.92699 23.1934 5.90839 23.1941C5.88978 23.1951 5.87183 23.2014 5.85668 23.2123C5.84152 23.2231 5.82979 23.2381 5.82287 23.2554C5.71585 23.5252 5.6086 23.7949 5.50114 24.0645L5.43366 24.2338C5.20848 24.7994 4.95592 25.4597 4.80914 26.141C4.70568 26.6217 4.69936 27.0857 4.79009 27.5275C4.43798 26.6894 4.14853 25.8038 3.92686 24.8855C3.92435 24.8753 3.92355 24.8488 3.9455 24.7878C4.05123 24.5012 4.23549 24.2502 4.47718 24.0634C5.00084 23.6617 5.29791 23.1035 5.51939 22.6104C5.97286 21.602 6.09588 20.5307 5.89536 19.3351C5.89288 19.322 5.8894 19.3092 5.88493 19.2966L5.88132 19.2858C5.87696 19.2725 5.86981 19.2603 5.86036 19.25C5.8509 19.2397 5.83935 19.2315 5.82648 19.226C5.81406 19.2211 5.80079 19.2186 5.78742 19.2188C5.77405 19.219 5.76085 19.2218 5.74858 19.2271C5.72853 19.2345 5.69815 19.2456 5.6784 19.2746C5.564 19.4273 5.44933 19.5798 5.33441 19.7321L5.31506 19.7578C5.0243 20.1439 4.72362 20.543 4.43467 20.9405C4.09991 21.3998 3.86349 21.8462 3.7118 22.3054C3.63861 22.5272 3.59079 22.7407 3.56823 22.948C3.47118 22.1941 3.41679 21.4353 3.4053 20.6753C3.4025 20.4922 3.42576 20.3467 3.55078 20.1874C3.68312 20.0176 3.80675 19.9227 3.97719 19.8602C4.6775 19.6043 5.12677 19.0636 5.43988 18.6212C5.94569 17.9054 6.24236 17.0726 6.34683 16.075C6.35796 15.9723 6.36427 15.8684 6.37079 15.7586L6.3724 15.7336C6.3755 15.6801 6.37881 15.6245 6.38302 15.5656C6.38431 15.5464 6.37993 15.5274 6.37045 15.5107C6.36096 15.4941 6.34678 15.4806 6.32969 15.472C6.31253 15.4637 6.29333 15.4605 6.27439 15.4628C6.25546 15.4651 6.23758 15.4728 6.22291 15.4849L6.13979 15.5561C6.10851 15.5828 6.08174 15.6057 6.05397 15.6279C5.92052 15.7351 5.78658 15.8412 5.65233 15.9475L5.63829 15.9586C5.34363 16.192 5.03884 16.4333 4.74778 16.6825C4.18302 17.1642 3.81938 17.6436 3.60332 18.1916C3.56842 18.2796 3.53711 18.3691 3.50947 18.4597C3.59674 17.5978 3.7408 16.7426 3.94069 15.8997C3.96475 15.798 3.97819 15.7681 4.02762 15.7518C4.0587 15.7413 4.08767 15.7211 4.10883 15.696C4.2525 15.5327 4.44169 15.5068 4.62497 15.5031C5.23655 15.4888 5.72161 15.1837 6.11533 14.8871C7.08073 14.16 7.74546 12.3152 7.74546 12.2527C7.74545 12.2365 7.74144 12.2207 7.73379 12.2065C7.72615 12.1923 7.7151 12.1802 7.70164 12.1714C7.68818 12.1627 7.67282 12.1574 7.65688 12.156C7.64093 12.1546 7.62488 12.1571 7.61011 12.1632C7.40898 12.2486 7.20786 12.3317 6.99962 12.4178C6.54143 12.6078 6.06771 12.8041 5.61273 13.0187C5.15484 13.2354 4.793 13.5252 4.53433 13.8817C4.77974 13.1838 5.06433 12.5002 5.38674 11.8344C5.42354 11.7632 5.59638 11.6876 5.84423 11.6876C5.92484 11.6876 6.00294 11.6962 6.07041 11.7125C6.65272 11.852 7.23012 11.7674 7.86918 11.4481C8.52297 11.1212 9.06538 10.5868 9.52738 9.81394C9.5362 9.799 9.55354 9.75338 9.56287 9.72782C9.56866 9.71268 9.57056 9.69632 9.56839 9.68026C9.56622 9.6642 9.56004 9.64893 9.55044 9.63588C9.53239 9.61101 9.50351 9.59618 9.46672 9.59618H9.46592L9.23512 9.61071C9.09365 9.61964 8.9563 9.62836 8.81894 9.63538L8.67226 9.6428C8.23432 9.66485 7.78135 9.68751 7.3382 9.79309C6.83279 9.9146 6.46173 10.1012 6.17719 10.3779C6.50708 9.82756 6.86671 9.29559 7.25448 8.78437C7.26471 8.77114 7.31374 8.75088 7.35394 8.74417C7.37399 8.73945 7.44698 8.72411 7.54403 8.72411C7.67277 8.72411 7.78546 8.75028 7.88101 8.80282C8.48808 9.09969 9.16985 9.12175 9.91007 8.86749C10.5172 8.66005 11.0315 8.27475 11.4822 7.68993C11.4969 7.67108 11.5101 7.65053 11.5221 7.62888C11.5289 7.61716 11.5327 7.60396 11.5331 7.59045C11.5336 7.57694 11.5307 7.56352 11.5248 7.55137C11.4899 7.47818 11.3389 7.4438 11.2753 7.43237C11.1193 7.40509 10.9425 7.37401 10.7673 7.35025C10.687 7.33902 10.6066 7.32729 10.526 7.31536L10.5156 7.31376C10.2425 7.27345 9.9602 7.23175 9.67576 7.21741C9.15601 7.19084 8.69452 7.29691 8.31684 7.53172C8.56602 7.2661 8.82518 7.01002 9.09375 6.76403C9.17707 6.68804 9.27131 6.61144 9.39974 6.51529C9.40967 6.50767 9.43494 6.49875 9.46592 6.49694C10.3762 6.46135 11.1336 6.05951 11.7813 5.26866C12.1341 4.83814 12.4046 4.29513 12.6085 3.60855L12.6155 3.58499C12.6372 3.5128 12.6493 3.4731 12.5992 3.42658C12.5606 3.39069 12.4927 3.40132 12.316 3.4713C12.1556 3.53296 11.9942 3.59281 11.8284 3.65427C11.4955 3.77769 11.1511 3.90532 10.8187 4.0495C10.2633 4.29092 9.81973 4.65687 9.50061 5.13701C9.25758 5.50236 9.16153 5.86941 9.20674 6.25722C9.20575 6.26265 9.20417 6.26797 9.20203 6.27306C8.62223 6.77366 8.06799 7.33722 7.49892 8.00796C7.8784 7.42775 8.12574 6.75972 8.24986 5.98531C8.37499 5.20459 8.38291 4.50969 8.27423 3.86101C8.26731 3.8204 8.25798 3.7798 8.24605 3.72896L8.22831 3.65066C8.22432 3.63407 8.21609 3.61879 8.20445 3.60632C8.1928 3.59384 8.17812 3.58459 8.16184 3.57948C8.14539 3.57466 8.12797 3.5742 8.11129 3.57814C8.09462 3.58207 8.07925 3.59027 8.06669 3.60194C8.02699 3.63933 7.98809 3.67462 7.95009 3.70891L7.92332 3.73308C7.82607 3.8207 7.73423 3.90342 7.65111 3.99696C6.84352 4.90802 6.3725 5.87032 6.21118 6.93889C6.13769 7.42184 6.16817 7.833 6.30442 8.19554C6.34954 8.31566 6.41992 8.42293 6.49 8.52941C6.52208 8.57804 6.55417 8.62686 6.58354 8.67699C6.6052 8.71299 6.607 8.72231 6.6069 8.72061C6.59084 8.88538 6.57139 9.04981 6.54855 9.21378C6.54745 9.21619 6.54384 9.2218 6.53231 9.23704L6.52299 9.24998C6.07865 9.86816 5.67264 10.513 5.30724 11.1809C5.48138 10.5733 5.56589 9.94354 5.55809 9.31154C5.54826 8.42895 5.34503 7.64181 4.93657 6.9048C4.92043 6.87612 4.89116 6.85748 4.85015 6.85467C4.83506 6.85485 4.82023 6.85856 4.80683 6.86549C4.79343 6.87241 4.78183 6.88237 4.77295 6.89457C4.76072 6.91162 4.74829 6.92766 4.73646 6.9429C4.71009 6.97699 4.68542 7.00927 4.66337 7.04376C4.33812 7.55378 4.16367 8.11614 4.04787 8.54916C3.83622 9.34332 3.73897 10.0064 3.74178 10.6362C3.74338 11.1715 3.84093 11.5829 4.04887 11.9311C4.11354 12.0395 4.19495 12.1344 4.27676 12.2298C4.32018 12.2804 4.36479 12.3325 4.4052 12.3858C4.43347 12.4229 4.44711 12.4607 4.44791 12.4818C4.45322 12.6087 4.45041 12.7377 4.44771 12.8624L4.4458 12.9487C4.44537 12.964 4.44239 12.9792 4.43698 12.9936C4.17262 13.6356 3.94352 14.2916 3.7507 14.9587C3.77887 14.7365 3.79527 14.513 3.79983 14.289C3.82349 13.0564 3.44541 11.9557 2.67581 11.017L2.5154 10.8216C2.50635 10.8103 2.49488 10.8012 2.48185 10.795C2.46882 10.7887 2.45455 10.7855 2.4401 10.7856L2.42406 10.787C2.40721 10.7898 2.3914 10.797 2.37822 10.8078C2.36504 10.8187 2.35495 10.8328 2.34897 10.8488C2.33433 10.8878 2.31999 10.9246 2.30605 10.9602C2.27952 11.0262 2.25494 11.093 2.23236 11.1604C2.06724 11.6777 1.98623 12.2427 1.96978 12.9923L1.96948 13.0069C1.95715 13.5522 1.94021 14.2993 2.16419 15.0141C2.38466 15.7178 2.77347 16.0735 2.84886 16.1373L2.85688 16.1446C3.06211 16.3277 3.19576 16.4953 3.22343 16.604C3.23456 16.648 3.24589 16.692 3.25913 16.7355C3.31768 16.9291 3.28108 17.1136 3.24158 17.3128C3.22193 17.4133 3.20148 17.5172 3.19436 17.6238C3.16608 18.0503 3.13139 18.484 3.09781 18.9034L3.0948 18.9422L3.06903 19.2631C2.98341 18.3034 2.66559 17.4311 2.11877 16.6596C1.7839 16.1876 1.38467 15.7837 0.931892 15.459C0.912341 15.4449 0.891788 15.4324 0.864317 15.4161C0.848311 15.4068 0.832468 15.3972 0.816794 15.3874C0.802706 15.3791 0.786791 15.3743 0.770447 15.3736C0.754102 15.3729 0.737827 15.3762 0.72305 15.3832C0.708234 15.3905 0.695519 15.4014 0.686101 15.415C0.676683 15.4286 0.670871 15.4443 0.669211 15.4608C0.662969 15.521 0.65605 15.5811 0.648457 15.6411C0.633318 15.766 0.618981 15.8839 0.618379 16.005C0.611662 17.2604 0.87725 18.4369 1.40803 19.5013C1.55591 19.7982 1.75132 20.0551 1.98903 20.265C2.22474 20.4721 2.4791 20.5942 2.76615 20.6381C2.77455 20.641 2.78252 20.645 2.78981 20.6501C2.80535 20.6813 2.82149 20.7126 2.83763 20.744C2.89498 20.8548 2.95423 20.9694 2.98371 21.0843C3.00827 21.1814 3.00828 21.2876 3.00828 21.4001C3.00828 21.4413 3.00828 21.4828 3.00958 21.5235C3.03715 22.496 3.07334 22.8347 3.22895 23.7036C3.134 23.4453 3.01479 23.1862 2.86089 22.937C2.23768 21.9282 1.44592 21.2436 0.440418 20.844C0.376452 20.8183 0.312286 20.7997 0.237893 20.7781L0.223054 20.7737C0.192876 20.7648 0.160893 20.7554 0.126704 20.745C0.111274 20.7401 0.0948635 20.7391 0.0789617 20.7421C0.0630598 20.7452 0.0481698 20.7522 0.0356424 20.7624C0.0231149 20.7727 0.0133465 20.7859 0.00722329 20.8009C0.00110003 20.8159 -0.0011843 20.8322 0.000577518 20.8482C0.00799675 20.9172 0.01311 20.9843 0.0178222 21.0498C0.028149 21.1933 0.0378742 21.3289 0.0726644 21.463C0.397106 22.7162 0.934098 23.7143 1.71422 24.5145C2.04779 24.8565 2.3993 25.0526 2.78881 25.1141C2.88706 25.1294 3.00717 25.1313 3.2105 25.1187L3.26905 25.1152C3.27797 25.1147 3.28579 25.1142 3.29291 25.1142C3.30895 25.1142 3.31026 25.1142 3.32139 25.1306L3.59379 25.5047C3.5973 25.5096 3.60242 25.5274 3.60592 25.5396L3.60993 25.553C3.89267 26.5115 4.24348 27.4347 4.65715 28.3109C4.47242 28.0559 4.26577 27.8176 4.03955 27.5986C2.99384 26.584 1.206 26.5546 1.00558 26.5546L0.980618 26.5548L0.964877 26.5577C0.94132 26.566 0.921861 26.583 0.910574 26.6053C0.899287 26.6275 0.897046 26.6533 0.90432 26.6772C0.918257 26.7238 0.93129 26.7709 0.946229 26.8262C0.974803 26.9302 1.00448 27.0376 1.04609 27.1415C1.2442 27.6365 1.56533 28.1128 2.05691 28.6407C2.39468 29.0027 2.77547 29.3697 3.27066 29.6018C3.81296 29.8565 4.30263 29.9187 4.78959 29.7939C4.87241 29.7722 4.96765 29.7446 5.04957 29.6915C5.10792 29.6541 5.12386 29.6553 5.18121 29.698C5.24918 29.7485 5.32147 29.7909 5.39165 29.832C5.43045 29.8548 5.46956 29.8778 5.50605 29.9008C5.51187 29.9057 5.5243 29.9261 5.52891 29.9336C5.96584 30.6462 6.44719 31.3086 6.96694 31.9127C6.68581 31.7082 6.39716 31.5602 6.09057 31.4617C5.15364 31.1598 4.17159 31.1982 3.19897 31.5743C3.05379 31.6305 2.89468 31.7157 2.88405 31.7217C2.87293 31.7291 2.86345 31.7387 2.85619 31.7499C2.84892 31.7611 2.84404 31.7736 2.84184 31.7868C2.83964 31.7999 2.84017 31.8134 2.8434 31.8263C2.84662 31.8393 2.85247 31.8514 2.86059 31.862C2.89097 31.9015 2.92035 31.9412 2.94942 31.9806L2.95584 31.9892C3.02151 32.0787 3.0959 32.1798 3.17932 32.2695C3.55499 32.6722 4.01829 32.9422 4.46305 33.174C5.07463 33.4913 5.70005 33.6623 6.32207 33.6823C6.35134 33.6833 6.38062 33.6839 6.40979 33.6839C6.98198 33.6839 7.42864 33.4953 7.77293 33.1096C7.78133 33.1048 7.79066 33.1018 7.8003 33.1008C7.93184 33.1102 8.05686 33.1294 8.15031 33.1449C8.16664 33.1483 8.18185 33.1557 8.19452 33.1666C8.76971 33.6758 9.37889 34.1228 10.0152 34.5031C9.91729 34.474 9.81802 34.4495 9.71777 34.4298C9.03771 34.299 8.34371 34.381 7.58163 34.6838C7.0675 34.8887 6.58936 35.1898 6.11984 35.6042C6.1012 35.6206 6.08955 35.6435 6.08727 35.6682C6.085 35.693 6.09227 35.7176 6.10761 35.7371C6.27374 35.9486 6.4899 36.067 6.67949 36.1548C7.14189 36.3697 7.66384 36.5072 8.27573 36.5756C8.27754 36.5757 8.47414 36.5928 8.74986 36.5928C8.94888 36.5928 9.13406 36.5838 9.29999 36.5663C9.45835 36.5497 9.61546 36.5227 9.77031 36.4856C10.4753 36.3139 10.9531 35.961 11.2268 35.4131C11.2317 35.4084 11.2527 35.3962 11.2794 35.3896C11.3949 35.3604 11.512 35.3375 11.63 35.3213C11.6557 35.3172 11.6877 35.3241 11.728 35.3403C12.2264 35.5314 12.7378 35.6866 13.2583 35.8047C13.2792 35.8097 13.3012 35.8077 13.3208 35.7989C13.3404 35.7901 13.3565 35.775 13.3666 35.756C13.4181 35.6607 13.4792 35.571 13.5492 35.4884C13.56 35.4757 13.5673 35.4604 13.5705 35.444C13.5736 35.4276 13.5725 35.4107 13.5671 35.3948C13.5618 35.379 13.5525 35.3649 13.5401 35.3537C13.5276 35.3426 13.5126 35.3348 13.4963 35.3312Z"></path>
+                                            <path d="M24.7562 22.3923L28.7846 18.4655C28.8516 18.4002 28.899 18.3175 28.9214 18.2266C28.9438 18.1358 28.9404 18.0405 28.9115 17.9516C28.8826 17.8626 28.8294 17.7835 28.7578 17.7232C28.6863 17.6629 28.5994 17.6238 28.5068 17.6104L22.94 16.802L20.4501 11.7576C20.4087 11.6737 20.3447 11.603 20.2653 11.5536C20.1858 11.5042 20.0942 11.478 20.0006 11.478C19.9071 11.478 19.8154 11.5042 19.736 11.5536C19.6565 11.603 19.5925 11.6737 19.5512 11.7576L17.0621 16.802L11.4945 17.6104C11.4019 17.6238 11.3149 17.6629 11.2434 17.7232C11.1719 17.7835 11.1187 17.8626 11.0897 17.9516C11.0608 18.0405 11.0574 18.1358 11.0798 18.2266C11.1023 18.3175 11.1497 18.4002 11.2167 18.4655L15.2451 22.3923L14.2946 27.9365C14.2788 28.0287 14.2891 28.1235 14.3243 28.2101C14.3596 28.2967 14.4184 28.3717 14.494 28.4267C14.5697 28.4817 14.6592 28.5144 14.7525 28.5212C14.8458 28.5279 14.9391 28.5084 15.0219 28.4649L20.0008 25.8476L24.9797 28.4649C25.0625 28.5084 25.1558 28.5279 25.2491 28.5212C25.3423 28.5144 25.4319 28.4817 25.5075 28.4267C25.5832 28.3718 25.642 28.2967 25.6773 28.2101C25.7125 28.1235 25.7228 28.0287 25.7069 27.9365L24.7562 22.3923Z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Best Price Guarantee Ever.</h3>
+                                    <p>
+                                        Travel confidently knowing you're getting the best value - we
+                                        guarantee competitive prices with
+                                        <strong>no hidden costs.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-4 col-sm-6 wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                <div className="about-feature-card booking-card">
+                                    <div className="icon">
+                                        <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M19.472 39.7456C19.8207 39.8153 20.18 39.8152 20.5287 39.7456L20.7123 39.7017C20.7732 39.6851 20.834 39.6669 20.8939 39.646V39.645C28.988 36.8144 33.0665 32.0129 35.0472 26.6421C36.9986 21.351 36.8835 15.574 36.7943 10.8687V10.856L36.7933 10.8433C36.7749 10.4281 36.7629 10.0127 36.7572 9.59719V9.59621C36.7257 7.46939 35.0528 5.73711 32.934 5.61867C28.2701 5.35814 24.6842 3.82032 21.6439 0.856953L21.6322 0.847187L21.6215 0.836445C20.6992 -0.00896275 19.3026 -0.00885248 18.3803 0.836445L18.3685 0.847187L18.3578 0.856953C15.3175 3.82033 11.7307 5.35814 7.06678 5.61867C4.94806 5.73725 3.27511 7.46959 3.24353 9.59621V9.59719C3.23792 10.0127 3.22582 10.4282 3.2074 10.8433V10.856L3.20643 10.8687C3.11727 15.55 2.99039 21.3278 4.93592 26.6245C6.91096 32.0016 10.9902 36.8153 19.1078 39.646H19.1088C19.2268 39.6871 19.3476 39.7192 19.4701 39.7437V39.7446L19.472 39.7456ZM19.8646 37.7847L19.8627 37.7837C19.83 37.7772 19.7974 37.7693 19.766 37.7583C12.2047 35.1216 8.57924 30.7411 6.81385 25.9351C5.01893 21.0484 5.11605 15.6522 5.20643 10.9068C5.22511 10.4799 5.23775 10.0528 5.24353 9.62551L5.25623 9.42727C5.36592 8.44695 6.17065 7.67109 7.17908 7.61477C12.274 7.33008 16.3218 5.62408 19.7308 2.31105C19.8885 2.16652 20.1122 2.16652 20.2699 2.31105C23.679 5.62425 27.7274 7.33014 32.8226 7.61477C33.898 7.675 34.7412 8.55338 34.7572 9.62551C34.7631 10.0528 34.7756 10.4799 34.7943 10.9068C34.8847 15.6728 34.9712 21.0688 33.1713 25.9497C31.4005 30.751 27.7738 35.1205 20.2338 37.7573V37.7583L20.1371 37.7837C20.0472 37.8017 19.9545 37.8025 19.8646 37.7847Z"></path>
+                                                <path d="M27.7815 20C27.7815 24.2978 24.2979 27.782 20.0002 27.7822C15.7025 27.7822 12.218 24.2979 12.218 20C12.2182 15.7022 15.7025 12.2188 20.0002 12.2188C24.2978 12.2189 27.7813 15.7024 27.7815 20ZM29.7815 20C29.7813 14.5978 25.4024 10.2189 20.0002 10.2188C14.598 10.2188 10.2182 14.5977 10.218 20C10.218 25.4024 14.5979 29.7822 20.0002 29.7822C25.4025 29.782 29.7815 25.4023 29.7815 20Z"></path>
+                                                <path d="M17.5304 23.8975C17.921 24.2881 18.554 24.2881 18.9445 23.8975L24.3967 18.4454C24.787 18.0548 24.7871 17.4218 24.3967 17.0313C24.0062 16.6409 23.3731 16.641 22.9826 17.0313L17.5304 22.4835C17.1399 22.874 17.1399 23.507 17.5304 23.8975Z"></path>
+                                                <path d="M17.53 23.8975C17.9205 24.2881 18.5545 24.2881 18.945 23.8975C19.3352 23.5071 19.3352 22.8739 18.945 22.4835L16.861 20.3995C16.4706 20.0093 15.8374 20.0093 15.4469 20.3995C15.0564 20.79 15.0564 21.424 15.4469 21.8145L17.53 23.8975Z"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <h3>Safe, Secure & Hassle-Free Booking.</h3>
+                                    <p>
+                                        Plan and confirm your trip quickly with our safe, simple, and
+                                        fully <strong>secure booking system.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-4 col-sm-6 wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <div className="about-feature-card package-card">
+                                    <div className="icon">
+                                        <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.5 23.3334C11.1217 23.3334 10 24.4551 10 25.8334C10 27.2117 11.1217 28.3334 12.5 28.3334C13.8784 28.3334 15 27.2117 15 25.8334C15 24.4551 13.8784 23.3334 12.5 23.3334ZM12.5 26.6667C12.0409 26.6667 11.6667 26.2926 11.6667 25.8334C11.6667 25.3742 12.0409 25.0001 12.5 25.0001C12.9592 25.0001 13.3334 25.3742 13.3334 25.8334C13.3334 26.2926 12.9592 26.6667 12.5 26.6667ZM24.1667 1.66675H15.8334C10.7792 1.66675 6.66669 5.77925 6.66669 10.8334V29.1667C6.66669 30.5451 7.78835 31.6667 9.16669 31.6667H11.6667L10.1717 33.6601L10.1609 33.6742L7.66669 37.0001C7.53397 37.1769 7.47692 37.3992 7.5081 37.6181C7.53928 37.8369 7.65613 38.0344 7.83294 38.1672C8.00975 38.2999 8.23204 38.3569 8.45091 38.3257C8.66978 38.2946 8.8673 38.1777 9.00002 38.0009L11.25 35.0009H28.75L31 38.0009C31.0656 38.0886 31.1478 38.1624 31.242 38.2182C31.3362 38.274 31.4404 38.3107 31.5488 38.3262C31.6572 38.3417 31.7675 38.3357 31.8735 38.3084C31.9796 38.2812 32.0792 38.2333 32.1667 38.1676C32.3435 38.035 32.4604 37.8376 32.4916 37.6188C32.5229 37.4 32.466 37.1777 32.3334 37.0009L29.8392 33.6759L29.8284 33.6609L28.3334 31.6667H30.8334C32.2117 31.6667 33.3334 30.5451 33.3334 29.1667V10.8334C33.3334 5.77925 29.2209 1.66675 24.1667 1.66675ZM12.5 33.3334L13.75 31.6667H26.25L27.5 33.3334H12.5ZM31.6667 29.1667C31.6667 29.6259 31.2925 30.0001 30.8334 30.0001H9.16669C8.70752 30.0001 8.33335 29.6259 8.33335 29.1667V10.8334C8.33335 6.69841 11.6984 3.33341 15.8334 3.33341H24.1667C28.3017 3.33341 31.6667 6.69841 31.6667 10.8334V29.1667ZM23.3334 25.8334C23.3334 26.0544 23.2456 26.2664 23.0893 26.4227C22.933 26.579 22.721 26.6667 22.5 26.6667H17.5C17.279 26.6667 17.067 26.579 16.9108 26.4227C16.7545 26.2664 16.6667 26.0544 16.6667 25.8334C16.6667 25.6124 16.7545 25.4004 16.9108 25.2442C17.067 25.0879 17.279 25.0001 17.5 25.0001H22.5C22.721 25.0001 22.933 25.0879 23.0893 25.2442C23.2456 25.4004 23.3334 25.6124 23.3334 25.8334ZM27.2517 8.33341H12.7484C12.3909 8.33329 12.0376 8.40988 11.7123 8.55799C11.387 8.70611 11.0972 8.92231 10.8626 9.19198C10.628 9.46166 10.454 9.77855 10.3523 10.1212C10.2507 10.4639 10.2238 10.8244 10.2734 11.1784L11.2417 18.1342C11.3888 19.1198 11.886 20.0194 12.6424 20.6682C13.3987 21.3169 14.3635 21.6714 15.36 21.6667H24.64C25.6383 21.6707 26.6046 21.3145 27.3614 20.6635C28.1182 20.0124 28.6148 19.1103 28.76 18.1226L29.7267 11.1784C29.7764 10.8245 29.7496 10.464 29.648 10.1213C29.5465 9.77861 29.3726 9.46171 29.138 9.19201C28.9035 8.92231 28.6138 8.7061 28.2885 8.55798C27.9632 8.40986 27.6091 8.33328 27.2517 8.33341ZM27.1117 17.8801C27.0235 18.4716 26.7251 19.0116 26.2711 19.4009C25.8172 19.7903 25.2381 20.003 24.64 20.0001H15.36C14.7638 20.0035 14.1863 19.7925 13.7328 19.4054C13.2793 19.0183 12.9802 18.4811 12.89 17.8917L11.9234 10.9484C11.9061 10.8305 11.9146 10.7103 11.9484 10.596C11.9823 10.4818 12.0405 10.3762 12.1192 10.2867C12.1969 10.1961 12.2935 10.1235 12.4022 10.074C12.5108 10.0245 12.629 9.99928 12.7484 10.0001H27.2517C27.4967 10.0001 27.72 10.1017 27.8809 10.2867C27.9595 10.3762 28.0178 10.4818 28.0516 10.596C28.0854 10.7103 28.094 10.8305 28.0767 10.9484L27.1117 17.8801ZM27.5 23.3334C26.1217 23.3334 25 24.4551 25 25.8334C25 27.2117 26.1217 28.3334 27.5 28.3334C28.8784 28.3334 30 27.2117 30 25.8334C30 24.4551 28.8784 23.3334 27.5 23.3334ZM27.5 26.6667C27.0409 26.6667 26.6667 26.2926 26.6667 25.8334C26.6667 25.3742 27.0409 25.0001 27.5 25.0001C27.9592 25.0001 28.3334 25.3742 28.3334 25.8334C28.3334 26.2926 27.9592 26.6667 27.5 26.6667Z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Flexible & Custom Travel Packages.</h3>
+                                    <p>
+                                        Plan your trip your way with flexible travel packages tailored
+                                        to your interests and
+                                        <strong>custom package.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-4 col-sm-6 wow animate fadeInDown" data-wow-delay="800ms" data-wow-duration="1500ms">
+                                <div className="about-feature-card support-card">
+                                    <div className="icon">
+                                        <svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M37.8284 27.0703C37.8284 29.2302 37.1921 31.2388 36.0979 32.9229L35.8528 33.2998L36.8284 36.8291L33.3 35.8525L32.9221 36.0977C31.2381 37.1917 29.2303 37.8281 27.0706 37.8281C21.8511 37.8281 17.4977 34.1095 16.5188 29.1768L14.5579 29.5664C15.719 35.417 20.8781 39.8281 27.0706 39.8281C29.4652 39.8281 31.7076 39.1667 33.6233 38.0176L39.6975 39.6973L38.0168 33.624C39.1663 31.708 39.8284 29.4654 39.8284 27.0703C39.8284 20.8779 35.4171 15.7188 29.5667 14.5576L29.3713 15.5381L29.177 16.5195C34.1097 17.4985 37.8284 21.8509 37.8284 27.0703Z"></path>
+                                                <path d="M28.375 15.2734C28.375 22.5092 22.5092 28.375 15.2734 28.375C12.678 28.375 10.2616 27.6214 8.22754 26.3213L7.85156 26.0811L7.42285 26.2002L3.1709 27.376L4.34668 23.124L4.46582 22.6953L4.22559 22.3193C2.9255 20.2853 2.17188 17.8688 2.17188 15.2734C2.1719 8.03772 8.03771 2.17188 15.2734 2.17188C22.5091 2.1719 28.375 8.03773 28.375 15.2734ZM30.375 15.2734C30.375 6.93316 23.6137 0.171898 15.2734 0.171875C6.93314 0.171875 0.171898 6.93315 0.171875 15.2734C0.171875 18.1004 0.950383 20.748 2.30371 23.0117L0.302734 30.2441L7.53516 28.2432C9.79894 29.5966 12.4465 30.375 15.2734 30.375C23.6137 30.375 30.375 23.6137 30.375 15.2734Z"></path>
+                                                <path d="M16.4453 23.5156H14.1016V21.1719H16.4453V23.5156Z"></path>
+                                                <path d="M16.4453 23.5156V21.1719H14.1016V23.5156H16.4453Z"></path>
+                                                <path d="M12.7578 11.7188C12.7578 10.3294 13.8841 9.20312 15.2734 9.20312C16.6628 9.20313 17.7891 10.3294 17.7891 11.7188C17.7891 12.4536 17.475 13.1138 16.9707 13.5752L14.5986 15.7471L14.2734 16.0439V18.8281H16.2734V16.9248L18.3203 15.0508C19.2212 14.2267 19.7891 13.0385 19.7891 11.7188C19.7891 9.22484 17.7673 7.20313 15.2734 7.20312C12.7795 7.20312 10.7578 9.22484 10.7578 11.7188H12.7578Z"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <h3>Our Support Alaways with You 24/7.</h3>
+                                    <p>
+                                        Travel with peace of mind knowing our expert team is always
+                                        ready to <strong>support you anytime, anywhere.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-destination-section mb-100">
+                <div className="container">
+                    <div className="section-title text-center mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2>Top Destinations</h2>
+                    </div>
+                    <div className="destination-slider-area">
+                        <div className="swiper home1-destination-slider">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img1.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="#">Indonesia</a></h3>
+                                            <span>36 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img2.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="#">Switzerland</a></h3>
+                                            <span>12 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img3.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="#">France</a></h3>
+                                            <span>16 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img4.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="#">Rome, Italy</a></h3>
+                                            <span>10 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img5.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="destination-details#">Hawaii, USA</a></h3>
+                                            <span>08 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img6.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="destination-details#">Singapore</a></h3>
+                                            <span>16 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img7.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="destination-details#">Thailand</a></h3>
+                                            <span>14 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img8.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="destination-details#">Vietnam</a></h3>
+                                            <span>12 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="swiper-slide">
+                                    <div className="destination-card">
+                                        <div className="destination-img">
+                                            <img alt="" src="/assets/img/home1/destination-img9.jpg" />
+                                        </div>
+                                        <div className="destination-content">
+                                            <h3><a href="destination-details#">Japan</a></h3>
+                                            <span>10 tours available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slider-btn-grp">
+                            <div className="slider-btn destination-slider-prev">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.11087 7.45372L10.341 1.22366C10.4851 1.07945 10.6775 1 10.8826 1C11.0877 1 11.2801 1.07945 11.4242 1.22366L11.883 1.68235C12.1815 1.98124 12.1815 2.46703 11.883 2.76547L6.65133 7.9971L11.8888 13.2345C12.0329 13.3787 12.1124 13.571 12.1124 13.776C12.1124 13.9812 12.0329 14.1734 11.8888 14.3178L11.43 14.7763C11.2858 14.9206 11.0935 15 10.8884 15C10.6833 15 10.4909 14.9206 10.3468 14.7763L4.11087 8.54059C3.96643 8.39592 3.88709 8.20277 3.88755 7.99744C3.88709 7.79131 3.96643 7.59827 4.11087 7.45372Z"></path>
+                                </svg>
+                            </div>
+                            <div className="slider-btn destination-slider-next">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.7828 7.45372L5.72295 1.22366C5.5828 1.07945 5.3957 1 5.1962 1C4.99671 1 4.80961 1.07945 4.66945 1.22366L4.22319 1.68235C3.9328 1.98124 3.9328 2.46703 4.22319 2.76547L9.31178 7.9971L4.21754 13.2345C4.07739 13.3787 4 13.571 4 13.776C4 13.9812 4.07739 14.1734 4.21754 14.3178L4.66381 14.7763C4.80407 14.9206 4.99106 15 5.19056 15C5.39005 15 5.57715 14.9206 5.71731 14.7763L11.7828 8.54059C11.9233 8.39592 12.0004 8.20277 12 7.99744C12.0004 7.79131 11.9233 7.59827 11.7828 7.45372Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-testimonial-section" style={{ backgroundImage: "url(/assets/img/home1/home1-tour-package-section-bg.png),           linear-gradient(180deg, #bdebce 0%, #bdebce 100%)" }}>
+                <div className="container">
+                    <div className="title-area mb-60">
+                        <div className="row gy-md-5 gy-4 justify-content-between align-items-end">
+                            <div className="col-lg-6 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <div className="section-title">
+                                    <span>Customer experience at Atlastrip</span>
+                                    <h2>What’s the People Say</h2>
+                                    <div className="trusted-travelers">
+                                        <ul className="travelers-img-grp">
+                                            <li>
+                                                <img alt="" src="/assets/img/home1/travelers-img1.png" />
+                                            </li>
+                                            <li>
+                                                <img alt="" src="/assets/img/home1/travelers-img2.png" />
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <svg height="15" viewBox="0 0 15 15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8.5 8.5V15H6.5V8.5H0V6.5H6.5V0H8.5V6.5H15V8.5H8.5Z"></path>
+                                                    </svg>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <span><strong>10,000+</strong> trusted travelers to join
+                                            Atlastrip community.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 d-flex justify-content-lg-end wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <div className="testimonial-award-area">
+                                    <img alt="" src="/assets/img/home1/testimonial-award-img1.png" />
+                                    <img alt="" src="/assets/img/home1/testimonial-award-img2.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="swiper home1-testimonial-slider">
+                        <div className="swiper-wrapper">
+                            <div className="swiper-slide">
+                                <div className="testimonial-card">
+                                    <div className="testimonial-content">
+                                        <ul className="rating-area">
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                        </ul>
+                                        <strong>Good Support!</strong>
+                                        <p>
+                                            Our honeymoon package to the Maldives was beyond amazing!
+                                            The travel agency took care of every detail.
+                                        </p>
+                                    </div>
+                                    <div className="author-area">
+                                        <div className="author-img">
+                                            <img alt="" src="/assets/img/home1/testimonial-author-img1.png" />
+                                        </div>
+                                        <div className="author-info">
+                                            <strong>Robert Kcarery</strong>
+                                            <span>Atlastrip Traveler</span>
+                                        </div>
+                                    </div>
+                                    <a className="play-btn" data-fancybox="video-player" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                        <div className="icon">
+                                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.99994 6.99881V3.10112C1.99994 1.48627 3.59677 0.476109 4.87252 1.28471L7.95702 3.23472L11.0415 5.18473C12.3194 5.99099 12.3194 8.01131 11.0415 8.81757L7.95702 10.7676L4.87252 12.7176C3.59677 13.5215 1.99994 12.5137 1.99994 10.8988V6.99881Z"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="testimonial-card">
+                                    <div className="testimonial-content">
+                                        <ul className="rating-area">
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                        </ul>
+                                        <strong>Excellent Trip!</strong>
+                                        <p>
+                                            Atlastrip agency is superb! They’re to much friendly.
+                                            Recommended.
+                                        </p>
+                                    </div>
+                                    <div className="author-area">
+                                        <div className="author-img">
+                                            <img alt="" src="/assets/img/home1/testimonial-author-img2.png" />
+                                        </div>
+                                        <div className="author-info">
+                                            <strong>Mrs. Emelia Jong</strong>
+                                            <span>Atlastrip Traveler</span>
+                                        </div>
+                                    </div>
+                                    <a className="play-btn" data-fancybox="video-player" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                        <div className="icon">
+                                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.99994 6.99881V3.10112C1.99994 1.48627 3.59677 0.476109 4.87252 1.28471L7.95702 3.23472L11.0415 5.18473C12.3194 5.99099 12.3194 8.01131 11.0415 8.81757L7.95702 10.7676L4.87252 12.7176C3.59677 13.5215 1.99994 12.5137 1.99994 10.8988V6.99881Z"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="testimonial-card">
+                                    <div className="testimonial-content">
+                                        <ul className="rating-area">
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                        </ul>
+                                        <strong>Perfect Itinerary!</strong>
+                                        <p>
+                                            Our trip to Vietnam was perfectly organized from start to
+                                            finish. Highly recommended for international travel.
+                                        </p>
+                                    </div>
+                                    <div className="author-area">
+                                        <div className="author-img">
+                                            <img alt="" src="/assets/img/home1/testimonial-author-img3.png" />
+                                        </div>
+                                        <div className="author-info">
+                                            <strong>Anderson</strong>
+                                            <span>Atlastrip Traveler</span>
+                                        </div>
+                                    </div>
+                                    <a className="play-btn" data-fancybox="video-player" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                        <div className="icon">
+                                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.99994 6.99881V3.10112C1.99994 1.48627 3.59677 0.476109 4.87252 1.28471L7.95702 3.23472L11.0415 5.18473C12.3194 5.99099 12.3194 8.01131 11.0415 8.81757L7.95702 10.7676L4.87252 12.7176C3.59677 13.5215 1.99994 12.5137 1.99994 10.8988V6.99881Z"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="testimonial-card">
+                                    <div className="testimonial-content">
+                                        <ul className="rating-area">
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                        </ul>
+                                        <strong>Great Visitors Venue!</strong>
+                                        <p>
+                                            Thank you so much for your work on our honeymoon. We really
+                                            did have such a great time.
+                                        </p>
+                                    </div>
+                                    <div className="author-area">
+                                        <div className="author-img">
+                                            <img alt="" src="/assets/img/home1/testimonial-author-img4.png" />
+                                        </div>
+                                        <div className="author-info">
+                                            <strong>James Bonde</strong>
+                                            <span>Atlastrip Traveler</span>
+                                        </div>
+                                    </div>
+                                    <a className="play-btn" data-fancybox="video-player" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                        <div className="icon">
+                                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.99994 6.99881V3.10112C1.99994 1.48627 3.59677 0.476109 4.87252 1.28471L7.95702 3.23472L11.0415 5.18473C12.3194 5.99099 12.3194 8.01131 11.0415 8.81757L7.95702 10.7676L4.87252 12.7176C3.59677 13.5215 1.99994 12.5137 1.99994 10.8988V6.99881Z"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="testimonial-card">
+                                    <div className="testimonial-content">
+                                        <ul className="rating-area">
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                            <li><i className="bi bi-circle-fill"></i></li>
+                                        </ul>
+                                        <strong>Fantastic Service!</strong>
+                                        <p>
+                                            We have returned from Greece and want to let you know how
+                                            terrific the trip was! Everything was great.
+                                        </p>
+                                    </div>
+                                    <div className="author-area">
+                                        <div className="author-img">
+                                            <img alt="" src="/assets/img/home1/testimonial-author-img5.png" />
+                                        </div>
+                                        <div className="author-info">
+                                            <strong>Amber Lashleye</strong>
+                                            <span>Atlastrip Traveler</span>
+                                        </div>
+                                    </div>
+                                    <a className="play-btn" data-fancybox="video-player" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                        <div className="icon">
+                                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.99994 6.99881V3.10112C1.99994 1.48627 3.59677 0.476109 4.87252 1.28471L7.95702 3.23472L11.0415 5.18473C12.3194 5.99099 12.3194 8.01131 11.0415 8.81757L7.95702 10.7676L4.87252 12.7176C3.59677 13.5215 1.99994 12.5137 1.99994 10.8988V6.99881Z"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="slider-btn-and-rating-area">
+                        <div className="slider-btn-grp">
+                            <div className="slider-btn testimonial-slider-prev">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.11087 7.45372L10.341 1.22366C10.4851 1.07945 10.6775 1 10.8826 1C11.0877 1 11.2801 1.07945 11.4242 1.22366L11.883 1.68235C12.1815 1.98124 12.1815 2.46703 11.883 2.76547L6.65133 7.9971L11.8888 13.2345C12.0329 13.3787 12.1124 13.571 12.1124 13.776C12.1124 13.9812 12.0329 14.1734 11.8888 14.3178L11.43 14.7763C11.2858 14.9206 11.0935 15 10.8884 15C10.6833 15 10.4909 14.9206 10.3468 14.7763L4.11087 8.54059C3.96643 8.39592 3.88709 8.20277 3.88755 7.99744C3.88709 7.79131 3.96643 7.59827 4.11087 7.45372Z"></path>
+                                </svg>
+                            </div>
+                            <div className="slider-btn testimonial-slider-next">
+                                <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.7828 7.45372L5.72295 1.22366C5.5828 1.07945 5.3957 1 5.1962 1C4.99671 1 4.80961 1.07945 4.66945 1.22366L4.22319 1.68235C3.9328 1.98124 3.9328 2.46703 4.22319 2.76547L9.31178 7.9971L4.21754 13.2345C4.07739 13.3787 4 13.571 4 13.776C4 13.9812 4.07739 14.1734 4.21754 14.3178L4.66381 14.7763C4.80407 14.9206 4.99106 15 5.19056 15C5.39005 15 5.57715 14.9206 5.71731 14.7763L11.7828 8.54059C11.9233 8.39592 12.0004 8.20277 12 7.99744C12.0004 7.79131 11.9233 7.59827 11.7828 7.45372Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="rating-area">
+                            <img alt="" src="/assets/img/home1/tripadvisor-logo.png" />
+                            <ul className="rating">
+                                <li><i className="bi bi-circle-fill"></i></li>
+                                <li><i className="bi bi-circle-fill"></i></li>
+                                <li><i className="bi bi-circle-fill"></i></li>
+                                <li><i className="bi bi-circle-fill"></i></li>
+                                <li><i className="bi bi-circle-fill"></i></li>
+                            </ul>
+                            <span>4.8 rated 10,000 real traveler at Atlastrip.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+         
+
+            <div className="home1-gallery-section mb-100 mt-100">
+                <div className="container">
+                    <div className="section-title text-center mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2>Authentic Travel Moment</h2>
+                    </div>
+                    <div className="home1-gallery-grid">
+                        <a className="gallery-card video-card tall-card" data-fancybox="video-player" href="/assets/video/home1-gallery-video1.mp4">
+                            <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/home1-gallery-video1.mp4"></video>
+                            <span className="source-icon">
+                                <svg height="23" viewBox="0 0 27 23" width="27" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.70661 15.2455C10.9389 13.2583 12.1597 11.6603 13.1124 11.6603C14.0199 11.6603 15.1711 13.1107 16.3435 14.9665C16.9835 14.8852 17.6394 14.7891 18.3082 14.6779C16.6779 10.3942 14.7093 5.00785 13.1124 0C11.4753 5.13351 9.44765 10.6652 7.79428 14.9988C8.36257 15.1129 9.00309 15.1953 9.70661 15.2455Z"></path>
+                                    <path d="M26.6743 13.3881C24.9207 13.998 22.9876 14.5563 20.9396 15.0281C20.1575 15.2082 19.3852 15.3693 18.6267 15.5121C18.0908 15.613 17.5616 15.7048 17.0409 15.7872C10.0298 16.8976 4.52705 16.3427 4.06278 14.2786C3.75141 12.8941 5.77448 11.129 9.19047 9.49219C3.43217 11.495 -0.388277 14.0526 0.0314452 15.9188C0.341224 17.2959 2.89396 18.0011 6.6407 17.9884C7.11522 17.9868 7.60888 17.9736 8.11952 17.949C10.705 17.8237 13.7264 17.4011 16.9084 16.6682C17.0444 16.6369 17.1787 16.6045 17.3136 16.5723C17.8449 16.4461 18.3684 16.3145 18.8822 16.1774C21.8695 15.3798 24.5431 14.4092 26.6743 13.3881Z" fill="#0067EE"></path>
+                                    <path d="M6.4099 18.5796C5.38715 21.1893 4.71051 22.8394 4.71051 22.8394C5.35809 22.768 6.49205 20.8118 7.77514 18.5557C7.38629 18.5707 7.00759 18.5791 6.64062 18.5802C6.56292 18.5804 6.48658 18.5799 6.4099 18.5796Z"></path>
+                                    <path d="M18.882 16.7682C18.4656 16.8793 18.0414 16.986 17.6133 17.0898C19.2281 19.8941 20.7286 22.7518 21.514 22.8384C21.514 22.8384 20.5049 20.3774 19.0882 16.7119C19.0194 16.7307 18.9513 16.7497 18.882 16.7682Z"></path>
+                                    <path d="M6.64059 17.9886C6.56187 18.1906 6.48496 18.387 6.40988 18.5788C6.48656 18.5791 6.56289 18.5796 6.64059 18.5794C7.00756 18.5782 7.38627 18.5698 7.77512 18.5548C7.88882 18.3549 8.00355 18.1528 8.11942 17.9492C7.60878 17.9739 7.11512 17.987 6.64059 17.9886Z" fill="#050505"></path>
+                                    <path d="M19.0882 16.7113C19.0203 16.5356 18.9517 16.3579 18.882 16.1768C18.3682 16.3139 17.8447 16.4456 17.3134 16.5717C17.4137 16.7435 17.5136 16.9162 17.6132 17.0891C18.0413 16.9853 18.4655 16.8786 18.8819 16.7675C18.9513 16.749 19.0194 16.73 19.0882 16.7113Z"></path>
+                                </svg>
+                            </span>
+                            <span className="gallery-card-content">
+                                <strong>Indonesia</strong>
+                                <small>Group tour with 36 travelers.</small>
+                            </span>
+                        </a>
+                        <div className="gallery-stack">
+                            <a className="gallery-card small-card" data-fancybox="gallery-01" href="/assets/img/home1/gallery-camel-selfie.jpg">
+                                <img alt="Traveler taking a camel ride selfie" src="/assets/img/home1/gallery-camel-selfie.jpg" />
+                            </a>
+                            <a className="gallery-card small-card" data-fancybox="gallery-01" href="/assets/img/home1/gallery-family-forest.jpg">
+                                <img alt="Family enjoying a forest tour" src="/assets/img/home1/gallery-family-forest.jpg" />
+                            </a>
+                        </div>
+                        <a className="gallery-card video-card feature-card" data-fancybox="video-player" href="/assets/video/home1-gallery-video2.mp4">
+                            <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/home1-gallery-video2.mp4"></video>
+                            <span className="source-icon">
+                                <svg height="23" viewBox="0 0 27 23" width="27" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.70661 15.2455C10.9389 13.2583 12.1597 11.6603 13.1124 11.6603C14.0199 11.6603 15.1711 13.1107 16.3435 14.9665C16.9835 14.8852 17.6394 14.7891 18.3082 14.6779C16.6779 10.3942 14.7093 5.00785 13.1124 0C11.4753 5.13351 9.44765 10.6652 7.79428 14.9988C8.36257 15.1129 9.00309 15.1953 9.70661 15.2455Z"></path>
+                                    <path d="M26.6743 13.3881C24.9207 13.998 22.9876 14.5563 20.9396 15.0281C20.1575 15.2082 19.3852 15.3693 18.6267 15.5121C18.0908 15.613 17.5616 15.7048 17.0409 15.7872C10.0298 16.8976 4.52705 16.3427 4.06278 14.2786C3.75141 12.8941 5.77448 11.129 9.19047 9.49219C3.43217 11.495 -0.388277 14.0526 0.0314452 15.9188C0.341224 17.2959 2.89396 18.0011 6.6407 17.9884C7.11522 17.9868 7.60888 17.9736 8.11952 17.949C10.705 17.8237 13.7264 17.4011 16.9084 16.6682C17.0444 16.6369 17.1787 16.6045 17.3136 16.5723C17.8449 16.4461 18.3684 16.3145 18.8822 16.1774C21.8695 15.3798 24.5431 14.4092 26.6743 13.3881Z" fill="#0067EE"></path>
+                                    <path d="M6.4099 18.5796C5.38715 21.1893 4.71051 22.8394 4.71051 22.8394C5.35809 22.768 6.49205 20.8118 7.77514 18.5557C7.38629 18.5707 7.00759 18.5791 6.64062 18.5802C6.56292 18.5804 6.48658 18.5799 6.4099 18.5796Z"></path>
+                                    <path d="M18.882 16.7682C18.4656 16.8793 18.0414 16.986 17.6133 17.0898C19.2281 19.8941 20.7286 22.7518 21.514 22.8384C21.514 22.8384 20.5049 20.3774 19.0882 16.7119C19.0194 16.7307 18.9513 16.7497 18.882 16.7682Z"></path>
+                                    <path d="M6.64059 17.9886C6.56187 18.1906 6.48496 18.387 6.40988 18.5788C6.48656 18.5791 6.56289 18.5796 6.64059 18.5794C7.00756 18.5782 7.38627 18.5698 7.77512 18.5548C7.88882 18.3549 8.00355 18.1528 8.11942 17.9492C7.60878 17.9739 7.11512 17.987 6.64059 17.9886Z" fill="#050505"></path>
+                                    <path d="M19.0882 16.7113C19.0203 16.5356 18.9517 16.3579 18.882 16.1768C18.3682 16.3139 17.8447 16.4456 17.3134 16.5717C17.4137 16.7435 17.5136 16.9162 17.6132 17.0891C18.0413 16.9853 18.4655 16.8786 18.8819 16.7675C18.9513 16.749 19.0194 16.73 19.0882 16.7113Z"></path>
+                                </svg>
+                            </span>
+                            <span className="gallery-card-content">
+                                <strong>Sri Lanka</strong>
+                                <small>Safari tour in Sri Lanka since 2025 and we're enjoy
+                                    that.</small>
+                            </span>
+                        </a>
+                        <div className="gallery-stack">
+                            <a className="gallery-card small-card" data-fancybox="gallery-01" href="/assets/img/home1/gallery-mountain-group.jpg">
+                                <img alt="Group travelers enjoying a mountain view" src="/assets/img/home1/gallery-mountain-group.jpg" />
+                            </a>
+                            <a className="gallery-card video-card small-card" data-fancybox="video-player" href="/assets/video/home1-gallery-video3.mp4">
+                                <video autoPlay="" loop="" muted="" playsInline="" src="/assets/video/home1-gallery-video3.mp4"></video>
+                                <span className="source-icon">
+                                    <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.8863 4.51367C15.859 4.51367 14.9112 4.17336 14.1501 3.59926C13.2771 2.94113 12.65 1.97574 12.4285 0.863047C12.3729 0.58327 12.3437 0.2989 12.3413 0.0136719H9.40679V8.03211L9.40327 12.4242C9.40327 13.5984 8.63863 14.594 7.57867 14.9442C7.26117 15.0492 6.92677 15.0935 6.59288 15.075C6.15132 15.0507 5.73753 14.9175 5.37788 14.7023C4.61253 14.2446 4.09363 13.4142 4.07956 12.4643C4.05741 10.9796 5.25765 9.76918 6.74124 9.76918C7.03409 9.76918 7.31534 9.81699 7.57867 9.90383V6.92434C7.30093 6.8832 7.01827 6.86176 6.73245 6.86176C5.10859 6.86176 3.58984 7.53676 2.50421 8.75281C1.68366 9.6718 1.19148 10.8443 1.11554 12.0737C1.01605 13.6887 1.60702 15.224 2.75312 16.3568C2.92152 16.523 3.09835 16.6774 3.28327 16.8198C4.26589 17.576 5.46718 17.9859 6.73245 17.9859C7.01827 17.9859 7.30093 17.9648 7.57867 17.9237C8.76062 17.7486 9.85116 17.2075 10.7118 16.3568C11.7693 15.3116 12.3536 13.9239 12.3599 12.447L12.3448 5.88828C12.8505 6.27833 13.4044 6.60139 13.9929 6.84945C14.9137 7.23793 15.89 7.4348 16.8947 7.43445V4.51297C16.8954 4.51367 16.887 4.51367 16.8863 4.51367Z"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <a className="gallery-card tall-card" data-fancybox="gallery-01" href="/assets/img/home1/gallery-mountain-sunset.jpg">
+                            <img alt="Traveler watching a mountain sunset" src="/assets/img/home1/gallery-mountain-sunset.jpg" />
+                        </a>
+                    </div>
+                  
+                </div>
+            </div>
+
+
+            <div className="home1-blog-section mb-100">
+                <div className="container">
+                    <div className="row align-items-end justify-content-between mb-60 gy-4 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div className="col-lg-7">
+                            <div className="section-title">
+                                <span>Get to know more with Atlastrip</span>
+                                <h2>Travel Tips & Inspirations.</h2>
+                            </div>
+                        </div>
+                        <div className="col-lg-auto">
+                            <a className="primary-btn1 two transparent" href="#">
+                                <span>View All Inspiration</span>
+                                <span>View All Inspiration</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="row gx-xl-4 gx-lg-3 gy-5">
+                        <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="blog-card">
+                                <div className="blog-img-wrap">
+                                    <a className="blog-img" href="#">
+                                        <img alt="" src="/assets/img/home1/blog-img1.jpg" />
+                                    </a>
+                                    <a className="location" href="blog#">
+                                        <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.83615 0C3.77766 0 1.28891 2.48879 1.28891 5.54892C1.28891 7.93837 4.6241 11.8351 6.05811 13.3994C6.25669 13.6175 6.54154 13.7411 6.83615 13.7411C7.13076 13.7411 7.41561 13.6175 7.6142 13.3994C9.04821 11.8351 12.3834 7.93833 12.3834 5.54892C12.3834 2.48879 9.89464 0 6.83615 0ZM7.31469 13.1243C7.18936 13.2594 7.02008 13.3342 6.83615 13.3342C6.65222 13.3342 6.48295 13.2594 6.35761 13.1243C4.95614 11.5959 1.69584 7.79515 1.69584 5.54896C1.69584 2.7134 4.00067 0.406933 6.83615 0.406933C9.67164 0.406933 11.9765 2.7134 11.9765 5.54896C11.9765 7.79515 8.71617 11.5959 7.31469 13.1243Z">
+                                            </path>
+                                            <path d="M6.83618 8.54529C8.4624 8.54529 9.7807 7.22698 9.7807 5.60077C9.7807 3.97456 8.4624 2.65625 6.83618 2.65625C5.20997 2.65625 3.89166 3.97456 3.89166 5.60077C3.89166 7.22698 5.20997 8.54529 6.83618 8.54529Z">
+                                            </path>
+                                        </svg>
+                                        Maldives Beach
+                                    </a>
+                                </div>
+                                <div className="blog-content">
+                                    <h2>
+                                        <a href="blog-details#">Best Time to Visit the Maldives for a Perfect Beach
+                                            Escape.</a>
+                                    </h2>
+                                    <p>
+                                        The Maldives is a dream destination known for its
+                                        crystal-clear lagoons and luxury overwater villas.
+                                    </p>
+                                    <a className="read-more-btn" href="blog-details#">
+                                        <span>Read More</span>
+                                        <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div className="blog-card">
+                                <div className="blog-img-wrap">
+                                    <a className="blog-img" href="blog-details#">
+                                        <img alt="" src="/assets/img/home1/blog-img2.jpg" />
+                                    </a>
+                                    <a className="location" href="blog#">
+                                        <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.83615 0C3.77766 0 1.28891 2.48879 1.28891 5.54892C1.28891 7.93837 4.6241 11.8351 6.05811 13.3994C6.25669 13.6175 6.54154 13.7411 6.83615 13.7411C7.13076 13.7411 7.41561 13.6175 7.6142 13.3994C9.04821 11.8351 12.3834 7.93833 12.3834 5.54892C12.3834 2.48879 9.89464 0 6.83615 0ZM7.31469 13.1243C7.18936 13.2594 7.02008 13.3342 6.83615 13.3342C6.65222 13.3342 6.48295 13.2594 6.35761 13.1243C4.95614 11.5959 1.69584 7.79515 1.69584 5.54896C1.69584 2.7134 4.00067 0.406933 6.83615 0.406933C9.67164 0.406933 11.9765 2.7134 11.9765 5.54896C11.9765 7.79515 8.71617 11.5959 7.31469 13.1243Z">
+                                            </path>
+                                            <path d="M6.83618 8.54529C8.4624 8.54529 9.7807 7.22698 9.7807 5.60077C9.7807 3.97456 8.4624 2.65625 6.83618 2.65625C5.20997 2.65625 3.89166 3.97456 3.89166 5.60077C3.89166 7.22698 5.20997 8.54529 6.83618 8.54529Z">
+                                            </path>
+                                        </svg>
+                                        South Africa
+                                    </a>
+                                </div>
+                                <div className="blog-content">
+                                    <h2>
+                                        <a href="blog-details#">What to Expect on Your First Wildlife Adventure Africa
+                                            Safari.</a>
+                                    </h2>
+                                    <p>
+                                        An African safari is one of the most exciting travel
+                                        experiences in the world. Visitors can witness the Big Five
+                                        wildlife.
+                                    </p>
+                                    <a className="read-more-btn" href="blog-details#">
+                                        <span>Read More</span>
+                                        <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div className="blog-card">
+                                <div className="blog-img-wrap">
+                                    <a className="blog-img" href="blog-details#">
+                                        <img alt="" src="/assets/img/home1/blog-img3.jpg" />
+                                    </a>
+                                    <a className="location" href="blog#">
+                                        <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.83615 0C3.77766 0 1.28891 2.48879 1.28891 5.54892C1.28891 7.93837 4.6241 11.8351 6.05811 13.3994C6.25669 13.6175 6.54154 13.7411 6.83615 13.7411C7.13076 13.7411 7.41561 13.6175 7.6142 13.3994C9.04821 11.8351 12.3834 7.93833 12.3834 5.54892C12.3834 2.48879 9.89464 0 6.83615 0ZM7.31469 13.1243C7.18936 13.2594 7.02008 13.3342 6.83615 13.3342C6.65222 13.3342 6.48295 13.2594 6.35761 13.1243C4.95614 11.5959 1.69584 7.79515 1.69584 5.54896C1.69584 2.7134 4.00067 0.406933 6.83615 0.406933C9.67164 0.406933 11.9765 2.7134 11.9765 5.54896C11.9765 7.79515 8.71617 11.5959 7.31469 13.1243Z">
+                                            </path>
+                                            <path d="M6.83618 8.54529C8.4624 8.54529 9.7807 7.22698 9.7807 5.60077C9.7807 3.97456 8.4624 2.65625 6.83618 2.65625C5.20997 2.65625 3.89166 3.97456 3.89166 5.60077C3.89166 7.22698 5.20997 8.54529 6.83618 8.54529Z">
+                                            </path>
+                                        </svg>
+                                        Switzerland
+                                    </a>
+                                </div>
+                                <div className="blog-content">
+                                    <h2>
+                                        <a href="blog-details#">Top Places to Visit in Switzerland for Nature Lovers.</a>
+                                    </h2>
+                                    <p>
+                                        Switzerland is famous for its snow-capped Alps, charming
+                                        villages, and scenic train journeys.
+                                    </p>
+                                    <a className="read-more-btn" href="blog-details#">
+                                        <span>Read More</span>
+                                        <svg height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8 4.5L2 9L2 0L8 4.5Z"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-newletter-section" style={{ backgroundImage: "url(/assets/img/home1/home1-newletter-section-bg.png),           linear-gradient(180deg, #0067ee 0%, #0067ee 100%)" }}>
+                <img alt="" className="vector1" src="/assets/img/home1/home1-newletter-section-vector1.png" />
+                <img alt="" className="vector2" src="/assets/img/home1/home1-newletter-section-vector2.png" />
+                <div className="container">
+                    <div className="row gy-4">
+                        <div className="col-lg-6 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="newletter-content">
+                                <h2>Subscribe our newsletter to discount 10% all package.</h2>
+                            </div>
+                        </div>
+                        <div className="col-lg-6 wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="newletter-form-wrap">
+                                <form className="newsletter-form">
+                                    <input placeholder="Email Address" type="email" />
+                                    <button>
+                                        <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.9597 0.771505C18.0006 0.669287 18.0107 0.557308 17.9885 0.449451C17.9664 0.341594 17.9131 0.242601 17.8353 0.164747C17.7574 0.0868923 17.6584 0.033599 17.5506 0.0114739C17.4427 -0.0106512 17.3307 -0.000635146 17.2285 0.0402804L0.863689 6.58643H0.862564L0.354081 6.78892C0.257774 6.82734 0.173959 6.89163 0.111895 6.97469C0.0498308 7.05775 0.0119333 7.15635 0.00238854 7.25959C-0.00715624 7.36284 0.0120231 7.46671 0.0578081 7.55974C0.103593 7.65278 0.174202 7.73134 0.261834 7.78676L0.723068 8.07925L0.724193 8.0815L6.34337 11.6566L9.9185 17.2758L9.92075 17.2781L10.2132 17.7393C10.2688 17.8266 10.3474 17.8968 10.4404 17.9423C10.5334 17.9878 10.6371 18.0068 10.7401 17.9972C10.8432 17.9875 10.9416 17.9496 11.0245 17.8876C11.1073 17.8257 11.1715 17.742 11.21 17.6459L17.9597 0.771505ZM15.8977 2.89768L7.46721 11.3281L7.22534 10.9479C7.18103 10.8781 7.12188 10.819 7.0521 10.7747L6.67186 10.5328L15.1023 2.10233L16.4275 1.57248L15.8988 2.89768H15.8977Z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <div className="subscription-note">
+                                    <div className="icon">
+                                        <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path d="M8.00005 16C8.95918 16 9.78512 15.4207 10.1475 14.5938H5.85259C6.21499 15.4207 7.04096 16 8.00005 16ZM12.8438 7.74569V6.71875C12.8438 4.53681 11.3935 2.68747 9.4063 2.08344V1.40625C9.4063 0.630844 8.77546 0 8.00005 0C7.22465 0 6.59381 0.630844 6.59381 1.40625V2.08344C4.60662 2.68747 3.15631 4.53678 3.15631 6.71875V7.74569C3.15631 9.66231 2.42574 11.4797 1.09921 12.8631C1.03561 12.9294 0.992895 13.0129 0.976382 13.1033C0.959869 13.1937 0.970285 13.2869 1.00634 13.3714C1.04239 13.4559 1.10248 13.528 1.17915 13.5786C1.25582 13.6293 1.34568 13.6563 1.43756 13.6562H14.5626C14.6544 13.6563 14.7443 13.6293 14.8209 13.5786C14.8976 13.528 14.9577 13.4559 14.9937 13.3714C15.0298 13.2869 15.0402 13.1937 15.0237 13.1033C15.0072 13.0129 14.9645 12.9294 14.9009 12.8631C13.5744 11.4797 12.8438 9.66228 12.8438 7.74569ZM8.4688 1.89775C8.31452 1.88287 8.15818 1.875 8.00005 1.875C7.84193 1.875 7.68559 1.88287 7.53131 1.89775V1.40625C7.53131 1.14778 7.74159 0.9375 8.00005 0.9375C8.25852 0.9375 8.4688 1.14778 8.4688 1.40625V1.89775ZM14.0938 6.71875C14.0938 6.97762 14.3037 7.1875 14.5626 7.1875C14.8214 7.1875 15.0313 6.97762 15.0313 6.71875C15.0313 4.84062 14.2999 3.07491 12.9719 1.74688C12.7889 1.56384 12.4921 1.56381 12.309 1.74688C12.1259 1.92994 12.1259 2.22672 12.309 2.40978C13.46 3.56075 14.0938 5.09103 14.0938 6.71875ZM1.43756 7.1875C1.69643 7.1875 1.90631 6.97762 1.90631 6.71875C1.90631 5.09106 2.54018 3.56078 3.69112 2.40981C3.87418 2.22675 3.87418 1.92997 3.69112 1.74691C3.50809 1.56384 3.21127 1.56384 3.02821 1.74691C1.70018 3.07494 0.968806 4.84062 0.968806 6.71875C0.968806 6.97762 1.17868 7.1875 1.43756 7.1875Z"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <span>Get practical strategies and business insights to help you
+                                        grow with confidence.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-quick-search-section pt-100 mb-100">
+                <div className="container">
+                    <div className="row g-4">
+                        <div className="col-lg-6 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="quick-search-wrapper">
+                                <h2>Top Destinations</h2>
+                                <div className="destination-dropdown">
+                                    <select>
+                                        <option>All</option>
+                                        <option id="asia">Asia</option>
+                                        <option id="europe">Europe</option>
+                                        <option id="africa">Africa</option>
+                                        <option id="america">America</option>
+                                        <option id="oceania">Oceania</option>
+                                    </select>
+                                </div>
+                                <ul className="destination-list">
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/france-flag.png" />
+                                            France
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/unitedKingdom-flag.png" />
+                                            United Kingdom
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/indonesia-flag.png" />
+                                            Indonesia
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/italy-flag.png" />
+                                            Italy
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/greece-flag.png" />
+                                            Greece
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/romania-flag.png" />
+                                            Romania
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="europe">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/netherland-flag.png" />
+                                            Netherlands
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/vietnam-flag.png" />
+                                            Hanoi, Vietnam
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/thailand-flag.png" />
+                                            Thailand
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/malaysia-flag.png" />
+                                            Malaysia
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/india-flag.png" />
+                                            India
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="asia">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/japan-flag.png" />
+                                            Japan
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="africa">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/kenya-flag.png" />
+                                            Kenya
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="africa">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/egypt-flag.png" />
+                                            Egypt
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="africa">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/south-africa-flag.png" />
+                                            South Africa
+                                        </a>
+                                    </li>
+                                    <li className="single-destination" data-region="africa">
+                                        <a href="destination-details#">
+                                            <img alt="" src="/assets/img/home1/flag/morocco-flag.png" />
+                                            Morocco
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-6 wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="quick-search-wrapper">
+                                <h2>Popular Search</h2>
+                                <ul className="adventure-list">
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Adventure</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Familty Tour</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Holiday</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Private Tour</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Seinor Couple</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Honeymoon</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Adult Tour</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Deals & Offer</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Group Tour</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Desert & Safari</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Luxury Tour</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Summar Vacation</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Beach</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Mountain</a>
+                                    </li>
+                                    <li className="single-adventure">
+                                        <a href="tour-package#">Water Adventure</a>
+                                    </li>
+                                </ul>
+                                <a className="offer-area" href="tour-package#">
+                                    <img alt="" src="/assets/img/home1/quick-search-offer-batch.svg" />
+                                    <span>Limited Offer! Honeymoon Package 15% Off.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="home1-counter-section mb-100">
+                <div className="container">
+                    <div className="section-title text-center wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2>We’ve Real Experience!</h2>
+                    </div>
+                    <div className="row gy-5">
+                        <div className="col-lg-3 col-sm-6 d-flex justify-content-lg-start justify-content-sm-center">
+                            <div className="single-counter">
+                                <h2><strong className="counter_number">26</strong>K+</h2>
+                                <span>Succesfully Tour Completed.</span>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6 d-flex justify-content-sm-center">
+                            <div className="single-counter">
+                                <h2><strong className="counter_number">15</strong>+</h2>
+                                <span>We’ve travel experience 15+ years.</span>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6 d-flex justify-content-sm-center">
+                            <div className="single-counter">
+                                <h2><strong className="counter_number">15000</strong></h2>
+                                <span>15,000 Happy traveler since 2014.</span>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-sm-6 d-flex justify-content-lg-end justify-content-sm-center">
+                            <div className="single-counter">
+                                <h2><strong className="counter_number">98</strong>%</h2>
+                                <span>We’ve achieve traveler satisfaction rate.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {/* <footer className="footer-section">
+                <div className="container">
+                    <div className="footer-menu-wrap">
+                        <div className="row gy-lg-4 gy-5">
+                            <div className="col-lg-4 col-md-4 col-sm-6">
+                                <div className="footer-logo-and-addition-info">
+                                    <a className="footer-logo" href="/">
+                                        <img alt="" src="/assets/img/footer-logo.svg" />
+                                    </a>
+                                    <div className="address-area">
+                                        <span>Atlastrip Travel Agency</span>
+                                        <a href="https://www.google.com/maps">Skyline Plaza, 5th Floor, 123 Main Street Los
+                                            Angeles, CA
+                                            90001, USA</a>
+                                    </div>
+                                    <ul className="social-list">
+                                        <li>
+                                            <a className="social-facebook" href="https://www.facebook.com/">
+                                                <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7.54745 14V7.62433H9.62061L9.92877 5.12805H7.54745V3.53802C7.54745 2.81769 7.7409 2.3245 8.73736 2.3245H10V0.098925C9.38565 0.0306183 8.76814 -0.00236327 8.15028 0.000131594C6.3178 0.000131594 5.05966 1.16076 5.05966 3.29143V5.12338H3V7.61966H5.06416V14H7.54745Z"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className="social-linkedin" href="https://www.linkedin.com/">
+                                                <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2.44006 3.94531C3.26849 3.94531 3.94006 3.27374 3.94006 2.44531C3.94006 1.61689 3.26849 0.945312 2.44006 0.945312C1.61164 0.945312 0.940063 1.61689 0.940063 2.44531C0.940063 3.27374 1.61164 3.94531 2.44006 3.94531Z"></path>
+                                                    <path d="M5.05646 5.13824V12.9447H7.58245V9.08422C7.58245 8.06557 7.78217 7.07907 9.09845 7.07907C10.3966 7.07907 10.4127 8.2437 10.4127 9.14853V12.9453H12.9401V8.66428C12.9401 6.56139 12.4682 4.94531 9.90672 4.94531C8.6769 4.94531 7.85255 5.5929 7.51543 6.20576H7.48125V5.13824H5.05646ZM0.940063 5.13824H3.47008V12.9447H0.940063V5.13824Z"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className="social-youtube" href="https://www.youtube.com/">
+                                                <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7.04463 1.74902H7.1225C7.84175 1.75165 11.4861 1.7779 12.4688 2.04215C12.7658 2.1228 13.0365 2.27999 13.2538 2.49803C13.471 2.71607 13.6273 2.98731 13.7069 3.28465C13.7953 3.61715 13.8574 4.05727 13.8994 4.5114L13.9081 4.6024L13.9274 4.8299L13.9344 4.9209C13.9913 5.72065 13.9983 6.46965 13.9991 6.63327V6.6989C13.9983 6.86865 13.9904 7.6684 13.9274 8.5014L13.9204 8.59327L13.9125 8.68427C13.8688 9.18477 13.804 9.68177 13.7069 10.0475C13.6273 10.3449 13.471 10.6161 13.2538 10.8341C13.0365 11.0522 12.7658 11.2094 12.4688 11.29C11.4538 11.563 7.59588 11.5823 7.06125 11.5831H6.937C6.66663 11.5831 5.54838 11.5779 4.37588 11.5376L4.22713 11.5324L4.151 11.5289L4.00138 11.5228L3.85175 11.5166C2.8805 11.4738 1.95563 11.4046 1.5295 11.2891C1.23255 11.2086 0.961931 11.0515 0.74467 10.8336C0.527409 10.6158 0.371108 10.3447 0.291375 10.0475C0.19425 9.68265 0.1295 9.18477 0.08575 8.68427L0.07875 8.5924L0.07175 8.5014C0.028318 7.90851 0.0043884 7.31436 0 6.7199L0 6.61227C0.00175 6.42415 0.00875 5.77402 0.056 5.05652L0.062125 4.9664L0.06475 4.9209L0.07175 4.8299L0.091 4.6024L0.09975 4.5114C0.14175 4.05727 0.203875 3.61627 0.29225 3.28465C0.371849 2.98731 0.528091 2.71607 0.74536 2.49803C0.96263 2.27999 1.23332 2.1228 1.53038 2.04215C1.9565 1.9284 2.88138 1.8584 3.85263 1.81465L4.00138 1.80852L4.15188 1.80327L4.22713 1.80065L4.37675 1.79452C5.2095 1.76775 6.04258 1.75287 6.87575 1.7499L7.04463 1.74902ZM5.6 4.55777V8.77352L9.23738 6.66652L5.6 4.55777Z"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className="social-instagram" href="https://www.instagram.com/">
+                                                <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9614 4.54186C12.9546 4.038 12.8602 3.53916 12.6821 3.06764C12.5278 2.66991 12.292 2.3087 11.9899 2.00709C11.6878 1.70549 11.326 1.47011 10.9276 1.316C10.4614 1.14127 9.9688 1.0468 9.4709 1.03659C8.82985 1.00798 8.62661 1 6.99933 1C5.37206 1 5.16348 1 4.5271 1.03659C4.02943 1.04687 3.5371 1.14135 3.07108 1.316C2.67263 1.47 2.31076 1.70534 2.00864 2.00696C1.70652 2.30858 1.47078 2.66985 1.31653 3.06764C1.14116 3.53274 1.04673 4.02436 1.03732 4.52123C1.00866 5.16188 1 5.36479 1 6.98936C1 8.61393 1 8.82149 1.03732 9.45748C1.04731 9.9551 1.14127 10.4461 1.31653 10.9124C1.47104 11.3101 1.70695 11.6712 2.00918 11.9727C2.3114 12.2742 2.6733 12.5094 3.07175 12.6634C3.5365 12.8451 4.0289 12.9464 4.52777 12.9627C5.16948 12.9914 5.37272 13 7 13C8.62728 13 8.83585 13 9.47223 12.9627C9.97012 12.953 10.4627 12.8587 10.9289 12.684C11.3272 12.5297 11.6889 12.2943 11.991 11.9927C12.2931 11.6911 12.5289 11.33 12.6835 10.9324C12.8587 10.4667 12.9527 9.97572 12.9627 9.47744C12.9913 8.83745 13 8.63455 13 7.00931C12.9987 5.38474 12.9987 5.17851 12.9614 4.54186ZM6.99534 10.0615C5.29343 10.0615 3.9147 8.68511 3.9147 6.98603C3.9147 5.28695 5.29343 3.91052 6.99534 3.91052C7.81237 3.91052 8.59594 4.23455 9.17367 4.81132C9.7514 5.38809 10.076 6.17035 10.076 6.98603C10.076 7.80171 9.7514 8.58397 9.17367 9.16074C8.59594 9.73751 7.81237 10.0615 6.99534 10.0615ZM10.1986 4.51392C10.1042 4.514 10.0108 4.49551 9.92358 4.4595C9.83638 4.42349 9.75716 4.37067 9.69044 4.30406C9.62371 4.23745 9.5708 4.15836 9.53473 4.07131C9.49866 3.98426 9.48014 3.89096 9.48023 3.79676C9.48023 3.70263 9.4988 3.60942 9.53489 3.52245C9.57097 3.43548 9.62386 3.35646 9.69053 3.28989C9.75721 3.22333 9.83636 3.17053 9.92347 3.13451C10.0106 3.09848 10.104 3.07994 10.1982 3.07994C10.2925 3.07994 10.3859 3.09848 10.473 3.13451C10.5601 3.17053 10.6393 3.22333 10.706 3.28989C10.7726 3.35646 10.8255 3.43548 10.8616 3.52245C10.8977 3.60942 10.9163 3.70263 10.9163 3.79676C10.9163 4.19326 10.5951 4.51392 10.1986 4.51392Z"></path>
+                                                    <path d="M6.99589 8.73983C7.96336 8.73983 8.74764 7.95554 8.74764 6.98808C8.74764 6.02061 7.96336 5.23633 6.99589 5.23633C6.02843 5.23633 5.24414 6.02061 5.24414 6.98808C5.24414 7.95554 6.02843 8.73983 6.99589 8.73983Z"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div className="footer-awards">
+                                        <a href="#"><img alt="" src="/assets/img/home1/footer-award-img1.png" /></a>
+                                        <a href="#"><img alt="" src="/assets/img/home1/footer-award-img2.png" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-5 col-sm-6 d-flex justify-content-sm-end">
+                                <div className="footer-widget">
+                                    <strong className="widget-title">Explore</strong>
+                                    <ul className="widget-list">
+                                        <li><a href="/about">About Atlastrip</a></li>
+                                        <li><a href="#">Health & Safety Measure</a></li>
+                                        <li><a href="customize-package#">Customize Tour</a></li>
+                                        <li><a href="holidays#">Deals & Discount</a></li>
+                                        <li><a href="holidays#">Last Minutes Deal</a></li>
+                                        <li><a href="blog#">Travel Inspirations</a></li>
+                                        <li>
+                                            <a href="https://www.tripadvisor.com/">Traveler Reviews</a>
+                                        </li>
+                                        <li><a href="/contact">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-lg-center justify-content-md-end">
+                                <div className="footer-widget">
+                                    <strong className="widget-title">Useful</strong>
+                                    <ul className="widget-list">
+                                        <li><a href="flight#">Flight Booking</a></li>
+                                        <li><a href="visa#">Visa Processing</a></li>
+                                        <li><a href="hotel#">Hotel Booking</a></li>
+                                        <li><a href="transport#">Transport</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-lg-2 col-sm-6 d-flex justify-content-lg-end">
+                                <div className="footer-widget">
+                                    <strong className="widget-title">Helpline</strong>
+                                    <ul className="widget-list">
+                                        <li><a href="#">Help & Support</a></li>
+                                        <li><a href="faq#">FAQs</a></li>
+                                        <li><a href="terms#">Terms & Condition</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="payment-method-area">
+                        <strong>We Accept:-</strong>
+                        <ul className="payment-method-list">
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img1.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img2.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img3.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img4.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img5.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img6.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img7.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img8.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img9.png" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img alt="" src="/assets/img/home1/payment-method-img10.png" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="copyright-area">
+                        <span>© 2026 Atlastrip, <a href="https://www.egenslab.com/">Egenslab</a>.
+                            All Rights Reserved.</span>
+                        <p>
+                            All travel services are provided in accordance with applicable
+                            international travel regulations, airline policies, visa
+                            requirements, and local tourism laws, ensuring transparency,
+                            reliability, and compliance throughout your journey.
+                        </p>
+                    </div>
+                </div>
+            </footer> */}
+
+
+
+
+
+
+
+
+
+
+        </>
+    );
+}

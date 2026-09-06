@@ -1,0 +1,14 @@
+@import url('/assets/css/bootstrap.min.css');
+@import url('/assets/css/jquery-ui.css');
+@import url('/assets/css/bootstrap-icons.css');
+@import url('/assets/css/animate.min.css');
+@import url('/assets/css/jquery.fancybox.min.css');
+@import url('/assets/css/nice-select.css');
+@import url('/assets/css/swiper-bundle.min.css');
+@import url('/assets/css/boxicons.min.css');
+@import url('/assets/css/calendar-css.css');
+@import url('/assets/css/leaflet.css');
+@import url('/assets/css/style.css');
+
+html, body, #root { min-height: 100%; margin: 0; }
+body { overflow-x: hidden; }
