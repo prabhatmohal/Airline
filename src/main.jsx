@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-ro
 import Home from './pages/Home.jsx';
 import AboutUs from './pages/AboutUs.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+import Privacy from './pages/Privacy.jsx';
+
+import Terms from './pages/Terms.jsx';
 import './app.css';
 
 const vendorScripts = [
@@ -109,6 +112,7 @@ function AppShell() {
         '/about.html': '/about',
         'contact.html': '/contact',
         '/contact.html': '/contact',
+        
         '/': '/',
         '/about': '/about',
         '/contact': '/contact',
@@ -129,6 +133,8 @@ function AppShell() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="terms" element={<Terms />} />
+       <Route path="Privacy" element={<Privacy />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

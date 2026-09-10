@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { origin, destination, startDate, endDate, name, email, phone } = req.body;
+  const { origin, destination, startDate, endDate, name, email, phone,message } = req.body;
 
   if (!email || !name) {
     return res.status(400).json({ error: 'Name and email are required' });
@@ -18,6 +18,39 @@ export default async function handler(req, res) {
   });
 
   try {
+    //  if (message !== undefined) {
+    //   await transporter.sendMail({
+    //     from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
+    //     to: process.env.EMAIL_USER,
+    //     replyTo: email,
+    //     subject: `New Contact Enquiry - ${name}`,
+
+    //     html: `
+    //       <h2>New Contact Enquiry</h2>
+
+    //       <p><strong>Name:</strong> ${name}</p>
+
+    //       <p><strong>Email:</strong> ${email}</p>
+
+    //       <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+
+    //       <p><strong>Message:</strong></p>
+
+    //       <p>${message || "No message provided"}</p>
+
+    //       <hr />
+
+    //       <p>
+    //         This enquiry was submitted from the MyTicket Expert website.
+    //       </p>
+    //     `,
+    //   });
+
+    //   return res.status(200).json({
+    //     success: true,
+    //   });
+    // }
+
     await transporter.sendMail({
       from: `"MyTicket Exprt" <${process.env.EMAIL_USER}>`,
       to: email, // 👈 only sends to whatever email the customer typed in the form
