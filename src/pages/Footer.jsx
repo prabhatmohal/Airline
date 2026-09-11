@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -58,7 +59,7 @@ const Footer = () => {
                                 <div className="footer-widget">
                                     <strong className="widget-title">Explore</strong>
                                     <ul className="widget-list">
-                                        <li><a href="">Home</a></li>
+                                        <li><a href="/">Home</a></li>
                                         <li><a href="/about">About us</a></li>
                                         <li><a href="/contact">Contact Us</a></li>
                                     </ul>
@@ -69,9 +70,9 @@ const Footer = () => {
                                 <div className="footer-widget">
                                     <strong className="widget-title">Helpline</strong>
                                     <ul className="widget-list">
-                                        <li><a href="/Privacy">Privacy Policy</a></li>
+                                        <li> <Link to="/privacy">Privacy Policy</Link></li>
                                         <li><a href="">FAQs</a></li>
-                                        <li><a href="/terms">Terms & Condition</a></li>
+                                        <li> <Link to="/terms">Terms &amp; Condition</Link></li>
                                     </ul>
                                 </div>
                             </div>

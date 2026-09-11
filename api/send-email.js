@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { origin, destination, startDate, endDate, name, email, phone,message } = req.body;
+  const { origin, destination, startDate, endDate, name, email, phone, message } = req.body;
 
   if (!email || !name) {
     return res.status(400).json({ error: 'Name and email are required' });
@@ -17,43 +17,37 @@ export default async function handler(req, res) {
     },
   });
 
+  const isContactForm = message !== undefined;
+
   try {
-    //  if (message !== undefined) {
-    //   await transporter.sendMail({
-    //     from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
-    //     to: process.env.EMAIL_USER,
-    //     replyTo: email,
-    //     subject: `New Contact Enquiry - ${name}`,
+    if (isContactForm) {
+      // Contact Us form submission
+      await transporter.sendMail({
+        from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
+        to: email, // sends to whatever email the visitor typed in the form
+        subject: `We received your enquiry, ${name}!`,
+        html: `
+          <h2>Thanks for reaching out, ${name}!</h2>
+          <p>We've received your enquiry and will get back to you shortly.</p>
+          <p><strong>Your message:</strong></p>
+          <p>${message}</p>
+          <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+          <hr />
+          <p>This is a confirmation from the MyTicket Expert website.</p>
+        `,
+      });
 
-    //     html: `
-    //       <h2>New Contact Enquiry</h2>
+      return res.status(200).json({ success: true });
+    }
 
-    //       <p><strong>Name:</strong> ${name}</p>
-
-    //       <p><strong>Email:</strong> ${email}</p>
-
-    //       <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-
-    //       <p><strong>Message:</strong></p>
-
-    //       <p>${message || "No message provided"}</p>
-
-    //       <hr />
-
-    //       <p>
-    //         This enquiry was submitted from the MyTicket Expert website.
-    //       </p>
-    //     `,
-    //   });
-
-    //   return res.status(200).json({
-    //     success: true,
-    //   });
-    // }
+    // Flight search submission
+    if (!origin || !destination) {
+      return res.status(400).json({ error: 'Origin and destination are required for a flight search' });
+    }
 
     await transporter.sendMail({
-      from: `"MyTicket Exprt" <${process.env.EMAIL_USER}>`,
-      to: email, // 👈 only sends to whatever email the customer typed in the form
+      from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
+      to: email, // sends to whatever email the visitor typed in the form
       subject: `Your Flight Search: ${origin} → ${destination}`,
       html: `
         <h2>Thanks for your search, ${name}!</h2>

@@ -134,7 +134,7 @@ function AppShell() {
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<ContactUs />} />
       <Route path="terms" element={<Terms />} />
-       <Route path="Privacy" element={<Privacy />} />
+       <Route path="privacy" element={<Privacy />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );
