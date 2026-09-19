@@ -23,11 +23,14 @@ export default async function handler(req, res) {
     if (isContactForm) {
       // Contact Us form submission
       await transporter.sendMail({
-        from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
-        to: email, // sends to whatever email the visitor typed in the form
+        // from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
+        // to: `${process.env.EMAIL_USER}`, // sends to whatever email the visitor typed in the form
+        from: `"MyTicket Expert" "myticketexpert@gmail.com"`,
+        to: "myticketexpert@gmail.com", 
         subject: `We received your enquiry, ${name}!`,
         html: `
           <h2>Thanks for reaching out, ${name}!</h2>
+          <h2>Email ${email}!</h2>
           <p>We've received your enquiry and will get back to you shortly.</p>
           <p><strong>Your message:</strong></p>
           <p>${message}</p>
@@ -46,8 +49,10 @@ export default async function handler(req, res) {
     }
 
     await transporter.sendMail({
-      from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
-      to: email, // sends to whatever email the visitor typed in the form
+      // from: `"MyTicket Expert" <${process.env.EMAIL_USER}>`,
+      // to: `${process.env.EMAIL_USER}`, 
+      from: `"MyTicket Expert" "myticketexpert@gmail.com"`,
+      to: "myticketexpert@gmail.com", 
       subject: `Your Flight Search: ${origin} → ${destination}`,
       html: `
         <h2>Thanks for your search, ${name}!</h2>
@@ -57,6 +62,7 @@ export default async function handler(req, res) {
           <li><strong>To:</strong> ${destination}</li>
           <li><strong>Dates:</strong> ${startDate} to ${endDate}</li>
           <li><strong>Phone:</strong> ${phone}</li>
+          <li><strong>Email:</strong> ${email}</li>
         </ul>
         <p>Our team will get back to you shortly with the best deals!</p>
       `,
